@@ -1,6 +1,5 @@
 import React, { Context } from "react"
 import "./App.css"
-import UsersContextProvider, { UsersContext } from "./contexts/UsersContext"
 
 function App() {
   return (
