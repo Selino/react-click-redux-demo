@@ -3,6 +3,8 @@ import "./App.css"
 import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Button from "react-bootstrap/Button"
+import { ButtonGroup } from "react-bootstrap"
 
 function App() {
   const counter = useSelector(state => state.counter)
@@ -15,12 +17,15 @@ function App() {
       </header>
       <div>
         <h2>Counter: {counter}</h2>
-        <button onClick={() => dispatch({ type: "DECREMENT" })}>
-          <FontAwesomeIcon icon={faMinus} />
-        </button>
-        <button onClick={() => dispatch({ type: "INCREMENT" })}>
-          <FontAwesomeIcon icon={faPlus} />
-        </button>
+        <ButtonGroup aria-label='controls'>
+          <Button onClick={() => dispatch({ type: "DECREMENT" })}>
+            <FontAwesomeIcon icon={faMinus} />
+          </Button>
+          <Button>Reset</Button>
+          <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+            <FontAwesomeIcon icon={faPlus} />
+          </Button>
+        </ButtonGroup>
       </div>
     </div>
   )
