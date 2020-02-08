@@ -21,7 +21,7 @@ function App() {
           <Button onClick={() => dispatch({ type: "DECREMENT" })}>
             <FontAwesomeIcon icon={faMinus} />
           </Button>
-          <Button>Reset</Button>
+          <Button onClick={() => dispatch({ type: "RESET" })}>Reset</Button>
           <Button onClick={() => dispatch({ type: "INCREMENT" })}>
             <FontAwesomeIcon icon={faPlus} />
           </Button>

@@ -10,6 +10,8 @@ function rootReducer(state = initialState, action) {
       if (state.counter > 0) {
         return { counter: state.counter - 1 }
       }
+    case "RESET":
+      return { counter: (state.counter = 0) }
     default:
       return state
   }
