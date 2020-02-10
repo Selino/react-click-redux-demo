@@ -1,10 +1,10 @@
-import React, { Context } from "react"
+import React from "react"
 import "./App.css"
 import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "react-bootstrap/Button"
-import { ButtonGroup } from "react-bootstrap"
+import { ButtonGroup, Container, Row, Col, Card, Navbar } from "react-bootstrap"
 
 function App() {
   const counter = useSelector(state => state.counter)
@@ -12,21 +12,35 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1>Slektor</h1>
-      </header>
-      <div>
-        <h2>Counter: {counter}</h2>
-        <ButtonGroup aria-label='controls'>
-          <Button onClick={() => dispatch({ type: "DECREMENT" })}>
-            <FontAwesomeIcon icon={faMinus} />
-          </Button>
-          <Button onClick={() => dispatch({ type: "RESET" })}>Reset</Button>
-          <Button onClick={() => dispatch({ type: "INCREMENT" })}>
-            <FontAwesomeIcon icon={faPlus} />
-          </Button>
-        </ButtonGroup>
-      </div>
+      <Navbar bg='dark' variant='dark'>
+        <Navbar.Brand>Slektor</Navbar.Brand>
+      </Navbar>
+      <Container>
+        <Row>
+          <Col>&nbsp;</Col>
+          <Col xs={6}>
+            <Card style={{ marginTop: "1rem" }}>
+              <Card.Body>
+                <Card.Title>Counter: {counter}</Card.Title>
+                <Card.Text>
+                  <ButtonGroup aria-label='controls'>
+                    <Button onClick={() => dispatch({ type: "DECREMENT" })}>
+                      <FontAwesomeIcon icon={faMinus} />
+                    </Button>
+                    <Button onClick={() => dispatch({ type: "RESET" })}>
+                      Reset
+                    </Button>
+                    <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+                      <FontAwesomeIcon icon={faPlus} />
+                    </Button>
+                  </ButtonGroup>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>&nbsp;</Col>
+        </Row>
+      </Container>
     </div>
   )
 }
