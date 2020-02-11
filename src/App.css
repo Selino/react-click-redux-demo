@@ -33,6 +33,10 @@
   text-align: left;
 }
 
+.pull-right {
+  float: right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -7,7 +7,7 @@ function GlobalNav() {
     <Navbar bg='dark' variant='dark'>
       <Navbar.Brand>Counter Demo</Navbar.Brand>
       <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav>
+        <Nav className='ml-auto'>
           <Nav.Item>
             <LinkContainer to='/about'>
               <Nav.Link>About</Nav.Link>
