@@ -10,14 +10,17 @@ function App() {
     <Router>
       <div className='App'>
         <GlobalNav />
-        <div className='body-container'>
+        <div>
           <Switch>
             <Route path='/counter'>
               <Counter />
             </Route>
             <Route path='/about'>
-              <h2>About</h2>
-              <LoremIpsum p={1} />
+              <div className='body-container'>
+                <h2>About</h2>
+
+                <LoremIpsum p={1} />
+              </div>
             </Route>
           </Switch>
         </div>
