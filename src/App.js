@@ -1,44 +1,16 @@
 import React from "react"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import "./App.css"
-import { useSelector, useDispatch } from "react-redux"
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "react-bootstrap/Button"
-import { ButtonGroup, Container, Row, Col, Card, Navbar } from "react-bootstrap"
+import GlobalNav from "./components/GlobalNav"
+import Counter from "./components/Counter"
 
 function App() {
-  const counter = useSelector(state => state.counter)
-  const dispatch = useDispatch()
-
   return (
     <div className='App'>
-      <Navbar bg='dark' variant='dark'>
-        <Navbar.Brand>Counter Demo</Navbar.Brand>
-      </Navbar>
-      <Container>
-        <Row>
-          <Col>&nbsp;</Col>
-          <Col xs={6}>
-            <Card style={{ marginTop: "1rem" }}>
-              <Card.Body>
-                <Card.Title>Counter: {counter}</Card.Title>
-                <ButtonGroup aria-label='controls'>
-                  <Button onClick={() => dispatch({ type: "DECREMENT" })}>
-                    <FontAwesomeIcon icon={faMinus} />
-                  </Button>
-                  <Button onClick={() => dispatch({ type: "RESET" })}>
-                    Reset
-                  </Button>
-                  <Button onClick={() => dispatch({ type: "INCREMENT" })}>
-                    <FontAwesomeIcon icon={faPlus} />
-                  </Button>
-                </ButtonGroup>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>&nbsp;</Col>
-        </Row>
-      </Container>
+      <Router>
+        <GlobalNav />
+        <Counter />
+      </Router>
     </div>
   )
 }
