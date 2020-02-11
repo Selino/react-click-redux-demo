@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       <Navbar bg='dark' variant='dark'>
-        <Navbar.Brand>Slektor</Navbar.Brand>
+        <Navbar.Brand>Counter Demo</Navbar.Brand>
       </Navbar>
       <Container>
         <Row>
@@ -22,19 +22,17 @@ function App() {
             <Card style={{ marginTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>Counter: {counter}</Card.Title>
-                <Card.Text>
-                  <ButtonGroup aria-label='controls'>
-                    <Button onClick={() => dispatch({ type: "DECREMENT" })}>
-                      <FontAwesomeIcon icon={faMinus} />
-                    </Button>
-                    <Button onClick={() => dispatch({ type: "RESET" })}>
-                      Reset
-                    </Button>
-                    <Button onClick={() => dispatch({ type: "INCREMENT" })}>
-                      <FontAwesomeIcon icon={faPlus} />
-                    </Button>
-                  </ButtonGroup>
-                </Card.Text>
+                <ButtonGroup aria-label='controls'>
+                  <Button onClick={() => dispatch({ type: "DECREMENT" })}>
+                    <FontAwesomeIcon icon={faMinus} />
+                  </Button>
+                  <Button onClick={() => dispatch({ type: "RESET" })}>
+                    Reset
+                  </Button>
+                  <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+                    <FontAwesomeIcon icon={faPlus} />
+                  </Button>
+                </ButtonGroup>
               </Card.Body>
             </Card>
           </Col>
