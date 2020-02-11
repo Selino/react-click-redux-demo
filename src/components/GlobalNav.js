@@ -1,24 +1,25 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { Navbar } from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap"
+import { LinkContainer } from "react-router-bootstrap"
 
 function GlobalNav() {
   return (
     <Navbar bg='dark' variant='dark'>
       <Navbar.Brand>Counter Demo</Navbar.Brand>
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/about'>About</Link>
-          </li>
-          <li>
-            <Link to='/users'>Users</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar.Collapse id='basic-navbar-nav'>
+        <Nav>
+          <Nav.Item>
+            <LinkContainer to='/about'>
+              <Nav.Link>About</Nav.Link>
+            </LinkContainer>
+          </Nav.Item>
+          <Nav.Item>
+            <LinkContainer to='/counter'>
+              <Nav.Link>Counter</Nav.Link>
+            </LinkContainer>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   )
 }
