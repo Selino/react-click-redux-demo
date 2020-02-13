@@ -1,9 +1,14 @@
 import React from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom"
 import "./App.css"
 import GlobalNav from "./components/GlobalNav"
 import Counter from "./components/Counter"
-import { LoremIpsum, Avatar } from "react-lorem-ipsum"
+import { LoremIpsum } from "react-lorem-ipsum"
 
 function App() {
   return (
@@ -18,10 +23,10 @@ function App() {
             <Route path='/about'>
               <div className='body-container'>
                 <h2>About</h2>
-
                 <LoremIpsum p={1} />
               </div>
             </Route>
+            <Route exact path='/' render={() => <Redirect to='/about' />} />
           </Switch>
         </div>
       </div>
