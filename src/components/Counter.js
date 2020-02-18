@@ -7,6 +7,24 @@ import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
 function Counter() {
   const counter = useSelector(state => state.counter)
   const dispatch = useDispatch()
+
+  const sendClick = type => {
+    switch (type) {
+      case "RESET":
+        dispatch({ type: type })
+        break
+      case "INCREMENT":
+        dispatch({ type: type })
+        break
+      case "DECREMENT":
+        if (counter > 0) {
+          dispatch({ type: type })
+        }
+        break
+      default:
+        dispatch({ type: type })
+    }
+  }
   return (
     <Container>
       <Row>
@@ -16,13 +34,11 @@ function Counter() {
             <Card.Body>
               <Card.Title>Counter: {counter}</Card.Title>
               <ButtonGroup aria-label='controls'>
-                <Button onClick={() => dispatch({ type: "DECREMENT" })}>
+                <Button onClick={() => sendClick("DECREMENT")}>
                   <FontAwesomeIcon icon={faMinus} />
                 </Button>
-                <Button onClick={() => dispatch({ type: "RESET" })}>
-                  Reset
-                </Button>
-                <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+                <Button onClick={() => sendClick("RESET")}>Reset</Button>
+                <Button onClick={() => sendClick("INCREMENT")}>
                   <FontAwesomeIcon icon={faPlus} />
                 </Button>
               </ButtonGroup>

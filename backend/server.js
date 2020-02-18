@@ -1,20 +1,32 @@
 const express = require("express")
 const cors = require("cors")
+const mongoose = require("mongoose")
 
-// put env variables in the dotenv file
 require("dotenv").config()
 
-// create the express server
 const app = express()
 const port = process.env.PORT || 5000
 
-// cors middleware
 app.use(cors())
-
-// allow parse JSON
 app.use(express.json())
 
-// start the server and report with [nodemon server]
+const uri = process.env.ATLAS_URI
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+})
+const connection = mongoose.connection
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully")
+})
+
+const currentcountRouter = require("./routes/currentcount")
+app.use("/currentcount", currentcountRouter)
+
+const usersRouter = require("./routes/users")
+app.use("/users", usersRouter)
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
 })
