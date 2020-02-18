@@ -30,13 +30,6 @@ router.route("/:id").get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err))
 })
 
-router.route("/:id").delete((req, res) => {
-  currentcount
-    .findByIdAndDelete(req.params.id)
-    .then(() => res.json("currentcount deleted."))
-    .catch(err => res.status(400).json("Error: " + err))
-})
-
 router.route("/update/:id").post((req, res) => {
   currentcount
     .findById(req.params.id)
@@ -46,7 +39,7 @@ router.route("/update/:id").post((req, res) => {
 
       currentcount
         .save()
-        .then(() => res.json("currentcount updated!"))
+        .then(() => res.json("currentcount updated to " + currentcount.counter))
         .catch(err => res.status(400).json("Error: " + err))
     })
     .catch(err => res.status(400).json("Error: " + err))
