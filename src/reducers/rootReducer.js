@@ -15,7 +15,7 @@ const myAxios = state => {
 }
 
 const initialState = {
-  counter: 0
+  counter: 2
 }
 
 function rootReducer(state = initialState, action) {
@@ -27,8 +27,8 @@ function rootReducer(state = initialState, action) {
       myAxios({ counter: state.counter - 1 })
       return { counter: state.counter - 1 }
     case "RESET":
-      myAxios({ counter: 0 })
-      return { counter: (state.counter = 0) }
+      myAxios({ counter: initialState.counter })
+      return { counter: (state.counter = initialState.counter) }
     default:
       return { counter: state.counter }
   }

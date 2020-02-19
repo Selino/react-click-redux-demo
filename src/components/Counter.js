@@ -18,10 +18,10 @@ function Counter() {
               <Card.Title>Counter: {counter}</Card.Title>
               <ButtonGroup aria-label='controls'>
                 <Button
-                  onClick={state => {
-                    if (state.counter > 0) {
-                      dispatch({ type: "DECREMENT" })
-                    }
+                  onClick={() => {
+                    counter > 0
+                      ? dispatch({ type: "DECREMENT" })
+                      : dispatch({ type: "" })
                   }}
                 >
                   <FontAwesomeIcon icon={faMinus} />
