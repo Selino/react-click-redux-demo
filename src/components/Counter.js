@@ -1,9 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
-import axios from "axios"
 
 function Counter() {
   const counter = useSelector(state => state.counter)

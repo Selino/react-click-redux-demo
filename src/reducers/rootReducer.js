@@ -1,19 +1,7 @@
 import axios from "axios"
 
-useEffect(() => {
-  axios
-    .get("http://localhost:5000/currentcount/5e4c34a342683f064e6ad948")
-    .then(res => {
-      // do something
-      console.log("Got the number: " + res.data.counter)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}, [])
-
 const initialState = {
-  counter: 0
+  counter: 2
 }
 
 function rootReducer(state = initialState, action) {
