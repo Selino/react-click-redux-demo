@@ -14,7 +14,6 @@ function rootReducer(state = initialState, action) {
         myAxios({ counter: state.counter - 1 })
         return { counter: state.counter - 1 }
       }
-      break
     case "RESET":
       myAxios({ counter: 0 })
       return { counter: (state.counter = 0) }
