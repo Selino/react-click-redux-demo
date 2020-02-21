@@ -15,7 +15,8 @@ function Counter() {
       .then(res => {
         // console.log(res.data.counter)
         dispatch({ type: "SET", data: res.data.counter })
-        // return res.data.counter
+        let n = document.getElementsByClassName("test")
+        n[0].style.visibility = "visible"
       })
       .catch(err => {
         console.log(err)
@@ -33,7 +34,7 @@ function Counter() {
         <Col xs={6}>
           <Card style={{ marginTop: "1rem" }}>
             <Card.Body>
-              <Card.Title>Counter: {counter}</Card.Title>
+              <Card.Title className='test'>Counter: {counter}</Card.Title>
               <ButtonGroup aria-label='controls'>
                 <Button
                   onClick={() => {
