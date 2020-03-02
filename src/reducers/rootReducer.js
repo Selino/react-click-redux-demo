@@ -6,9 +6,6 @@ const myAxios = state => {
       "http://localhost:5000/currentcount/update/5e4c34a342683f064e6ad948",
       state
     )
-    .then(res => {
-      console.log(res.data)
-    })
     .catch(err => {
       console.log(err)
     })
