@@ -16,9 +16,9 @@ const decrementCount = ({ decrementBy = 1 } = {}) => ({
   decrementBy
 })
 
-const setCount = ({ data = 0 } = {}) => ({
+const setCount = ({ count }) => ({
   type: "SET",
-  data
+  count
 })
 
 const resetCount = () => ({
@@ -33,7 +33,7 @@ function Counter() {
     axios
       .get("http://localhost:5000/currentcount/5e4c34a342683f064e6ad948")
       .then(res => {
-        dispatch(setCount({ data: res.data.counter }))
+        dispatch(setCount({ count: res.data.counter }))
         let n = document.getElementsByClassName("test")
         n[0].style.visibility = "visible"
       })
