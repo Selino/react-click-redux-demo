@@ -21,11 +21,11 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT":
-      myAxios({ counter: state.counter + 1 })
-      return { counter: state.counter + 1 }
+      myAxios({ counter: state.counter + action.incrementBy })
+      return { counter: state.counter + action.incrementBy }
     case "DECREMENT":
-      myAxios({ counter: state.counter - 1 })
-      return { counter: state.counter - 1 }
+      myAxios({ counter: state.counter - action.decrementBy })
+      return { counter: state.counter - action.decrementBy }
     case "SET":
       return { counter: (state.counter = action.data) }
     case "RESET":

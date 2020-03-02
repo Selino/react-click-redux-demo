@@ -5,6 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
 import axios from "axios"
 
+//action generators
+const incrementCount = (payload = {}) => ({
+  type: "INCREMENT",
+  incrementBy: typeof payload.incrementBy === "number" ? payload.incrementBy : 1
+})
+
+const decrementCount = (payload = {}) => ({
+  type: "DECREMENT",
+  decrementBy: typeof payload.decrementBy === "number" ? payload.decrementBy : 1
+})
+
+const resetCount = () => ({
+  type: "RESET"
+})
+
 function Counter() {
   const counter = useSelector(state => state.counter)
   const dispatch = useDispatch()
@@ -39,16 +54,14 @@ function Counter() {
                 <Button
                   onClick={() => {
                     counter > 0
-                      ? dispatch({ type: "DECREMENT" })
+                      ? dispatch(decrementCount())
                       : dispatch({ type: "" })
                   }}
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </Button>
-                <Button onClick={() => dispatch({ type: "RESET" })}>
-                  Reset
-                </Button>
-                <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+                <Button onClick={() => dispatch(resetCount())}>Reset</Button>
+                <Button onClick={() => dispatch(incrementCount())}>
                   <FontAwesomeIcon icon={faPlus} />
                 </Button>
               </ButtonGroup>
