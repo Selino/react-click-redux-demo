@@ -6,14 +6,19 @@ import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
 import axios from "axios"
 
 //action generators
-const incrementCount = ({ incrementBy = 1 }) => ({
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
   type: "INCREMENT",
   incrementBy
 })
 
-const decrementCount = ({ decrementBy = 1 }) => ({
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
   type: "DECREMENT",
   decrementBy
+})
+
+const setCount = ({ data = 0 } = {}) => ({
+  type: "SET",
+  data
 })
 
 const resetCount = () => ({
@@ -28,8 +33,7 @@ function Counter() {
     axios
       .get("http://localhost:5000/currentcount/5e4c34a342683f064e6ad948")
       .then(res => {
-        // console.log(res.data.counter)
-        dispatch({ type: "SET", data: res.data.counter })
+        dispatch(setCount({ data: res.data.counter }))
         let n = document.getElementsByClassName("test")
         n[0].style.visibility = "visible"
       })
