@@ -6,14 +6,14 @@ import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
 import axios from "axios"
 
 //action generators
-const incrementCount = (payload = {}) => ({
+const incrementCount = ({ incrementBy = 1 }) => ({
   type: "INCREMENT",
-  incrementBy: typeof payload.incrementBy === "number" ? payload.incrementBy : 1
+  incrementBy
 })
 
-const decrementCount = (payload = {}) => ({
+const decrementCount = ({ decrementBy = 1 }) => ({
   type: "DECREMENT",
-  decrementBy: typeof payload.decrementBy === "number" ? payload.decrementBy : 1
+  decrementBy
 })
 
 const resetCount = () => ({
