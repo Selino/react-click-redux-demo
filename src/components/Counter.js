@@ -4,6 +4,7 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
 import axios from "axios"
+import { API_HOST } from "../constants"
 
 //action generators
 const incrementCount = ({ incrementBy = 1 } = {}) => ({
@@ -30,8 +31,9 @@ function Counter() {
   const dispatch = useDispatch()
 
   const getStoredCount = () => {
+    console.log(API_HOST)
     axios
-      .get("http://localhost:5000/currentcount/5e4c34a342683f064e6ad948")
+      .get(`${API_HOST}/currentcount/5e4c34a342683f064e6ad948`)
       .then(res => {
         dispatch(setCount({ count: res.data.counter }))
         let n = document.getElementsByClassName("test")
