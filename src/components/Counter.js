@@ -3,10 +3,23 @@ import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
-import axios from "axios"
-import { API_HOST } from "../constants"
+import * as firebase from "firebase"
 
-//action generators
+// firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCL_Lo3hHzl4soj8Gb2MQ6Lsy1M5h-E6lk",
+  authDomain: "react-click-redux-demo.firebaseapp.com",
+  databaseURL: "https://react-click-redux-demo.firebaseio.com",
+  projectId: "react-click-redux-demo",
+  storageBucket: "react-click-redux-demo.appspot.com",
+  messagingSenderId: "931347627875",
+  appId: "1:931347627875:web:e5c45c8dcb825939b7dd56"
+}
+firebase.initializeApp(firebaseConfig)
+const database = firebase.database()
+// firebase end
+
+// action generators
 const incrementCount = ({ incrementBy = 1 } = {}) => ({
   type: "INCREMENT",
   incrementBy
@@ -17,30 +30,33 @@ const decrementCount = ({ decrementBy = 1 } = {}) => ({
   decrementBy
 })
 
-const setCount = ({ count }) => ({
+const setCount = ({ counter }) => ({
   type: "SET",
-  count
+  counter
 })
 
 const resetCount = () => ({
   type: "RESET"
 })
+// action generators end
 
 function Counter() {
   const counter = useSelector(state => state.counter)
   const dispatch = useDispatch()
 
   const getStoredCount = () => {
-    console.log(API_HOST)
-    axios
-      .get(`${API_HOST}/currentcount/5e4c34a342683f064e6ad948`)
-      .then(res => {
-        dispatch(setCount({ count: res.data.counter }))
+    database
+      .ref()
+      .once("value")
+      .then(snapshot => {
+        const data = snapshot.val()
+        console.log(data)
+        dispatch(setCount({ counter: data.counter }))
         let n = document.getElementsByClassName("test")
         n[0].style.visibility = "visible"
       })
-      .catch(err => {
-        console.log(err)
+      .catch(e => {
+        console.log(`There was a problem: ${e}`)
       })
   }
 
