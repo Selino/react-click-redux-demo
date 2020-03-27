@@ -3,6 +3,12 @@ import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
+import {
+  setCount,
+  incrementCount,
+  decrementCount,
+  resetCount
+} from "../actions/CounterActions"
 import * as firebase from "firebase"
 
 // firebase
@@ -18,27 +24,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 const database = firebase.database()
 // firebase end
-
-// action generators
-const incrementCount = ({ incrementBy = 1 } = {}) => ({
-  type: "INCREMENT",
-  incrementBy
-})
-
-const decrementCount = ({ decrementBy = 1 } = {}) => ({
-  type: "DECREMENT",
-  decrementBy
-})
-
-const setCount = ({ counter }) => ({
-  type: "SET",
-  counter
-})
-
-const resetCount = () => ({
-  type: "RESET"
-})
-// action generators end
 
 function Counter() {
   const counter = useSelector(state => state.counter)
