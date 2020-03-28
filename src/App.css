@@ -24,6 +24,7 @@
 
 .btn {
   font-size: 3rem;
+  touch-action: manipulation;
 }
 
 @keyframes App-logo-spin {
