@@ -24,13 +24,14 @@ function App() {
                   concepts.
                 </p>
                 <ul>
-                  <li>Functional components without using class</li>
-                  <li>Functionl components using Redux for state</li>
+                  <li>Functional components using Redux for state</li>
+                  <li>Redux Dev Tools integration</li>
                   <li>
-                    Persistent data across sessions using read/update from
-                    remote mongoDB Atlas
+                    Persistent data across sessions using Firebase Realtime
+                    DB/Redux-Thunk
                   </li>
                   <li>React router usage</li>
+                  <li>Deployment using Heroku CLI</li>
                 </ul>
                 <p>Click on the "Counter" link in the nav to continue.</p>
               </div>
