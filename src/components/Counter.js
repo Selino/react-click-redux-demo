@@ -3,45 +3,19 @@ import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
-import axios from "axios"
-import { API_HOST } from "../constants"
-
-//action generators
-const incrementCount = ({ incrementBy = 1 } = {}) => ({
-  type: "INCREMENT",
-  incrementBy
-})
-
-const decrementCount = ({ decrementBy = 1 } = {}) => ({
-  type: "DECREMENT",
-  decrementBy
-})
-
-const setCount = ({ count }) => ({
-  type: "SET",
-  count
-})
-
-const resetCount = () => ({
-  type: "RESET"
-})
+import {
+  startCount,
+  incrementCount,
+  decrementCount,
+  resetCount
+} from "../actions/CounterActions"
 
 function Counter() {
   const counter = useSelector(state => state.counter)
   const dispatch = useDispatch()
 
   const getStoredCount = () => {
-    console.log(API_HOST)
-    axios
-      .get(`${API_HOST}/currentcount/5e4c34a342683f064e6ad948`)
-      .then(res => {
-        dispatch(setCount({ count: res.data.counter }))
-        let n = document.getElementsByClassName("test")
-        n[0].style.visibility = "visible"
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    dispatch(startCount())
   }
 
   useEffect(() => {
@@ -52,27 +26,36 @@ function Counter() {
     <Container>
       <Row>
         <Col>&nbsp;</Col>
-        <Col xs={6}>
+        <Col xs={12} sm={8} md={6} lg={4}>
           <Card style={{ marginTop: "1rem" }}>
             <Card.Body>
               <Card.Title className='test'>Counter: {counter}</Card.Title>
-              <ButtonGroup aria-label='controls'>
-                <Button
-                  onClick={() => {
-                    counter > 0
-                      ? dispatch(decrementCount())
-                      : dispatch({ type: "" })
-                  }}
-                >
-                  <FontAwesomeIcon icon={faMinus} />
-                </Button>
-                <Button onClick={() => dispatch(resetCount())}>Reset</Button>
-                <Button onClick={() => dispatch(incrementCount())}>
-                  <FontAwesomeIcon icon={faPlus} />
-                </Button>
-              </ButtonGroup>
+              <Button
+                onClick={() => {
+                  counter > 0
+                    ? dispatch(decrementCount(1, counter))
+                    : dispatch({ type: "" })
+                }}
+              >
+                <FontAwesomeIcon icon={faMinus} />
+              </Button>
+              <Button onClick={() => dispatch(resetCount())}>Reset</Button>
+              <Button
+                onClick={() => {
+                  counter <= 24
+                    ? dispatch(incrementCount(1, counter))
+                    : dispatch({ type: "" })
+                }}
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </Button>
             </Card.Body>
           </Card>
+          <p style={{ marginTop: "1rem" }}>
+            Count between 0 - 25.
+            <br />
+            Data is persistent across sessions. Enjoy!
+          </p>
         </Col>
         <Col>&nbsp;</Col>
       </Row>
