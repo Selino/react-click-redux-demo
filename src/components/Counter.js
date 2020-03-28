@@ -26,31 +26,29 @@ function Counter() {
     <Container>
       <Row>
         <Col>&nbsp;</Col>
-        <Col xs={6}>
+        <Col xs={12} sm={8} md={6} lg={4}>
           <Card style={{ marginTop: "1rem" }}>
             <Card.Body>
               <Card.Title className='test'>Counter: {counter}</Card.Title>
-              <ButtonGroup aria-label='controls'>
-                <Button
-                  onClick={() => {
-                    counter > 0
-                      ? dispatch(decrementCount(1, counter))
-                      : dispatch({ type: "" })
-                  }}
-                >
-                  <FontAwesomeIcon icon={faMinus} />
-                </Button>
-                <Button onClick={() => dispatch(resetCount())}>Reset</Button>
-                <Button
-                  onClick={() => {
-                    counter <= 24
-                      ? dispatch(incrementCount(1, counter))
-                      : dispatch({ type: "" })
-                  }}
-                >
-                  <FontAwesomeIcon icon={faPlus} />
-                </Button>
-              </ButtonGroup>
+              <Button
+                onClick={() => {
+                  counter > 0
+                    ? dispatch(decrementCount(1, counter))
+                    : dispatch({ type: "" })
+                }}
+              >
+                <FontAwesomeIcon icon={faMinus} />
+              </Button>
+              <Button onClick={() => dispatch(resetCount())}>Reset</Button>
+              <Button
+                onClick={() => {
+                  counter <= 24
+                    ? dispatch(incrementCount(1, counter))
+                    : dispatch({ type: "" })
+                }}
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </Button>
             </Card.Body>
           </Card>
           <p style={{ marginTop: "1rem" }}>
