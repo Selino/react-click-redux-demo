@@ -53,6 +53,11 @@ function Counter() {
               </ButtonGroup>
             </Card.Body>
           </Card>
+          <p style={{ marginTop: "1rem" }}>
+            Count between 0 - 25.
+            <br />
+            Data is persistent across sessions. Enjoy!
+          </p>
         </Col>
         <Col>&nbsp;</Col>
       </Row>
