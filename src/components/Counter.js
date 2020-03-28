@@ -41,7 +41,13 @@ function Counter() {
                   <FontAwesomeIcon icon={faMinus} />
                 </Button>
                 <Button onClick={() => dispatch(resetCount())}>Reset</Button>
-                <Button onClick={() => dispatch(incrementCount(1, counter))}>
+                <Button
+                  onClick={() => {
+                    counter <= 24
+                      ? dispatch(incrementCount(1, counter))
+                      : dispatch({ type: "" })
+                  }}
+                >
                   <FontAwesomeIcon icon={faPlus} />
                 </Button>
               </ButtonGroup>

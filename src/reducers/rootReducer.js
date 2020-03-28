@@ -11,7 +11,7 @@ function rootReducer(state = initialState, action) {
     case "SET":
       return { counter: (state.counter = action.counter) }
     case "RESET":
-      return { counter: (state.counter = initialState.counter) }
+      return { counter: (state.counter = 0) }
     default:
       return { counter: state.counter }
   }
