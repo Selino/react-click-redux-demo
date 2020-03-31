@@ -1,2 +1,0 @@
-# slektor
-Don't ask…
