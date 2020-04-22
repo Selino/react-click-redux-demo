@@ -6,7 +6,6 @@ import * as serviceWorker from "./serviceWorker"
 import configureStore from "./store/configureStore"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./index.css"
-import { firebase } from "./firebase/firebase"
 
 const store = configureStore()
 
@@ -21,12 +20,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()
-
-// firebase auth test
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log("logged in")
-  } else {
-    console.log("logged out")
-  }
-})
