@@ -1,5 +1,5 @@
 import React from "react"
-import { Router, Route, Switch, Link, Navlink } from "react-router-dom"
+import { Router, Route, Switch } from "react-router-dom"
 import { createBrowserHistory } from "history"
 import GlobalNav from "../components/GlobalNav"
 import Counter from "../components/Counter"
@@ -13,13 +13,13 @@ const AppRouter = () => (
     <div>
       <GlobalNav />
       <Switch>
-        <Route path='/login'>
+        <Route exact path='/login'>
           <LogIn />
         </Route>
-        <Route path='/about'>
+        <Route exact path='/about'>
           <About />
         </Route>
-        <Route path='/counter'>
+        <Route exact path='/counter'>
           <Counter />
         </Route>
         <Route exact path='/' component={LogIn} />
