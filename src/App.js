@@ -1,13 +1,9 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
 import GlobalNav from "./components/GlobalNav"
 import Counter from "./components/Counter"
+import LogIn from "./components/LogIn"
 
 function App() {
   return (
@@ -16,6 +12,9 @@ function App() {
         <GlobalNav />
         <div>
           <Switch>
+            <Route path='/login'>
+              <LogIn />
+            </Route>
             <Route path='/about'>
               <div className='body-container'>
                 <h2>About</h2>
@@ -39,7 +38,7 @@ function App() {
             <Route path='/counter'>
               <Counter />
             </Route>
-            <Route exact path='/' render={() => <Redirect to='/about' />} />
+            <Route exact path='/' component={LogIn} />
           </Switch>
         </div>
       </div>

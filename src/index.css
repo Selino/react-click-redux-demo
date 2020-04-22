@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.btn {
+#main-counter .btn {
   padding: 1rem 1.2rem;
   margin: 0.5rem;
 }

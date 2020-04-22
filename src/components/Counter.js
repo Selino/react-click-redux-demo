@@ -2,16 +2,16 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Button, ButtonGroup, Container, Row, Col, Card } from "react-bootstrap"
+import { Button, Container, Row, Col, Card } from "react-bootstrap"
 import {
   startCount,
   incrementCount,
   decrementCount,
-  resetCount
-} from "../actions/CounterActions"
+  resetCount,
+} from "../actions/counter_actions"
 
 function Counter() {
-  const counter = useSelector(state => state.counter)
+  const counter = useSelector((state) => state.counter)
   const dispatch = useDispatch()
 
   const getStoredCount = () => {
@@ -23,7 +23,7 @@ function Counter() {
   }, [])
 
   return (
-    <Container>
+    <Container id='main-counter'>
       <Row>
         <Col>&nbsp;</Col>
         <Col xs={12} sm={8} md={6} lg={4}>
