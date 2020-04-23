@@ -12,7 +12,10 @@ export default () => {
   // )
 
   const store = createStore(
-    combineReducers({ counter: counterReducer, uid: authReducer }),
+    combineReducers({
+      counter: counterReducer,
+      uid: authReducer,
+    }),
     composeEnhancers(applyMiddleware(thunk))
   )
   return store
