@@ -1,6 +1,4 @@
 import React from "react"
-import { LinkContainer } from "react-router-bootstrap"
-import { Link } from "react-router-dom"
 
 export default function About() {
   return (
@@ -21,6 +19,7 @@ export default function About() {
         <a
           href='https://github.com/Selino/react-click-redux-demo'
           target='_blank'
+          rel='noopener noreferrer'
         >
           github.com/Selino/react-click-redux-demo
         </a>
