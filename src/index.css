@@ -31,12 +31,15 @@ code {
   padding: 1rem;
 }
 
-.test {
+.counter-area {
   visibility: hidden;
+  text-align: center;
 }
 
 #main-counter .btn {
   font-size: 2rem;
   touch-action: manipulation;
   margin: 0.5rem;
+  width: 4rem;
+  height: 4rem;
 }

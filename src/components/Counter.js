@@ -29,7 +29,9 @@ function Counter() {
         <Col xs={12} sm={8} md={6} lg={4}>
           <Card style={{ marginTop: "1rem" }}>
             <Card.Body>
-              <Card.Title className='test'>Counter: {counter}</Card.Title>
+              <Card.Title className='counter-area'>
+                Counter: {counter}
+              </Card.Title>
               <Button
                 onClick={() => {
                   counter > 0
@@ -39,7 +41,12 @@ function Counter() {
               >
                 <FontAwesomeIcon icon={faMinus} />
               </Button>
-              <Button onClick={() => dispatch(resetCount())}>Reset</Button>
+              <Button
+                style={{ fontSize: "1rem", width: "6rem", fontWeight: "bold" }}
+                onClick={() => dispatch(resetCount())}
+              >
+                Reset
+              </Button>
               <Button
                 onClick={() => {
                   counter <= 24

@@ -1,7 +1,6 @@
 import { firebase, googleAuthProvider } from "../firebase/firebase"
 
 export const login = (uid) => {
-  console.log(`Logged in with: ${uid}`)
   return {
     type: "LOGIN",
     uid,
@@ -15,7 +14,6 @@ export const startLogin = () => {
 }
 
 export const logout = () => {
-  console.log(`Logged out.`)
   return {
     type: "LOGOUT",
   }
