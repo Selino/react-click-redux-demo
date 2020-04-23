@@ -19,6 +19,7 @@ ReactDOM.render(
 // firebase auth test
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    console.log(user.uid)
     if (history.location.pathname === "/") {
       history.push("/counter")
     }
