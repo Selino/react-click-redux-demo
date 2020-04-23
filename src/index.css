@@ -36,10 +36,24 @@ code {
   text-align: center;
 }
 
-#main-counter .btn {
+.main-counter {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.main-counter .btn {
   font-size: 2rem;
   touch-action: manipulation;
   margin: 0.5rem;
   width: 4rem;
   height: 4rem;
+}
+
+.login-area {
+  padding-top: 50vmin;
+  text-align: center;
+}
+
+.counter-line {
+  visibility: hidden;
 }

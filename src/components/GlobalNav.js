@@ -7,11 +7,7 @@ import { startLogout } from "../actions/auth_actions"
 export function GlobalNav({ startLogout }) {
   return (
     <Navbar bg='dark' variant='dark'>
-      <Navbar.Brand>
-        <LinkContainer to='/' style={{ color: "white" }}>
-          <Nav.Link>Counter Demo</Nav.Link>
-        </LinkContainer>
-      </Navbar.Brand>
+      <Navbar.Brand>Counter Demo</Navbar.Brand>
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
           <Nav.Item>

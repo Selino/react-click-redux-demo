@@ -12,7 +12,7 @@ export const startCount = () => {
             counter: data.counter,
           })
         )
-        let n = document.getElementsByClassName("counter-area")
+        let n = document.getElementsByClassName("counter-line")
         n[0].style.visibility = "visible"
       })
       .catch((e) => {

@@ -1,6 +1,10 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
+import {
+  faPlus,
+  faMinus,
+  faToiletPaper,
+} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, Container, Row, Col, Card } from "react-bootstrap"
 import {
@@ -11,7 +15,7 @@ import {
 } from "../actions/counter_actions"
 
 function Counter() {
-  const counter = useSelector((state) => state.counter)
+  const counter = useSelector((state) => state.counter.count)
   const dispatch = useDispatch()
 
   const getStoredCount = () => {
@@ -20,16 +24,17 @@ function Counter() {
 
   useEffect(() => {
     getStoredCount()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <Container id='main-counter'>
+    <Container>
       <Row>
         <Col>&nbsp;</Col>
         <Col xs={12} sm={8} md={6} lg={4}>
-          <Card style={{ marginTop: "1rem" }}>
+          <Card className='main-counter'>
             <Card.Body>
-              <Card.Title className='counter-area'>
+              <Card.Title className='counter-line'>
                 Counter: {counter}
               </Card.Title>
               <Button
@@ -41,11 +46,8 @@ function Counter() {
               >
                 <FontAwesomeIcon icon={faMinus} />
               </Button>
-              <Button
-                style={{ fontSize: "1rem", width: "6rem", fontWeight: "bold" }}
-                onClick={() => dispatch(resetCount())}
-              >
-                Reset
+              <Button onClick={() => dispatch(resetCount())}>
+                <FontAwesomeIcon icon={faToiletPaper} />
               </Button>
               <Button
                 onClick={() => {

@@ -34,12 +34,14 @@ const renderApp = () => {
 // firebase auth test
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    console.log("uid", user.uid)
     renderApp()
     store.dispatch(login(user.uid))
     if (history.location.pathname === "/") {
       history.push("/counter")
     }
   } else {
+    console.log("logged out")
     renderApp()
     store.dispatch(logout())
     history.push("/")

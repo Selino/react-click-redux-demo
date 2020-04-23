@@ -1,14 +1,18 @@
-export default (state = 1, action) => {
+const initialState = {
+  count: 0,
+}
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state + action.incrementBy
+      return { count: state.count + action.incrementBy }
     case "DECREMENT":
-      return state - action.decrementBy
+      return { count: state.count - action.decrementBy }
     case "SET":
-      return (state = action.counter)
+      return { count: (state.count = action.counter) }
     case "RESET":
-      return (state = 0)
+      return { count: (state.count = 0) }
     default:
-      return state
+      return { count: state.count }
   }
 }
