@@ -1,22 +1,49 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
-import App from "./App"
-import * as serviceWorker from "./serviceWorker"
+import { firebase } from "./firebase/firebase"
+import AppRouter, { history } from "./routers/AppRouter"
 import configureStore from "./store/configureStore"
+import { login, logout } from "./actions/auth_actions"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./index.css"
 
 const store = configureStore()
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-)
+// let hasRendered = false
+// const renderApp = () => {
+//   if (!hasRendered) {
+//     ReactDOM.render(jsx, document.getElementById("app"))
+//     hasRendered = true
+//   }
+// }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+let hasRendered = false
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(
+      <Provider store={store} history={history}>
+        <AppRouter />
+      </Provider>,
+      document.getElementById("root")
+    )
+    hasRendered = true
+  }
+}
+
+// firebase auth test
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("uid", user.uid)
+    renderApp()
+    store.dispatch(login(user.uid))
+    if (history.location.pathname === "/") {
+      history.push("/counter")
+    }
+  } else {
+    console.log("logged out")
+    renderApp()
+    store.dispatch(logout())
+    history.push("/")
+  }
+})

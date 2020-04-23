@@ -12,7 +12,48 @@ code {
     monospace;
 }
 
-.btn {
-  padding: 1rem 1.2rem;
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.body-container {
+  padding: 1rem;
+}
+
+.counter-area {
+  visibility: hidden;
+  text-align: center;
+}
+
+.main-counter {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.main-counter .btn {
+  font-size: 2rem;
+  touch-action: manipulation;
   margin: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.login-area {
+  padding-top: 50vmin;
+  text-align: center;
+}
+
+.counter-line {
+  visibility: hidden;
 }
