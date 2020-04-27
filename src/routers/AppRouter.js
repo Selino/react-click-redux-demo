@@ -6,6 +6,7 @@ import Counter from "../components/Counter"
 import LogIn from "../components/LogIn"
 import About from "../components/About"
 import PrivateRoute from "./PrivateRoute"
+import PublicRoute from "./PublicRoute"
 
 export const history = createBrowserHistory()
 
@@ -14,7 +15,7 @@ const AppRouter = () => (
     <div>
       <PrivateRoute component={GlobalNav} />
       <Switch>
-        <Route exact path='/login' component={LogIn} />
+        <PublicRoute exact path='/login' component={LogIn} />
         <PrivateRoute exact path='/about' component={About} />
         <PrivateRoute exact path='/counter' component={Counter} />
         <Route exact path='/' component={LogIn} />

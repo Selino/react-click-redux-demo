@@ -1,10 +1,11 @@
 import React from "react"
 import { Nav, Navbar, Button } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
 
-export function GlobalNav({ startLogout }) {
+export function GlobalNav() {
+  const dispatch = useDispatch()
   return (
     <Navbar bg='dark' variant='dark'>
       <Navbar.Brand>Counter Demo</Navbar.Brand>
@@ -22,15 +23,11 @@ export function GlobalNav({ startLogout }) {
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
-      <Button onClick={startLogout} variant='outline-light'>
+      <Button onClick={() => dispatch(startLogout())} variant='outline-light'>
         Logout
       </Button>
     </Navbar>
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  startLogout: () => dispatch(startLogout()),
-})
-
-export default connect(undefined, mapDispatchToProps)(GlobalNav)
+export default GlobalNav
