@@ -11,7 +11,7 @@
     "@testing-library/react": "^10.0.2",
     "@testing-library/user-event": "^10.1.0",
     "bootstrap": "^4.4.1",
-    "firebase": "^7.13.1",
+    "firebase": "^7.14.6",
     "history": "^4.10.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
