@@ -6,9 +6,9 @@ export default function About() {
       <h2>About</h2>
       <p>This demo is to display an understanding of several core concepts.</p>
       <ul>
-        <li>Functional components using Redux Hookk for state</li>
+        <li>Functional components using Redux Hooks for state</li>
         <li>Redux Dev Tools integration</li>
-        <li>Persistent data across sessions using Firebase Realtime DB</li>
+        <li>Serverless database using Firebase Realtime DB</li>
         <li>Authentication and persmissions using Firebase Auth Services</li>
         <li>React router usage</li>
         <li>Deployment using Heroku CLI</li>
