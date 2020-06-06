@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
 import { firebase } from "./firebase/firebase"
-import AppRouter, { history } from "./routers/AppRouter"
+import AppRouter, { history } from "./routes/AppRouter"
 import configureStore from "./store/configureStore"
 import { login, logout } from "./actions/auth_actions"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -29,7 +29,7 @@ firebase.auth().onAuthStateChanged((user) => {
     renderApp()
     store.dispatch(login(user.uid))
     if (history.location.pathname === "/") {
-      history.push("/counter")
+      history.push("/about")
     }
   } else {
     renderApp()
