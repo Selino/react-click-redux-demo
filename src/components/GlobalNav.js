@@ -17,7 +17,7 @@ export function GlobalNav() {
   }
   return (
     <Navbar bg='dark' variant='dark' onSelect={handleSelect}>
-      <Navbar.Brand>Selino Demos</Navbar.Brand>
+      <Navbar.Brand>Selino's Demo</Navbar.Brand>
       <Nav className='ml-auto'>
         <NavDropdown title='' alignRight>
           <LinkContainer to='/about'>

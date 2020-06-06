@@ -18,8 +18,12 @@ function Counter() {
   const counter = useSelector((state) => state.counter.count)
   const dispatch = useDispatch()
 
-  const getStoredCount = () => {
-    dispatch(startCount())
+  const getStoredCount = async function () {
+    try {
+      dispatch(startCount())
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {

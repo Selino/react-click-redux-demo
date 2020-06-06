@@ -7,11 +7,10 @@ export default function About() {
       <p>This demo is to display an understanding of several core concepts.</p>
       <ul>
         <li>Functional components using Redux Hooks for state</li>
-        <li>Redux Dev Tools integration</li>
         <li>Serverless database using Firebase Realtime DB</li>
         <li>Authentication and persmissions using Firebase Auth Services</li>
         <li>React router usage</li>
-        <li>Deployment using Heroku CLI</li>
+        <li>Deployment onto Heroku</li>
       </ul>
       <p>Click on the "Counter" link in the nav to continue.</p>
       <p>
