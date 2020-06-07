@@ -1,12 +1,4 @@
-@fontface {
-  font-family: "Bungee Inline", cursive;
-  src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
-}
-
-@fontface {
-  font-family: "Roboto Slab", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 .logo-pic {
   width: 120px;
@@ -19,26 +11,21 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 0;
+  top: -50px;
   left: 0;
-  bottom: 0;
   right: 0;
 }
 
 .login-area .sub-text {
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.5rem;
+  font-family: "Roboto Slab", serif;
   color: #333;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 1rem;
   padding-top: 5rem;
   color: white;
   background-color: #333333;
   border-radius: 4px;
-}
-
-.login-area .sub-text h2 {
-  font-family: "Roboto Slab", serif;
+  position: relative;
 }
 
 .fade-in {

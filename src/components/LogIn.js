@@ -11,12 +11,11 @@ export const LogIn = ({ startLogin }) => {
       <Row>
         <Col>&nbsp;</Col>
         <Col className='login-area fade-in' xs={6}>
-          <div className='logo-pic'></div>
           <div className='sub-text'>
+            <div className='logo-pic'></div>
+            <h2>Welcome!</h2>
             Selino's React Click Demo is a live portfolio of custom components
             hand crafted with React… and love.
-            <br />
-            Lots and lots of love.
           </div>
           <img
             style={{ cursor: "pointer", marginTop: "1rem" }}
