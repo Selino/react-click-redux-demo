@@ -1,0 +1,33 @@
+table {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  table-layout: auto !important;
+}
+
+.table-header {
+  font-variant-caps: all-small-caps;
+  background-color: #f5f5f5;
+  border-bottom: none !important;
+}
+
+.search-container {
+  padding: 0.5rem;
+  border: solid 1px #ccc;
+}
+
+.table-name-container {
+  display: inline-block;
+  height: 1.5rem;
+  max-width: 200px;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: solid 1px #ccc;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-variant-caps: all-small-caps;
+}
+
+.searchbar-container {
+  display: inline-block;
+  width: 300px;
+}

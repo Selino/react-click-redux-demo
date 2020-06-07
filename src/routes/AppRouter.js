@@ -4,6 +4,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom"
 import { createBrowserHistory } from "history"
 import GlobalNav from "../components/GlobalNav"
 import Counter from "../components/Counter"
+import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import About from "../components/About"
 
@@ -41,6 +42,11 @@ const AppRouter = () => (
         <PublicRoute exact path='/login' component={LogIn} />
         <PrivateRoute exact path='/about' component={About} />
         <PrivateRoute exact path='/counter' component={Counter} />
+        <PrivateRoute
+          exact
+          path='/executivesummary'
+          component={ExecutiveSummary}
+        />
         <Route exact path='/' component={LogIn} />
       </Switch>
     </div>

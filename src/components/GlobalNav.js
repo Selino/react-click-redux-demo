@@ -17,7 +17,7 @@ export function GlobalNav() {
   }
   return (
     <Navbar bg='dark' variant='dark' onSelect={handleSelect}>
-      <Navbar.Brand>Selino's Demo</Navbar.Brand>
+      <Navbar.Brand>Selino's React Demo</Navbar.Brand>
       <Nav className='ml-auto'>
         <NavDropdown title='' alignRight>
           <LinkContainer to='/about'>
@@ -25,6 +25,9 @@ export function GlobalNav() {
           </LinkContainer>
           <LinkContainer to='/counter'>
             <NavDropdown.Item>Counter</NavDropdown.Item>
+          </LinkContainer>
+          <LinkContainer to='/executivesummary'>
+            <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
           </LinkContainer>
           <NavDropdown.Divider />
           <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>

@@ -1,0 +1,94 @@
+@fontface {
+  font-family: "Bungee Inline", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+}
+
+@fontface {
+  font-family: "Roboto Slab", serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+}
+
+.logo-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: solid 4px #333;
+  margin: auto;
+  background-image: url("../sv-logo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.login-area .sub-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  font-size: 0.8rem;
+  padding: 1rem;
+  padding-top: 5rem;
+  color: white;
+  background-color: #333333;
+  border-radius: 4px;
+}
+
+.login-area .sub-text h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
