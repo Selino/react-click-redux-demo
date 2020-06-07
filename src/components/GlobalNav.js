@@ -3,6 +3,9 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "../css/globalnav.css"
 
 export function GlobalNav() {
   const dispatch = useDispatch()
@@ -19,7 +22,7 @@ export function GlobalNav() {
     <Navbar bg='dark' variant='dark' onSelect={handleSelect}>
       <Navbar.Brand>Selino's React Demo</Navbar.Brand>
       <Nav className='ml-auto'>
-        <NavDropdown title='' alignRight>
+        <NavDropdown title={<FontAwesomeIcon icon={faBars} />} alignRight>
           <LinkContainer to='/about'>
             <NavDropdown.Item>About</NavDropdown.Item>
           </LinkContainer>
