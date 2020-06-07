@@ -39,7 +39,7 @@ function Counter() {
           <Card className='main-counter'>
             <Card.Body>
               <Card.Title className='counter-line'>
-                Counter: {counter}
+                Redux Counter: {counter}
               </Card.Title>
               <Button
                 onClick={() => {

@@ -19,15 +19,15 @@ export function GlobalNav() {
     }
   }
   return (
-    <Navbar bg='dark' variant='dark' onSelect={handleSelect}>
+    <Navbar bg='dark' variant='dark' onSelect={handleSelect} fixed='top'>
       <Navbar.Brand>
         <div className='d-inline-block align-top logo'></div>
         Selino's React Demo
       </Navbar.Brand>
       <Nav className='ml-auto'>
         <NavDropdown title={<FontAwesomeIcon icon={faBars} />} alignRight>
-          <LinkContainer to='/about'>
-            <NavDropdown.Item>About</NavDropdown.Item>
+          <LinkContainer to='/menu'>
+            <NavDropdown.Item>Menu</NavDropdown.Item>
           </LinkContainer>
           <LinkContainer to='/counter'>
             <NavDropdown.Item>Counter</NavDropdown.Item>
@@ -44,24 +44,3 @@ export function GlobalNav() {
 }
 
 export default GlobalNav
-
-// <Navbar bg='dark' variant='dark'>
-// <Navbar.Brand>Selino Demo</Navbar.Brand>
-// <Navbar.Collapse id='basic-navbar-nav'>
-//   <Nav className='ml-auto'>
-//     <Nav.Item>
-//       <LinkContainer to='/about'>
-//         <Nav.Link>About</Nav.Link>
-//       </LinkContainer>
-//     </Nav.Item>
-//     <Nav.Item>
-//       <LinkContainer to='/counter'>
-//         <Nav.Link>Counter</Nav.Link>
-//       </LinkContainer>
-//     </Nav.Item>
-//   </Nav>
-// </Navbar.Collapse>
-// <Button onClick={() => dispatch(startLogout())} variant='outline-light'>
-//   Logout
-// </Button>
-// </Navbar>
