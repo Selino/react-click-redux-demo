@@ -20,7 +20,10 @@ export function GlobalNav() {
   }
   return (
     <Navbar bg='dark' variant='dark' onSelect={handleSelect}>
-      <Navbar.Brand>Selino's React Demo</Navbar.Brand>
+      <Navbar.Brand>
+        <div className='d-inline-block align-top logo'></div>
+        Selino's React Demo
+      </Navbar.Brand>
       <Nav className='ml-auto'>
         <NavDropdown title={<FontAwesomeIcon icon={faBars} />} alignRight>
           <LinkContainer to='/about'>

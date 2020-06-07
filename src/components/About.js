@@ -12,7 +12,7 @@ export default function About() {
         <li>React router usage</li>
         <li>Deployment onto Heroku</li>
       </ul>
-      <p>Click on the "Counter" link in the nav to continue.</p>
+      <p>Select a demo from the dropdown above.</p>
       <p>
         Source code at{" "}
         <a
