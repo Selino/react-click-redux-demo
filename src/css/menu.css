@@ -1,3 +1,9 @@
-.card {
+.card-override {
   margin-bottom: 2rem;
+  cursor: pointer;
+  height: 100%;
+}
+
+.card-override:hover {
+  box-shadow: 0px 0px 4px#333;
 }

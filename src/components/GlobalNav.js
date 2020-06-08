@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faHome } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../css/globalnav.css"
 
@@ -20,19 +20,26 @@ export function GlobalNav() {
   }
   return (
     <Navbar bg='dark' variant='dark' onSelect={handleSelect} fixed='top'>
-      <Navbar.Brand>
-        <div className='d-inline-block align-top logo'></div>
-        Selino's React Demo
-      </Navbar.Brand>
+      <LinkContainer exact to='/menu' active='false'>
+        <Navbar.Brand>
+          <div>
+            <div className='d-inline-block align-top logo'></div>
+            Selino's React Demo
+          </div>
+        </Navbar.Brand>
+      </LinkContainer>
+
       <Nav className='ml-auto'>
         <NavDropdown title={<FontAwesomeIcon icon={faBars} />} alignRight>
-          <LinkContainer to='/menu'>
+          <LinkContainer exact to='/menu' active={false}>
             <NavDropdown.Item>Menu</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to='/counter'>
+
+          <LinkContainer exact to='/counter' active={false}>
             <NavDropdown.Item>Counter</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to='/executivesummary'>
+
+          <LinkContainer exact to='/executivesummary' active={false}>
             <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
           </LinkContainer>
           <NavDropdown.Divider />
