@@ -24,7 +24,7 @@ export function GlobalNav() {
         <Navbar.Brand>
           <div>
             <div className='d-inline-block align-top logo'></div>
-            Selino's React Demo
+            Selino's ReactJS Demo
           </div>
         </Navbar.Brand>
       </LinkContainer>

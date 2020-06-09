@@ -10,7 +10,7 @@ export const LogIn = ({ startLogin }) => {
       <div className='sub-text'>
         <div className='logo-pic'></div>
         <h2>Welcome!</h2>
-        Selino's React Demo is a live portfolio of custom components hand
+        Selino's ReactJS Demo is a live portfolio of custom components hand
         crafted with React… and love.
       </div>
       <img
