@@ -13,7 +13,7 @@ export const LogIn = ({ startLogin }) => {
         <img
           style={{
             display: "block",
-            margin: "-.5rem auto 1rem",
+            margin: "-10px auto 1rem",
             width: "80%",
           }}
           src={BigTitle}
