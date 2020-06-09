@@ -8,6 +8,7 @@ import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
 import SubNav from "../components/SubNav"
+import WordCounter from "../components/Wordcounter"
 
 export const history = createBrowserHistory()
 
@@ -49,6 +50,7 @@ const AppRouter = () => (
           path='/executivesummary'
           component={ExecutiveSummary}
         />
+        <PrivateRoute exact path='/wordcounter' component={WordCounter} />
         <Route exact path='/' component={LogIn} />
       </Switch>
     </div>
