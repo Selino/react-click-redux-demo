@@ -35,32 +35,34 @@ export default function SubNav(props) {
       }}
     >
       <table>
-        <tr style={{ verticalAlign: "top" }}>
-          <td>
-            <LinkContainer
-              to='/menu'
-              exact
-              active='false'
+        <tbody>
+          <tr style={{ verticalAlign: "top" }}>
+            <td>
+              <LinkContainer
+                to='/menu'
+                exact
+                active='false'
+                style={{
+                  marginRight: "1rem",
+                  cursor: "pointer",
+                }}
+              >
+                <FontAwesomeIcon icon={faHome} />
+              </LinkContainer>
+            </td>
+            <td
               style={{
-                marginRight: "1rem",
-                cursor: "pointer",
+                color: "#FFD500",
+                fontWeight: "bold",
+                paddingRight: "1rem",
               }}
             >
-              <FontAwesomeIcon icon={faHome} />
-            </LinkContainer>
-          </td>
-          <td
-            style={{
-              color: "#FFD500",
-              fontWeight: "bold",
-              paddingRight: "1rem",
-            }}
-          >
-            {text.title}
-          </td>
+              {text.title}
+            </td>
 
-          <td>{text.desc}</td>
-        </tr>
+            <td>{text.desc}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   )

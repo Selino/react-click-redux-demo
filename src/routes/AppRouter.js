@@ -8,7 +8,7 @@ import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
 import SubNav from "../components/SubNav"
-import WordCounter from "../components/Wordcounter"
+import WordCounter from "../components/WordCounter"
 
 export const history = createBrowserHistory()
 
