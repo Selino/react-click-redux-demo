@@ -7,6 +7,7 @@ import Counter from "../components/Counter"
 import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
+import SubNav from "../components/SubNav"
 
 export const history = createBrowserHistory()
 
@@ -37,6 +38,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
 const AppRouter = () => (
   <Router history={history}>
     <PrivateRoute component={GlobalNav} />
+    <PrivateRoute component={SubNav} />
     <div className='body-container'>
       <Switch>
         <PublicRoute exact path='/login' component={LogIn} />

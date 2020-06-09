@@ -30,7 +30,15 @@ export function GlobalNav() {
       </LinkContainer>
 
       <Nav className='ml-auto'>
-        <NavDropdown title={<FontAwesomeIcon icon={faBars} />} alignRight>
+        <NavDropdown
+          title={
+            <FontAwesomeIcon
+              icon={faBars}
+              style={{ color: "#FFD500", fontSize: "1.5rem" }}
+            />
+          }
+          alignRight
+        >
           <LinkContainer exact to='/menu' active={false}>
             <NavDropdown.Item>Menu</NavDropdown.Item>
           </LinkContainer>
