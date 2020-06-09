@@ -11,6 +11,7 @@ export const LogIn = ({ startLogin }) => {
       <div className='sub-text'>
         <div className='logo-pic'></div>
         <img
+          alt="Selino's ReactJS Demo"
           style={{
             display: "block",
             margin: "-10px auto 1rem",
