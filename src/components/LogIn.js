@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { startLogin } from "../actions/auth_actions"
 import GoogleSignIn from "../btn-sign-in-g.svg"
+import BigTitle from "../big-title.svg"
 import "../css/login.css"
 
 export const LogIn = ({ startLogin }) => {
@@ -9,9 +10,16 @@ export const LogIn = ({ startLogin }) => {
     <div className='login-area fade-in'>
       <div className='sub-text'>
         <div className='logo-pic'></div>
-        <h2>Welcome!</h2>
-        Selino's ReactJS Demo is a live portfolio of custom components hand
-        crafted with React… and love.
+        <img
+          style={{
+            display: "block",
+            margin: "-.5rem auto 1rem",
+            width: "80%",
+          }}
+          src={BigTitle}
+        />
+        Welcome to Selino's ReactJS Demo! A live portfolio of custom components
+        hand crafted with React… and love.
       </div>
       <img
         style={{ cursor: "pointer", marginTop: "1rem" }}
