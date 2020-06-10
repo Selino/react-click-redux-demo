@@ -30,16 +30,17 @@ export default function WordCounter() {
             the non-letters. I never really enjoyed Regex.
           </p>
           <code>
-            const myCounter = (str) => &#123; <br />
-            let regex = new RegExp(/\w/)
+            const myCounter = (str) => &#123;
             <br />
-            const aRaw = str.split(" ")
+            &nbsp; let regex = new RegExp(/\w/)
             <br />
-            const clean = aRaw.filter((e) =>
+            &nbsp; const aRaw = str.split(" ")
             <br />
-            e.match(regex))
+            &nbsp; const clean = aRaw.filter((e) =>
             <br />
-            setState(clean.length)
+            &nbsp; e.match(regex))
+            <br />
+            &nbsp; setState(clean.length)
             <br />
             &#125;
           </code>
