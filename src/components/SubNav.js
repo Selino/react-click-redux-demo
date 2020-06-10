@@ -18,6 +18,11 @@ export default function SubNav(props) {
       text.title = "Trilliant Executive Summary"
       text.desc = "A live data table with all the bells and whistles."
       break
+    case "/wordcounter":
+      text.title = "Word Counter"
+      text.desc =
+        "Type is some words and watch the count change! Exciting, right?"
+      break
 
     default:
       text.title = ""
