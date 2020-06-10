@@ -16,15 +16,34 @@ export default function WordCounter() {
       <Row>
         <Col xs={12} sm={6}>
           <textarea
+            style={{ width: "100%", minHeight: "200px", resize: "none" }}
             id='name'
             type='textarea'
-            rows='10'
-            cols='30'
+            placeholder='Type text into this area.'
             onChange={(e) => myCounter(e.target.value)}
           />
           <div>{state}</div>
         </Col>
-        <Col>Test</Col>
+        <Col>
+          <p>
+            It took a while to figure out the method & regex combo to filter out
+            the non-letters. I never really enjoyed Regex.
+          </p>
+          <code>
+            const myCounter = (str) => &#123; <br />
+            let regex = new RegExp(/\w/)
+            <br />
+            const aRaw = str.split(" ")
+            <br />
+            const clean = aRaw.filter((e) =>
+            <br />
+            e.match(regex))
+            <br />
+            setState(clean.length)
+            <br />
+            &#125;
+          </code>
+        </Col>
       </Row>
     </Container>
   )
