@@ -9,6 +9,7 @@ import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
 import SubNav from "../components/SubNav"
 import WordCounter from "../components/WordCounter"
+import GifCaller from "../components/GifCaller"
 
 export const history = createBrowserHistory()
 
@@ -45,6 +46,7 @@ const AppRouter = () => (
         <PublicRoute exact path='/login' component={LogIn} />
         <PrivateRoute exact path='/menu' component={Menu} />
         <PrivateRoute exact path='/counter' component={Counter} />
+        <PrivateRoute exact path='/gifcaller' component={GifCaller} />
         <PrivateRoute
           exact
           path='/executivesummary'
