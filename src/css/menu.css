@@ -1,7 +1,7 @@
-.card-override {
-  margin-bottom: 2rem;
+.card {
   cursor: pointer;
-  height: 100%;
+  /* height: 100%; */
+  margin-bottom: 2rem !important;
 }
 
 .card-override:hover {
