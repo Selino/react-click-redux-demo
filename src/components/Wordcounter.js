@@ -27,7 +27,7 @@ export default function WordCounter() {
         <Col>
           <p>
             It took a while to figure out the method & regex combo to filter out
-            the non-letters. I never really enjoyed Regex.
+            the non-letters. I don't enjoy Regex.
           </p>
           <code>
             const myCounter = (str) => &#123;
