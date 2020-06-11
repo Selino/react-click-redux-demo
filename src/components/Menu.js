@@ -9,7 +9,7 @@ import "../css/menu.css"
 
 export default function About() {
   return (
-    <div class='d-flex flex-wrap justify-content-center'>
+    <div class='menu d-flex flex-wrap justify-content-center'>
       <LinkContainer exact to='/counter' active='false'>
         <Card className='card-override'>
           <Card.Img variant='top' src={tnReduxCounter} />
