@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
-import { faBars } from "@fortawesome/fontawesome-pro"
+import { faBars } from "@fortawesome/fontawesome-free"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../css/globalnav.css"
 
