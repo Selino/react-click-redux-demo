@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { faSearch, faTimesCircle } from "@fortawesome/fontawesome-pro"
 import { css, jsx } from "@emotion/core"
 
 function useGiphy(query) {
@@ -14,7 +14,7 @@ function useGiphy(query) {
       try {
         setLoading(true)
         const response = await fetch(
-          `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&q=${query}&limit=10&offset=0&rating=G&lang=en`
+          `https://api.giphy.com/v1/gifs/search?api_key={process.env.REACT_APP_GIPHY_API_KEY}&q=${query}&limit=10&offset=0&rating=G&lang=en`
         )
         const json = await response.json()
 

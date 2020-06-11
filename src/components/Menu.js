@@ -18,7 +18,6 @@ export default function About() {
               <Card.Body>
                 <Card.Title>Redux Counter Prototype</Card.Title>
                 <Card.Text>
-                  {process.env.REACT_APP_TEST}
                   It took a while to wrap my head around exactly how Redux works
                   and why it's handy on larger projects. It was helpful to learn
                   by implemting on a simple component. I've also integrated
