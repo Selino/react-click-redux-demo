@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react"
+/** @jsx jsx */
+import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
-import { css, jsx } from "@emotion/core" /** @jsx jsx */
+import { faSearch, faTimesCircle } from "@fortawesome/fontawesome-pro"
+import { css, jsx } from "@emotion/core"
 
 function useGiphy(query) {
   const [results, setResults] = useState([])
@@ -13,7 +14,7 @@ function useGiphy(query) {
       try {
         setLoading(true)
         const response = await fetch(
-          `https://api.giphy.com/v1/gifs/search?api_key=Ms8MCTImiu6Ugn3ZzE3ppcgI0jH2kc8Q&q=${query}&limit=10&offset=0&rating=G&lang=en`
+          `https://api.giphy.com/v1/gifs/search?api_key={process.env.REACT_APP_GIPHY_API_KEY}&q=${query}&limit=10&offset=0&rating=G&lang=en`
         )
         const json = await response.json()
 
@@ -62,16 +63,18 @@ export default function GifCaller() {
                 position: absolute;
                 top: 50%;
                 right: 3rem;
+                transform: translate(-50%, -50%);
                 color: #e5e5e5;
                 cursor: pointer;
                 z-index: 5;
-                transform: translate(-50%, -50%);
                 font-size: 1.3rem;
                 &:hover {
                   color: #666;
                 }
               `}
-              onClick={() => setSearch("")}
+              onClick={() => {
+                setSearch("")
+              }}
               icon={faTimesCircle}
               className={search ? "" : "d-none"}
             />
@@ -83,7 +86,12 @@ export default function GifCaller() {
         </InputGroup>
       </Form>
 
-      <div style={{ textAlign: "center", padding: "25%" }}>
+      <div
+        css={css`
+          padding-top: 2rem;
+          text-align: center;
+        `}
+      >
         {loading ? (
           <Spinner animation='border' role='status'>
             <span className='sr-only'>Loading...</span>

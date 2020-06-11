@@ -4,6 +4,7 @@ import { Container, Row, Col, Card } from "react-bootstrap"
 import tnReduxCounter from "../images/tn-redux-counter.png"
 import tnExecSummary from "../images/tn-exec-summary.png"
 import tnWordCounter from "../images/tn-word-counter.png"
+import tnGifCaller from "../images/tn-gifcaller.gif"
 import "../css/menu.css"
 
 export default function About() {
@@ -17,6 +18,7 @@ export default function About() {
               <Card.Body>
                 <Card.Title>Redux Counter Prototype</Card.Title>
                 <Card.Text>
+                  {process.env.REACT_APP_TEST}
                   It took a while to wrap my head around exactly how Redux works
                   and why it's handy on larger projects. It was helpful to learn
                   by implemting on a simple component. I've also integrated
@@ -54,6 +56,19 @@ export default function About() {
                   question I was given during a React test. I have it memorized
                   now!
                 </Card.Text>
+              </Card.Body>
+            </Card>
+          </LinkContainer>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs='12' md='4'>
+          <LinkContainer exact to='/gifcaller' active='false'>
+            <Card className='card-override'>
+              <Card.Img variant='top' src={tnGifCaller} />
+              <Card.Body>
+                <Card.Title>Gif Caller</Card.Title>
+                <Card.Text>Wanna hit an API for some GIFs</Card.Text>
               </Card.Body>
             </Card>
           </LinkContainer>

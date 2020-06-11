@@ -1,10 +1,6 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import {
-  faPlus,
-  faMinus,
-  faToiletPaper,
-} from "@fortawesome/free-solid-svg-icons"
+import { faPlus, faMinus, faToiletPaper } from "@fortawesome/fontawesome-pro"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, Container, Row, Col, Card } from "react-bootstrap"
 import {
