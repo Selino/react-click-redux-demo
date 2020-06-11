@@ -50,9 +50,15 @@ export function GlobalNav() {
           <LinkContainer exact to='/executivesummary' active={false}>
             <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
           </LinkContainer>
+
           <LinkContainer exact to='/wordcounter' active={false}>
             <NavDropdown.Item>Word Counter</NavDropdown.Item>
           </LinkContainer>
+
+          <LinkContainer exact to='/gifcaller' active={false}>
+            <NavDropdown.Item>Gif Caller</NavDropdown.Item>
+          </LinkContainer>
+
           <NavDropdown.Divider />
           <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
         </NavDropdown>

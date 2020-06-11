@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Form, InputGroup, Button, Container } from "react-bootstrap"
+import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons"
+import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { css, jsx } from "@emotion/core" /** @jsx jsx */
 
 function useGiphy(query) {
   const [results, setResults] = useState([])
@@ -39,17 +40,13 @@ export default function GifCaller() {
   const [query, setQuery] = useState("")
   const [results, loading] = useGiphy(query)
 
-  const clearResults = () => {
-    setSearch("")
-  }
-
   return (
     <Container>
       <Form
         id='myForm'
         onSubmit={(e) => {
           e.preventDefault()
-          setQuery("")
+          setQuery(search)
         }}
       >
         <InputGroup className='mb-3'>
@@ -60,27 +57,37 @@ export default function GifCaller() {
             placeholder='Search for Gifs!'
           />
           <InputGroup.Append>
-            <Button variant='outline-secondary' onClick={clearResults}>
-              Clear
+            <FontAwesomeIcon
+              css={css`
+                position: absolute;
+                top: 50%;
+                right: 3rem;
+                color: #e5e5e5;
+                cursor: pointer;
+                z-index: 5;
+                transform: translate(-50%, -50%);
+                font-size: 1.3rem;
+                &:hover {
+                  color: #666;
+                }
+              `}
+              onClick={() => setSearch("")}
+              icon={faTimesCircle}
+              className={search ? "" : "d-none"}
+            />
+
+            <Button type='submit'>
+              <FontAwesomeIcon icon={faSearch} />
             </Button>
-            <Button type='submit'>Search</Button>
           </InputGroup.Append>
         </InputGroup>
       </Form>
 
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", padding: "25%" }}>
         {loading ? (
-          <FontAwesomeIcon
-            icon={faCircleNotch}
-            className='fa-spin'
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              fontSize: "2rem",
-            }}
-          />
+          <Spinner animation='border' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </Spinner>
         ) : (
           results.map((item) => <video autoPlay loop key={item} src={item} />)
         )}
