@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faTimesCircle } from "@fortawesome/fontawesome-pro"
+import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
 import { css, jsx } from "@emotion/core"
 
 function useGiphy(query) {

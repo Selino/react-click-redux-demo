@@ -1,5 +1,5 @@
 import React from "react"
-import { faHome } from "@fortawesome/fontawesome-pro"
+import { faHome } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { LinkContainer } from "react-router-bootstrap"
 
