@@ -1,6 +1,6 @@
 import React from "react"
 import { LinkContainer } from "react-router-bootstrap"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import tnReduxCounter from "../images/tn-redux-counter.png"
 import tnExecSummary from "../images/tn-exec-summary.png"
 import tnWordCounter from "../images/tn-word-counter.png"
