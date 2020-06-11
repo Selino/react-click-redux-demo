@@ -8,7 +8,43 @@ import moment from "moment"
 import Dinero from "dinero.js"
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"
 import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css"
-import "../css/trilliant-table.css"
+import styled from "@emotion/styled"
+
+const Emotion = styled.div`
+  table {
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    table-layout: auto !important;
+  }
+
+  .table-header {
+    font-variant-caps: all-small-caps;
+    background-color: #f5f5f5;
+    border-bottom: none !important;
+  }
+
+  .search-container {
+    padding: 0.5rem;
+    border: solid 1px #ccc;
+  }
+
+  .table-name-container {
+    display: inline-block;
+    height: 1.5rem;
+    max-width: 200px;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: solid 1px #ccc;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-variant-caps: all-small-caps;
+  }
+
+  .searchbar-container {
+    display: inline-block;
+    width: 300px;
+  }
+`
 
 const myData = getSampleData()
 
@@ -138,32 +174,34 @@ export default function ExecutiveSummary() {
     },
   ]
   return (
-    <ToolkitProvider
-      keyField='id'
-      data={myData}
-      columns={columns}
-      bootstrap4={true}
-      search
-    >
-      {(props) => (
-        <div>
-          <div className='search-container'>
-            <div className='table-name-container'>Strategy List</div>
-            <div className='searchbar-container'>
-              <SearchBar {...props.searchProps} />
+    <Emotion>
+      <ToolkitProvider
+        keyField='id'
+        data={myData}
+        columns={columns}
+        bootstrap4={true}
+        search
+      >
+        {(props) => (
+          <div>
+            <div className='search-container'>
+              <div className='table-name-container'>Strategy List</div>
+              <div className='searchbar-container'>
+                <SearchBar {...props.searchProps} />
+              </div>
             </div>
-          </div>
 
-          <BootstrapTable
-            {...props.baseProps}
-            bordered={false}
-            striped={false}
-            hover={true}
-            condensed={false}
-            headerClasses='table-header'
-          />
-        </div>
-      )}
-    </ToolkitProvider>
+            <BootstrapTable
+              {...props.baseProps}
+              bordered={false}
+              striped={false}
+              hover={true}
+              condensed={false}
+              headerClasses='table-header'
+            />
+          </div>
+        )}
+      </ToolkitProvider>
+    </Emotion>
   )
 }
