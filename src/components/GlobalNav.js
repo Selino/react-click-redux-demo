@@ -1,11 +1,13 @@
-import React from "react"
-import { Nav, Navbar, NavDropdown } from "react-bootstrap"
+/** @jsx jsx */
+import { Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../css/globalnav.css"
+import { css, jsx } from "@emotion/core"
 
 export function GlobalNav() {
   const dispatch = useDispatch()
@@ -28,14 +30,22 @@ export function GlobalNav() {
           </div>
         </Navbar.Brand>
       </LinkContainer>
+      <Navbar.Collapse className='justify-content-end'>
+        <FontAwesomeIcon
+          icon={faGithub}
+          css={css`
+            color: white;
+          `}
+        />
 
-      <Nav className='ml-auto'>
         <NavDropdown
           alignRight
           title={
             <FontAwesomeIcon
               icon={faBars}
-              style={{ color: "#FFD500", fontSize: "1.5rem" }}
+              css={css`
+                color: #ffd500;
+              `}
             />
           }
         >
@@ -62,7 +72,7 @@ export function GlobalNav() {
           <NavDropdown.Divider />
           <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
         </NavDropdown>
-      </Nav>
+      </Navbar.Collapse>
     </Navbar>
   )
 }
