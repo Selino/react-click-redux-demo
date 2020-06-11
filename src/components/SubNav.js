@@ -1,7 +1,4 @@
 import React from "react"
-import { faHome } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { LinkContainer } from "react-router-bootstrap"
 
 export default function SubNav(props) {
   let text = { title: "", desc: "" }
@@ -23,6 +20,10 @@ export default function SubNav(props) {
       text.desc =
         "Type is some words and watch the count change! Exciting, right?"
       break
+    case "/gifcaller":
+      text.title = "Gif Caller"
+      text.desc = "A Giphy API caller using Async React Hooks."
+      break
 
     default:
       text.title = ""
@@ -32,29 +33,19 @@ export default function SubNav(props) {
 
   return (
     <div
+      className='position-fixed'
       style={{
         marginTop: "58px",
         backgroundColor: "#333",
         color: "white",
         padding: "1rem",
+        zIndex: "1",
+        width: "100%",
       }}
     >
       <table>
         <tbody>
           <tr style={{ verticalAlign: "top" }}>
-            <td>
-              <LinkContainer
-                to='/menu'
-                exact
-                active='false'
-                style={{
-                  marginRight: "1rem",
-                  cursor: "pointer",
-                }}
-              >
-                <FontAwesomeIcon icon={faHome} />
-              </LinkContainer>
-            </td>
             <td
               style={{
                 color: "#FFD500",

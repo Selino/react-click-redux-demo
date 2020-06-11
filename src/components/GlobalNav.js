@@ -1,11 +1,13 @@
-import React from "react"
-import { Nav, Navbar, NavDropdown } from "react-bootstrap"
+/** @jsx jsx */
+import { Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faHome } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../css/globalnav.css"
+import { css, jsx } from "@emotion/core"
 
 export function GlobalNav() {
   const dispatch = useDispatch()
@@ -28,16 +30,48 @@ export function GlobalNav() {
           </div>
         </Navbar.Brand>
       </LinkContainer>
+      <Navbar.Collapse
+        className='justify-content-end'
+        css={css`
+          color: white;
+          font-size: 1.2rem;
+        `}
+      >
+        <LinkContainer to='/menu' exact active='false'>
+          <FontAwesomeIcon
+            icon={faHome}
+            css={css`
+              margin-right: 1rem;
+              cursor: pointer;
+            `}
+          />
+        </LinkContainer>
 
-      <Nav className='ml-auto'>
+        <a
+          href='https://github.com/Selino/react-click-redux-demo'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <FontAwesomeIcon
+            icon={faGithub}
+            css={css`
+              margin-right: 0.25rem;
+              color: white;
+              cursor: pointer;
+            `}
+          />
+        </a>
+
         <NavDropdown
+          alignRight
           title={
             <FontAwesomeIcon
               icon={faBars}
-              style={{ color: "#FFD500", fontSize: "1.5rem" }}
+              css={css`
+                color: #ffd500;
+              `}
             />
           }
-          alignRight
         >
           <LinkContainer exact to='/menu' active={false}>
             <NavDropdown.Item>Menu</NavDropdown.Item>
@@ -50,13 +84,19 @@ export function GlobalNav() {
           <LinkContainer exact to='/executivesummary' active={false}>
             <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
           </LinkContainer>
+
           <LinkContainer exact to='/wordcounter' active={false}>
             <NavDropdown.Item>Word Counter</NavDropdown.Item>
           </LinkContainer>
+
+          <LinkContainer exact to='/gifcaller' active={false}>
+            <NavDropdown.Item>Gif Caller</NavDropdown.Item>
+          </LinkContainer>
+
           <NavDropdown.Divider />
           <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
         </NavDropdown>
-      </Nav>
+      </Navbar.Collapse>
     </Navbar>
   )
 }
