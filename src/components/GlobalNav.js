@@ -3,7 +3,7 @@ import { Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faHome } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../css/globalnav.css"
@@ -30,13 +30,37 @@ export function GlobalNav() {
           </div>
         </Navbar.Brand>
       </LinkContainer>
-      <Navbar.Collapse className='justify-content-end'>
-        <FontAwesomeIcon
-          icon={faGithub}
-          css={css`
-            color: white;
-          `}
-        />
+      <Navbar.Collapse
+        className='justify-content-end'
+        css={css`
+          color: white;
+          font-size: 1.2rem;
+        `}
+      >
+        <LinkContainer to='/menu' exact active='false'>
+          <FontAwesomeIcon
+            icon={faHome}
+            css={css`
+              margin-right: 1rem;
+              cursor: pointer;
+            `}
+          />
+        </LinkContainer>
+
+        <a
+          href='https://github.com/Selino/react-click-redux-demo'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <FontAwesomeIcon
+            icon={faGithub}
+            css={css`
+              margin-right: 0.25rem;
+              color: white;
+              cursor: pointer;
+            `}
+          />
+        </a>
 
         <NavDropdown
           alignRight
