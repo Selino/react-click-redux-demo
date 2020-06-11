@@ -40,8 +40,6 @@
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .login-area {
-  }
   .login-area .sub-text {
     font-size: 1.2rem;
   }
