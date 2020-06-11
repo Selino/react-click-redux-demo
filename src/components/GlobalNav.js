@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Nav, Navbar, NavDropdown } from "react-bootstrap"
+import { Navbar, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
