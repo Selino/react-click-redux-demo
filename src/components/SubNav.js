@@ -1,4 +1,5 @@
 import React from "react"
+import { Fade } from "react-reveal"
 
 export default function SubNav(props) {
   let text = { title: "", desc: "" }
@@ -43,23 +44,25 @@ export default function SubNav(props) {
         width: "100%",
       }}
     >
-      <table>
-        <tbody>
-          <tr style={{ verticalAlign: "top" }}>
-            <td
-              style={{
-                color: "#FFD500",
-                fontWeight: "bold",
-                paddingRight: "1rem",
-              }}
-            >
-              {text.title}
-            </td>
+      <Fade left>
+        <table>
+          <tbody>
+            <tr style={{ verticalAlign: "top" }}>
+              <td
+                style={{
+                  color: "#FFD500",
+                  fontWeight: "bold",
+                  paddingRight: "1rem",
+                }}
+              >
+                {text.title}
+              </td>
 
-            <td>{text.desc}</td>
-          </tr>
-        </tbody>
-      </table>
+              <td>{text.desc}</td>
+            </tr>
+          </tbody>
+        </table>
+      </Fade>
     </div>
   )
 }
