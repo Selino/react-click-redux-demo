@@ -79,10 +79,10 @@ const Emotion = styled.div`
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
-      width: 40%;
+      width: 25%;
     }
     .login-area .sub-text {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 `
