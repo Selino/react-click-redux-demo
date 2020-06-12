@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { connect } from "react-redux"
 import { startLoginGoogle, startLoginGithub } from "../actions/auth_actions"
 import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
@@ -88,16 +88,18 @@ const Emotion = styled.div`
 `
 
 export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
+  const [animation, setAnimation] = useState(0)
   return (
     <Emotion>
       <div className='login-area'>
-        <Fade cascade>
+        <Fade cascade when={animation > 2}>
           <div className='sub-text'>
             <Bounce top>
               <div className='logo-pic'></div>
             </Bounce>
             <Bounce>
               <img
+                onLoad={() => setAnimation(animation + 1)}
                 alt="Selino's ReactJS Demo"
                 style={{
                   display: "block",
@@ -111,12 +113,14 @@ export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
             components hand crafted with React… and love.
           </div>
           <img
+            onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
             onClick={startLoginGoogle}
             src={imgGoogleSignIn}
             alt='Sign in with Google'
           />
           <img
+            onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
             onClick={startLoginGithub}
             src={imgGitHubSignIn}
