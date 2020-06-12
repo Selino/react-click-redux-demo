@@ -17,15 +17,19 @@ const Emotion = styled.div`
     table-layout: auto !important;
   }
 
+  .table-container {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+  }
+
   .table-header {
     font-variant-caps: all-small-caps;
     background-color: #f5f5f5;
-    border-bottom: none !important;
   }
 
   .search-container {
     padding: 0.5rem;
-    border: solid 1px #ccc;
+    line-height: -0.2rem;
   }
 
   .table-name-container {
@@ -183,7 +187,7 @@ export default function ExecutiveSummary() {
         search
       >
         {(props) => (
-          <div>
+          <div className='table-container'>
             <div className='search-container'>
               <div className='table-name-container'>Strategy List</div>
               <div className='searchbar-container'>

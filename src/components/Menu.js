@@ -30,7 +30,7 @@ const Emotion = styled.div`
 export default function About() {
   return (
     <Emotion>
-      <div class='d-flex flex-wrap justify-content-center'>
+      <div className='d-flex flex-wrap justify-content-center'>
         <LinkContainer exact to='/counter' active='false'>
           <Card className='card-override'>
             <Card.Img variant='top' src={tnReduxCounter} />
