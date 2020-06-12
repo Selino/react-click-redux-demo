@@ -1,3 +1,8 @@
+### `Welcome!`
+
+This is a public repo of some React demos I've put together. Feel free to fork and assist or just plain lift it.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
