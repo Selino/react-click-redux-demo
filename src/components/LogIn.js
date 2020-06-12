@@ -1,7 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
-import { startLogin } from "../actions/auth_actions"
-import GoogleSignIn from "../images/btn-sign-in-g.svg"
+import { startLoginGoogle, startLoginGithub } from "../actions/auth_actions"
+import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
+import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
 import styled from "@emotion/styled"
@@ -86,7 +87,7 @@ const Emotion = styled.div`
   }
 `
 
-export const LogIn = ({ startLogin }) => {
+export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
   return (
     <Emotion>
       <div className='login-area'>
@@ -110,10 +111,16 @@ export const LogIn = ({ startLogin }) => {
             components hand crafted with React… and love.
           </div>
           <img
-            style={{ cursor: "pointer", marginTop: "1rem" }}
-            onClick={startLogin}
-            src={GoogleSignIn}
-            alt='React Logo'
+            style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
+            onClick={startLoginGoogle}
+            src={imgGoogleSignIn}
+            alt='Sign in with Google'
+          />
+          <img
+            style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
+            onClick={startLoginGithub}
+            src={imgGitHubSignIn}
+            alt='Sign in with Google'
           />
         </Fade>
       </div>
@@ -122,7 +129,8 @@ export const LogIn = ({ startLogin }) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  startLogin: () => dispatch(startLogin()),
+  startLoginGoogle: () => dispatch(startLoginGoogle()),
+  startLoginGithub: () => dispatch(startLoginGithub()),
 })
 
 export default connect(undefined, mapDispatchToProps)(LogIn)
