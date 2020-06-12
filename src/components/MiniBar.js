@@ -1,4 +1,5 @@
 import React from "react"
+import { Flip } from "react-reveal"
 
 export default function MiniBar(props) {
   const myBarBackGround = {
@@ -17,10 +18,10 @@ export default function MiniBar(props) {
     height: "100%",
   }
   return (
-    <>
+    <Flip right>
       <div style={myBarBackGround}>
         <div style={myBarForGround}></div>
       </div>
-    </>
+    </Flip>
   )
 }

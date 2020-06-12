@@ -6,6 +6,7 @@ import tnExecSummary from "../images/tn-exec-summary.png"
 import tnWordCounter from "../images/tn-word-counter.png"
 import tnGifCaller from "../images/tn-gifcaller.gif"
 import styled from "@emotion/styled"
+import { Fade } from "react-reveal"
 
 const myData = [
   {
@@ -64,19 +65,21 @@ const Emotion = styled.div`
 export default function About() {
   return (
     <Emotion>
-      <div className='d-flex flex-wrap justify-content-center'>
-        {myData.map((a) => (
-          <LinkContainer key={a.id} exact to={a.link} active='false'>
-            <Card className='card-override'>
-              <Card.Img variant='top' src={a.img} />
-              <Card.Body>
-                <Card.Title>{a.title}</Card.Title>
-                <Card.Text>{a.desc}</Card.Text>
-              </Card.Body>
-            </Card>
-          </LinkContainer>
-        ))}
-      </div>
+      <Fade>
+        <div className='d-flex flex-wrap justify-content-center'>
+          {myData.map((a) => (
+            <LinkContainer key={a.id} exact to={a.link} active='false'>
+              <Card className='card-override'>
+                <Card.Img variant='top' src={a.img} />
+                <Card.Body>
+                  <Card.Title>{a.title}</Card.Title>
+                  <Card.Text>{a.desc}</Card.Text>
+                </Card.Body>
+              </Card>
+            </LinkContainer>
+          ))}
+        </div>
+      </Fade>
     </Emotion>
   )
 }
