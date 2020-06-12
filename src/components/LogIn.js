@@ -152,7 +152,7 @@ export const LogIn = ({ startLogin }) => {
             }}
             src={BigTitle}
           />
-          Welcome to Selino's ReactJS Demo! A live portfolio of custom
+          Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
           components hand crafted with React… and love.
         </div>
         <img

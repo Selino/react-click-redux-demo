@@ -13,7 +13,7 @@ const myData = [
     link: "/counter",
     title: "Redux Counter",
     desc:
-      "It took a while to wrap my head around exactly how Redux works and why it's handy on larger projects. It was helpful to learn by implemting on a simple component. I've also integrated Firebase into the Redux actions.",
+      "It took a while to wrap my head around how Redux works and why it's handy on larger projects. It was helpful to learn by implemting on a simple component. I've also integrated Firebase serverless DB calls into the Redux actions.",
     img: tnReduxCounter,
   },
   {
@@ -21,7 +21,7 @@ const myData = [
     link: "/executivesummary",
     title: "Trilliant Executive Summary",
     desc:
-      "I thought I'd challenge myself by refactoring some of the Trilliant components from Angular into React. It wasn't without issues but it was fast. I literally spent two work days getting the functionality and the look into place.",
+      "I thought I'd challenge myself by refactoring some of the Trilliant components from Angular into React. It wasn't without issues but it was fast. I literally spent one work day getting the functionality and the look into place.",
     img: tnExecSummary,
   },
   {
@@ -29,15 +29,14 @@ const myData = [
     link: "/wordcounter",
     title: "Word Counter",
     desc:
-      "I was given a white board test and I didn't have the algorithm for this function committed to memory. It was the only question I was given during a React test. I have it memorized now!",
+      "I was given a white board test and I didn't have the algorithm for this function committed to memory. It was the only question I was given. I have it memorized now!",
     img: tnWordCounter,
   },
-  ,
   {
     id: "4",
     link: "/gifcaller",
     title: "Gif Caller",
-    desc: "Wanna hit an API for some GIFs",
+    desc: "Wanna hit an API for some GIFs?!",
     img: tnGifCaller,
   },
 ]
@@ -67,7 +66,7 @@ export default function About() {
     <Emotion>
       <div className='d-flex flex-wrap justify-content-center'>
         {myData.map((a) => (
-          <LinkContainer exact to={a.link} active='false'>
+          <LinkContainer key={a.id} exact to={a.link} active='false'>
             <Card className='card-override'>
               <Card.Img variant='top' src={a.img} />
               <Card.Body>
