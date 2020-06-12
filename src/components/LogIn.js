@@ -5,6 +5,7 @@ import GoogleSignIn from "../images/btn-sign-in-g.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
 import styled from "@emotion/styled"
+import { Fade, Bounce } from "react-reveal"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
@@ -83,84 +84,38 @@ const Emotion = styled.div`
       font-size: 1.5rem;
     }
   }
-
-  .fade-in {
-    animation: fadeIn ease 2s;
-    -webkit-animation: fadeIn ease 2s;
-    -moz-animation: fadeIn ease 2s;
-    -o-animation: fadeIn ease 2s;
-    -ms-animation: fadeIn ease 2s;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
 
 export const LogIn = ({ startLogin }) => {
   return (
     <Emotion>
-      <div className='login-area fade-in'>
-        <div className='sub-text'>
-          <div className='logo-pic'></div>
+      <div className='login-area'>
+        <Fade cascade>
+          <div className='sub-text'>
+            <Bounce top>
+              <div className='logo-pic'></div>
+            </Bounce>
+            <Bounce>
+              <img
+                alt="Selino's ReactJS Demo"
+                style={{
+                  display: "block",
+                  margin: "-10px auto 1rem",
+                  width: "80%",
+                }}
+                src={BigTitle}
+              />
+            </Bounce>
+            Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
+            components hand crafted with React… and love.
+          </div>
           <img
-            alt="Selino's ReactJS Demo"
-            style={{
-              display: "block",
-              margin: "-10px auto 1rem",
-              width: "80%",
-            }}
-            src={BigTitle}
+            style={{ cursor: "pointer", marginTop: "1rem" }}
+            onClick={startLogin}
+            src={GoogleSignIn}
+            alt='React Logo'
           />
-          Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
-          components hand crafted with React… and love.
-        </div>
-        <img
-          style={{ cursor: "pointer", marginTop: "1rem" }}
-          onClick={startLogin}
-          src={GoogleSignIn}
-          alt='React Logo'
-        />
+        </Fade>
       </div>
     </Emotion>
   )

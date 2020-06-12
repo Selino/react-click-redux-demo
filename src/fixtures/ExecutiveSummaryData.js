@@ -30,7 +30,7 @@ export const getSampleData = () => [
   {
     id: "3",
     status: "live",
-    serviceLine: "Woman's Health",
+    serviceLine: "Women's Health",
     name: "ValleyCare Health System of Ohio Northside Medical Center",
     spendToDate: 380000,
     budget: 4281200,

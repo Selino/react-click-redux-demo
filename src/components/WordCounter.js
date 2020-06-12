@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
+import { Fade } from "react-reveal"
 
 export default function WordCounter() {
   const [state, setState] = useState(0)
@@ -12,7 +13,7 @@ export default function WordCounter() {
   }
 
   return (
-    <Container>
+    <Fade left>
       <Row>
         <Col xs={12} sm={6}>
           <textarea
@@ -46,6 +47,6 @@ export default function WordCounter() {
           </code>
         </Col>
       </Row>
-    </Container>
+    </Fade>
   )
 }

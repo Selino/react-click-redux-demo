@@ -4,6 +4,7 @@ import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
 import { css, jsx } from "@emotion/core"
+import { Fade } from "react-reveal"
 
 function useGiphy(query) {
   const [results, setResults] = useState([])
@@ -97,7 +98,11 @@ export default function GifCaller() {
             <span className='sr-only'>Loading...</span>
           </Spinner>
         ) : (
-          results.map((item) => <video autoPlay loop key={item} src={item} />)
+          results.map((item, index) => (
+            <Fade cascade key={index}>
+              <video autoPlay loop src={item} />
+            </Fade>
+          ))
         )}
       </div>
     </Container>

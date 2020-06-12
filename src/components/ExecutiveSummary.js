@@ -9,6 +9,7 @@ import Dinero from "dinero.js"
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"
 import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css"
 import styled from "@emotion/styled"
+import { Fade } from "react-reveal"
 
 const Emotion = styled.div`
   table {
@@ -105,11 +106,11 @@ export default function ExecutiveSummary() {
       variant = "primary"
     }
     return (
-      <div>
+      <Fade cascade>
         <Badge variant={variant} style={{ width: "100%", padding: "4px" }}>
           {status}
         </Badge>
-      </div>
+      </Fade>
     )
   }
 
