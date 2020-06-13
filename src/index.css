@@ -58,3 +58,11 @@ code {
 .counter-line {
   visibility: hidden;
 }
+
+/* bootstrap override */
+.btn:focus,
+.btn:active,
+.input-group > .form-control:focus {
+  outline: none !important;
+  box-shadow: none;
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
 import tnReduxCounter from "../images/tn-redux-counter.png"
@@ -63,14 +63,19 @@ const Emotion = styled.div`
 `
 
 export default function About() {
+  const [animation, setAnimation] = useState(0)
   return (
     <Emotion>
-      <Fade>
+      <Fade when={animation === myData.length}>
         <div className='d-flex flex-wrap justify-content-center'>
           {myData.map((a) => (
             <LinkContainer key={a.id} exact to={a.link} active='false'>
               <Card className='card-override'>
-                <Card.Img variant='top' src={a.img} />
+                <Card.Img
+                  onLoad={() => setAnimation(animation + 1)}
+                  variant='top'
+                  src={a.img}
+                />
                 <Card.Body>
                   <Card.Title>{a.title}</Card.Title>
                   <Card.Text>{a.desc}</Card.Text>

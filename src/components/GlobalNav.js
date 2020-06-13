@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Navbar, NavDropdown } from "react-bootstrap"
+import { Navbar, NavDropdown, Button } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../actions/auth_actions"
@@ -65,30 +65,32 @@ export function GlobalNav() {
             font-size: 1.2rem;
           `}
         >
-          <LinkContainer to='/menu' exact active='false'>
-            <FontAwesomeIcon
-              icon={faHome}
-              css={css`
-                margin-right: 1rem;
-                cursor: pointer;
-              `}
-            />
-          </LinkContainer>
+          <Button
+            variant=''
+            css={css`
+              margin-right: 0.25rem;
+              color: white;
+              font-size: 1.2rem;
+            `}
+          >
+            <LinkContainer to='/menu' exact active='false'>
+              <FontAwesomeIcon icon={faHome} />
+            </LinkContainer>
+          </Button>
 
-          <a
+          <Button
+            variant=''
+            css={css`
+              margin-right: 0.25rem;
+              color: white;
+              font-size: 1.2rem;
+            `}
             href='https://github.com/Selino/react-click-redux-demo'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FontAwesomeIcon
-              icon={faGithub}
-              css={css`
-                margin-right: 0.25rem;
-                color: white;
-                cursor: pointer;
-              `}
-            />
-          </a>
+            <FontAwesomeIcon icon={faGithub} />
+          </Button>
 
           <NavDropdown
             alignRight
