@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 import { startLoginGoogle, startLoginGithub } from "../actions/auth_actions"
 import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
@@ -87,8 +87,12 @@ const Emotion = styled.div`
   }
 `
 
-export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
+export const LogIn = () => {
   const [animation, setAnimation] = useState(0)
+  const dispatch = useDispatch()
+  const startLoginGithubFunc = dispatch(startLoginGithub)
+  const startLoginGoogleFunc = dispatch(startLoginGoogle)
+
   return (
     <Emotion>
       <div className='login-area'>
@@ -115,14 +119,14 @@ export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
           <img
             onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
-            onClick={startLoginGoogle}
+            onClick={startLoginGoogleFunc}
             src={imgGoogleSignIn}
             alt='Sign in with Google'
           />
           <img
             onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
-            onClick={startLoginGithub}
+            onClick={startLoginGithubFunc}
             src={imgGitHubSignIn}
             alt='Sign in with Google'
           />
@@ -132,9 +136,4 @@ export const LogIn = ({ startLoginGoogle, startLoginGithub }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  startLoginGoogle: () => dispatch(startLoginGoogle()),
-  startLoginGithub: () => dispatch(startLoginGithub()),
-})
-
-export default connect(undefined, mapDispatchToProps)(LogIn)
+export default LogIn
