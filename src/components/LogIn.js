@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { startLoginGoogle, startLoginGithub } from "../actions/auth_actions"
+import {
+  startLoginGoogleAction,
+  startLoginGithubAction,
+} from "../actions/auth_actions"
 import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
@@ -90,8 +93,8 @@ const Emotion = styled.div`
 export const LogIn = () => {
   const [animation, setAnimation] = useState(0)
   const dispatch = useDispatch()
-  const startLoginGithubFunc = dispatch(startLoginGithub)
-  const startLoginGoogleFunc = dispatch(startLoginGoogle)
+  const startLoginGithub = dispatch(startLoginGithubAction)
+  const startLoginGoogle = dispatch(startLoginGoogleAction)
 
   return (
     <Emotion>
@@ -119,14 +122,14 @@ export const LogIn = () => {
           <img
             onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
-            onClick={startLoginGoogleFunc}
+            onClick={startLoginGoogle}
             src={imgGoogleSignIn}
             alt='Sign in with Google'
           />
           <img
             onLoad={() => setAnimation(animation + 1)}
             style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
-            onClick={startLoginGithubFunc}
+            onClick={startLoginGithub}
             src={imgGitHubSignIn}
             alt='Sign in with Google'
           />

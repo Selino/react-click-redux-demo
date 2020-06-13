@@ -11,13 +11,13 @@ export const login = (uid) => {
   }
 }
 
-export const startLoginGoogle = () => {
+export const startLoginGoogleAction = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider)
   }
 }
 
-export const startLoginGithub = () => {
+export const startLoginGithubAction = () => {
   return () => {
     return firebase.auth().signInWithPopup(githubAuthProvider)
   }
