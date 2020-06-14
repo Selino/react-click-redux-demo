@@ -5,7 +5,7 @@ export default function SubNav(props) {
   let text = { title: "", desc: "" }
   switch (props.location.pathname) {
     case "/menu":
-      text.title = "Menu"
+      text.title = "Home"
       text.desc = "Choose an item from the list below."
       break
     case "/counter":

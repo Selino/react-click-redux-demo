@@ -104,7 +104,7 @@ export function GlobalNav() {
             }
           >
             <LinkContainer exact to='/menu' active={false}>
-              <NavDropdown.Item>Menu</NavDropdown.Item>
+              <NavDropdown.Item>Home</NavDropdown.Item>
             </LinkContainer>
 
             <LinkContainer exact to='/counter' active={false}>
