@@ -1,16 +1,17 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Row, Col } from "react-bootstrap"
 import { Fade } from "react-reveal"
 
 export default function WordCounter() {
   const [state, setState] = useState(0)
+  const [words, setWords] = useState("")
 
-  const myCounter = (str) => {
+  useEffect(() => {
     let regex = new RegExp(/\w/)
-    const aRaw = str.split(" ")
+    const aRaw = words.split(" ")
     const clean = aRaw.filter((e) => e.match(regex))
     setState(clean.length)
-  }
+  }, [words])
 
   return (
     <Fade left>
@@ -21,7 +22,7 @@ export default function WordCounter() {
             id='name'
             type='textarea'
             placeholder='Type text into this area.'
-            onChange={(e) => myCounter(e.target.value)}
+            onChange={(e) => setWords(e.target.value)}
           />
           <div>{state}</div>
         </Col>
