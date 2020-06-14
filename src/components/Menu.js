@@ -49,6 +49,7 @@ const Emotion = styled.div`
     min-width: 200px;
     max-width: 300px;
     margin: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   }
 
   .card-override:hover {
