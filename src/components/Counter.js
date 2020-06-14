@@ -29,8 +29,7 @@ function Counter() {
 
   useEffect(() => {
     getStoredCount()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  })
 
   return (
     <Bounce>
