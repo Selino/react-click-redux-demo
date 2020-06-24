@@ -18,7 +18,6 @@ export default function FizzBuzz() {
   const [displayArray, setDisplayArray] = useState([""])
 
   useEffect(() => {
-    console.log(numberArray)
     setDisplayArray(processNumberArray(numberArray))
   }, [numberArray])
 
@@ -36,10 +35,16 @@ export default function FizzBuzz() {
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           />
-          <Button type='submit'>Submit</Button>
+          <InputGroup.Append>
+            <Button type='submit'>Submit</Button>
+          </InputGroup.Append>
         </InputGroup>
       </Form>
-      <div>{displayArray}</div>
+      <div>
+        {displayArray.map((i, index) => {
+          return <div key={index}>{i}</div>
+        })}
+      </div>
     </Container>
   )
 }
