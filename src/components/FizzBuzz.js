@@ -47,7 +47,12 @@ export default function FizzBuzz() {
   const inputRef1 = React.createRef()
 
   const handleChange = (value) => {
-    setNumber(value)
+    const regexp = new RegExp("^[0-9]+$")
+    const cleanValue = value.match(regexp)
+
+    if (cleanValue >= 1) {
+      setNumber(cleanValue)
+    }
   }
 
   useEffect(() => {
@@ -58,7 +63,7 @@ export default function FizzBuzz() {
   return (
     <Container>
       <Row>
-        <Col xs={4}>
+        <Col xs={6}>
           <Form
             onSubmit={(e) => {
               e.preventDefault()
