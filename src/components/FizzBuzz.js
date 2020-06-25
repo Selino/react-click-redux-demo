@@ -10,40 +10,49 @@ import {
   Alert,
 } from "react-bootstrap"
 
-function processNumberArray(array) {
-  const processedArray = array.map((item) => {
-    if (item % 15 === 0) return "FizzBuzz"
-    else if (item % 3 === 0) return "Fizz"
-    else if (item % 5 === 0) return "Buzz"
-    else return item
-  })
-  return processedArray
+function getString(item) {
+  if (item % 15 === 0) return "FizzBuzz"
+  else if (item % 3 === 0) return "Fizz"
+  else if (item % 5 === 0) return "Buzz"
+  else return null
 }
 
 export const AlertItem = (props) => {
   return (
     <Alert key={props.index} variant={props.variant}>
-      {props.value}
+      <Container>
+        <Row>
+          <Col xs={6}>{props.displayStatus}</Col>
+          <Col className='text-right font-weight-bold'>{props.value}</Col>
+        </Row>
+      </Container>
     </Alert>
   )
 }
 
 export const DisplayAlerts = (props) => {
   let strVariant = ""
-  const result = props.displayArray.map((i, index) => {
-    if (i === "Fizz") strVariant = "warning"
-    else if (i === "Buzz") strVariant = "primary"
-    else if (i === "FizzBuzz") strVariant = "danger"
+  const result = props.items.map((i, index) => {
+    const stringResult = getString(i.num)
+    if (stringResult === "Fizz") strVariant = "warning"
+    else if (stringResult === "Buzz") strVariant = "primary"
+    else if (stringResult === "FizzBuzz") strVariant = "danger"
     else strVariant = "success"
-    return <AlertItem key={index} variant={strVariant} value={i} />
+    return (
+      <AlertItem
+        key={index}
+        variant={strVariant}
+        displayStatus={getString(i.num)}
+        value={i.num}
+      />
+    )
   })
   return <div>{result}</div>
 }
 
 export default function FizzBuzz() {
   const [number, setNumber] = useState(5)
-  const [numberArray, setNumberArray] = useState([])
-  const [displayArray, setDisplayArray] = useState([""])
+  const [displayArray, setDisplayArray] = useState([])
   const inputRef1 = React.createRef()
 
   const handleChange = (value) => {
@@ -51,14 +60,13 @@ export default function FizzBuzz() {
     const cleanValue = value.match(regexp)
 
     if (cleanValue >= 1) {
-      setNumber(cleanValue)
+      setNumber(parseInt(cleanValue))
     }
   }
 
   useEffect(() => {
-    setDisplayArray(processNumberArray(numberArray))
     inputRef1.current.focus()
-  }, [numberArray])
+  }, [displayArray])
 
   return (
     <Container>
@@ -67,7 +75,7 @@ export default function FizzBuzz() {
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              setNumberArray([number, ...numberArray])
+              setDisplayArray([{ num: number }, ...displayArray])
             }}
           >
             <InputGroup className='mb-3'>
@@ -87,11 +95,11 @@ export default function FizzBuzz() {
             sapien lorem, suscipit tempor dictum at, commodo ut libero. Ut felis
             ipsum, fringilla uis tortor nec, varius pellentesque nibh. Nulla
             lacinia massa vitae diam lobortis maximus. Curabitur id molestie
-            dolor, mattis fermentum sapien
+            dolor, mattis fermentum sapien.
           </Form>
         </Col>
         <Col>
-          <DisplayAlerts displayArray={displayArray} />
+          <DisplayAlerts items={displayArray} />
         </Col>
       </Row>
     </Container>
