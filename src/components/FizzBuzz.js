@@ -9,9 +9,11 @@ import {
   Col,
   Alert,
 } from "react-bootstrap"
+import { faCalculator } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function getString(item) {
-  if (item % 15 === 0) return "FizzBuzz"
+  if (item % 15 === 0) return "FIZZBUZZ!"
   else if (item % 3 === 0) return "Fizz"
   else if (item % 5 === 0) return "Buzz"
   else return null
@@ -23,7 +25,7 @@ export const AlertItem = (props) => {
       <Container>
         <Row>
           <Col xs={6}>{props.displayStatus}</Col>
-          <Col className='text-right font-weight-bold'>{props.value}</Col>
+          <Col className='text-right font-weight-bold h2'>{props.value}</Col>
         </Row>
       </Container>
     </Alert>
@@ -36,7 +38,7 @@ export const DisplayAlerts = (props) => {
     const stringResult = getString(i.num)
     if (stringResult === "Fizz") strVariant = "warning"
     else if (stringResult === "Buzz") strVariant = "primary"
-    else if (stringResult === "FizzBuzz") strVariant = "danger"
+    else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
     else strVariant = "success"
     return (
       <AlertItem
@@ -51,7 +53,7 @@ export const DisplayAlerts = (props) => {
 }
 
 export default function FizzBuzz() {
-  const [number, setNumber] = useState(5)
+  const [inputNumber, setInputNumber] = useState(5)
   const [displayArray, setDisplayArray] = useState([])
   const inputRef1 = React.createRef()
 
@@ -60,7 +62,7 @@ export default function FizzBuzz() {
     const cleanValue = value.match(regexp)
 
     if (cleanValue >= 1) {
-      setNumber(parseInt(cleanValue))
+      setInputNumber(parseInt(cleanValue))
     }
   }
 
@@ -75,27 +77,38 @@ export default function FizzBuzz() {
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              setDisplayArray([{ num: number }, ...displayArray])
+              setDisplayArray([{ num: inputNumber }, ...displayArray])
             }}
           >
             <InputGroup className='mb-3'>
               <Form.Control
                 type='number'
-                value={number}
+                value={inputNumber}
                 onChange={(e) => {
                   handleChange(e.target.value)
                 }}
                 ref={inputRef1}
               />
               <InputGroup.Append>
-                <Button type='submit'>Check Number</Button>
+                <Button type='submit'>
+                  <FontAwesomeIcon
+                    alt='Calculate'
+                    icon={faCalculator}
+                  ></FontAwesomeIcon>
+                </Button>
               </InputGroup.Append>
             </InputGroup>
-            Nullam finibus diam elit, ut sodales augue euismod sed. Mauris
-            sapien lorem, suscipit tempor dictum at, commodo ut libero. Ut felis
-            ipsum, fringilla uis tortor nec, varius pellentesque nibh. Nulla
-            lacinia massa vitae diam lobortis maximus. Curabitur id molestie
-            dolor, mattis fermentum sapien.
+            <p>
+              Enter a number to determine if it is a factor of (divides evenly
+              into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by 5, and "
+              <strong>FIZZBUZZ</strong>" if both!
+            </p>
+
+            <p>
+              This is a classic JS algorithm that I've been asked to write more
+              than once during white boarding interviews. I have not remembered
+              it yet. 😬
+            </p>
           </Form>
         </Col>
         <Col>

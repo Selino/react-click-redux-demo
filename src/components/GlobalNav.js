@@ -111,6 +111,10 @@ export function GlobalNav() {
               <NavDropdown.Item>Counter</NavDropdown.Item>
             </LinkContainer>
 
+            <LinkContainer exact to='/fizzbuzz' active={false}>
+              <NavDropdown.Item>Fizz Buzz</NavDropdown.Item>
+            </LinkContainer>
+
             <LinkContainer exact to='/executivesummary' active={false}>
               <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
             </LinkContainer>
