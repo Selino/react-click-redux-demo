@@ -22,7 +22,7 @@ function processNumberArray(array) {
 
 export const AlertItem = (props) => {
   return (
-    <Alert key={props.key} variant={props.variant}>
+    <Alert key={props.index} variant={props.variant}>
       {props.value}
     </Alert>
   )
@@ -59,20 +59,10 @@ export default function FizzBuzz() {
     <Container>
       <Row>
         <Col xs={4}>
-          Nullam finibus diam elit, ut sodales augue euismod sed. Mauris sapien
-          lorem, suscipit tempor dictum at, commodo ut libero. Ut felis ipsum,
-          fringilla uis tortor nec, varius pellentesque nibh. Nulla lacinia
-          massa vitae diam lobortis maximus. Curabitur id molestie dolor, mattis
-          fermentum sapien. Orci varius natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Sed efficitur felis vitae
-          suscipit faucibus.
-        </Col>
-
-        <Col xs={3}>
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              setNumberArray([...numberArray, number])
+              setNumberArray([number, ...numberArray])
             }}
           >
             <InputGroup className='mb-3'>
@@ -88,9 +78,14 @@ export default function FizzBuzz() {
                 <Button type='submit'>Check Number</Button>
               </InputGroup.Append>
             </InputGroup>
+            Nullam finibus diam elit, ut sodales augue euismod sed. Mauris
+            sapien lorem, suscipit tempor dictum at, commodo ut libero. Ut felis
+            ipsum, fringilla uis tortor nec, varius pellentesque nibh. Nulla
+            lacinia massa vitae diam lobortis maximus. Curabitur id molestie
+            dolor, mattis fermentum sapien
           </Form>
         </Col>
-        <Col xs={2}>
+        <Col>
           <DisplayAlerts displayArray={displayArray} />
         </Col>
       </Row>
