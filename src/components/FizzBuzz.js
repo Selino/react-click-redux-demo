@@ -11,6 +11,8 @@ import {
 } from "react-bootstrap"
 import { faCalculator } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Fade } from "react-reveal"
+import TransitionGroup from "react-transition-group/TransitionGroup"
 
 function getString(item) {
   if (item % 15 === 0) return "FIZZBUZZ!"
@@ -20,36 +22,42 @@ function getString(item) {
 }
 
 export const AlertItem = (props) => {
+  const hasAnimation = props.displayStatus === "FIZZBUZZ!"
+
   return (
-    <Alert key={props.index} variant={props.variant}>
-      <Container>
-        <Row>
-          <Col xs={6}>{props.displayStatus}</Col>
-          <Col className='text-right font-weight-bold h2'>{props.value}</Col>
-        </Row>
-      </Container>
-    </Alert>
+    <Fade right>
+      <Alert key={props.index} variant={props.variant}>
+        <Container>
+          <Row>
+            <Col xs={6}>{props.displayStatus}</Col>
+            <Col className='text-right font-weight-bold h2'>{props.value}</Col>
+          </Row>
+        </Container>
+      </Alert>
+    </Fade>
   )
 }
 
 export const DisplayAlerts = (props) => {
   let strVariant = ""
-  const result = props.items.map((i, index) => {
-    const stringResult = getString(i.num)
-    if (stringResult === "Fizz") strVariant = "warning"
-    else if (stringResult === "Buzz") strVariant = "primary"
-    else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
-    else strVariant = "success"
-    return (
-      <AlertItem
-        key={index}
-        variant={strVariant}
-        displayStatus={getString(i.num)}
-        value={i.num}
-      />
-    )
-  })
-  return <div>{result}</div>
+  const result = props.items
+    .map((i, index) => {
+      const stringResult = getString(i.num)
+      if (stringResult === "Fizz") strVariant = "warning"
+      else if (stringResult === "Buzz") strVariant = "primary"
+      else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
+      else strVariant = "success"
+      return (
+        <AlertItem
+          key={index}
+          variant={strVariant}
+          displayStatus={getString(i.num)}
+          value={i.num}
+        />
+      )
+    })
+    .reverse()
+  return <TransitionGroup>{result}</TransitionGroup>
 }
 
 export default function FizzBuzz() {
@@ -77,7 +85,7 @@ export default function FizzBuzz() {
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              setDisplayArray([{ num: inputNumber }, ...displayArray])
+              setDisplayArray([...displayArray, { num: inputNumber }])
             }}
           >
             <InputGroup className='mb-3'>
