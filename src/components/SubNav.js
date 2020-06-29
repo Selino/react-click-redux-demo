@@ -25,6 +25,10 @@ export default function SubNav(props) {
       text.title = "Gif Caller"
       text.desc = "A Giphy API caller using Async React Hooks."
       break
+    case "/fizzbuzz":
+      text.title = "Fizz Buzz"
+      text.desc = "A React version of a classic Javascript puzzle."
+      break
 
     default:
       text.title = ""
