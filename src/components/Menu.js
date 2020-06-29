@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
-import tnReduxCounter from "../images/tn-redux-counter.png"
-import tnExecSummary from "../images/tn-exec-summary.png"
-import tnWordCounter from "../images/tn-word-counter.png"
+import tnReduxCounter from "../images/tn-redux-counter.jpg"
+import tnExecSummary from "../images/tn-trilliant-exec-summary.jpg"
+import tnWordCounter from "../images/tn-word-counter.jpg"
+import tnFizzBuzz from "../images/tn-fizz-buzz.jpg"
 import tnGifCaller from "../images/tn-gifcaller.gif"
 import styled from "@emotion/styled"
 import { Fade } from "react-reveal"
@@ -39,6 +40,13 @@ const myData = [
     title: "Gif Caller",
     desc: "Wanna hit an API for some GIFs?!",
     img: tnGifCaller,
+  },
+  {
+    id: "5",
+    link: "/fizzbuzz",
+    title: "FizzBuzz",
+    desc: "A React version of a classic Javascript puzzle.",
+    img: tnFizzBuzz,
   },
 ]
 
