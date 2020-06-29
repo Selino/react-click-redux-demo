@@ -22,7 +22,7 @@ function getString(item) {
 }
 
 export const AlertItem = (props) => {
-  const hasAnimation = props.displayStatus === "FIZZBUZZ!"
+  // const hasAnimation = props.displayStatus === "FIZZBUZZ!"
 
   return (
     <Fade right>
@@ -44,9 +44,9 @@ export const DisplayAlerts = (props) => {
     .map((i, index) => {
       const stringResult = getString(i.num)
       if (stringResult === "Fizz") strVariant = "warning"
-      else if (stringResult === "Buzz") strVariant = "primary"
+      else if (stringResult === "Buzz") strVariant = "success"
       else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
-      else strVariant = "success"
+      else strVariant = "secondary"
       return (
         <AlertItem
           key={index}
@@ -76,7 +76,7 @@ export default function FizzBuzz() {
 
   useEffect(() => {
     inputRef1.current.focus()
-  }, [displayArray])
+  }, [displayArray, inputRef1])
 
   return (
     <Container>
@@ -115,7 +115,10 @@ export default function FizzBuzz() {
             <p>
               This is a classic JS algorithm that I've been asked to write more
               than once during white boarding interviews. I have not remembered
-              it yet. 😬
+              it yet.{" "}
+              <span role='img' aria-label='grimmace'>
+                😬
+              </span>
             </p>
           </Form>
         </Col>
