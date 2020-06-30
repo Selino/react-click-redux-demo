@@ -69,7 +69,7 @@ export default function FizzBuzz() {
     const regexp = new RegExp("^[0-9]+$")
     const cleanValue = value.match(regexp)
 
-    if (cleanValue >= 1 && cleanValue != null) {
+    if (cleanValue >= 1 && cleanValue <= 99 && cleanValue != null) {
       setInputNumber(parseInt(cleanValue))
     }
   }
@@ -107,9 +107,9 @@ export default function FizzBuzz() {
               </InputGroup.Append>
             </InputGroup>
             <p>
-              Enter a number to determine if it is a factor of (divides evenly
-              into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by 5, and "
-              <strong>FIZZBUZZ</strong>" if both!
+              Enter a number between 1 & 99 to determine if it is a factor of
+              (divides evenly into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by
+              5, and "<strong>FIZZBUZZ</strong>" if both!
             </p>
 
             <p>
