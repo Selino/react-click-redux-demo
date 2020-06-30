@@ -61,7 +61,7 @@ export const DisplayAlerts = (props) => {
 }
 
 export default function FizzBuzz() {
-  const [inputNumber, setInputNumber] = useState(5)
+  const [inputNumber, setInputNumber] = useState(1)
   const [displayArray, setDisplayArray] = useState([])
   const inputRef1 = React.createRef()
 
@@ -69,7 +69,7 @@ export default function FizzBuzz() {
     const regexp = new RegExp("^[0-9]+$")
     const cleanValue = value.match(regexp)
 
-    if (cleanValue >= 1) {
+    if (cleanValue >= 1 && cleanValue != null) {
       setInputNumber(parseInt(cleanValue))
     }
   }

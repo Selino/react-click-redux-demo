@@ -44,7 +44,7 @@ export default function SubNav(props) {
         backgroundColor: "#333",
         color: "white",
         padding: "1rem",
-        zIndex: "1",
+        zIndex: "5",
         width: "100%",
       }}
     >
