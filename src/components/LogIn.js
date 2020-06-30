@@ -17,9 +17,9 @@ const Emotion = styled.div`
   .login-area {
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-52%, -50%);
     width: 80%;
   }
 
@@ -52,8 +52,17 @@ const Emotion = styled.div`
     box-shadow: 0px 0px 3px black;
   }
 
+  .button-sign-in {
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
+    .login-area {
+      width: 70vmax;
+    }
     .login-area .sub-text {
       font-size: 1.2rem;
     }
@@ -62,27 +71,27 @@ const Emotion = styled.div`
   /* // Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     .login-area {
-      width: 50%;
+      width: 30vmax;
     }
     .login-area .sub-text {
-      font-size: 1.3rem;
+      font-size: 0.8rem;
     }
   }
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 50%;
+      width: 40vmax;
     }
     .login-area .sub-text {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
-      width: 25%;
+      width: 50vmin;
     }
     .login-area .sub-text {
       font-size: 1.2rem;
@@ -120,15 +129,15 @@ export const LogIn = () => {
             components hand crafted with React… and love.
           </div>
           <img
+            className='button-sign-in'
             onLoad={() => setAnimation(animation + 1)}
-            style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
             onClick={startLoginGoogle}
             src={imgGoogleSignIn}
             alt='Sign in with Google'
           />
           <img
+            className='button-sign-in'
             onLoad={() => setAnimation(animation + 1)}
-            style={{ cursor: "pointer", marginTop: "1rem", width: "100%" }}
             onClick={startLoginGithub}
             src={imgGitHubSignIn}
             alt='Sign in with Google'
