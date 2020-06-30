@@ -46,7 +46,7 @@ const myData = [
     id: "5",
     link: "/fizzbuzz",
     title: "FizzBuzz",
-    desc: "A React version of a classic Javascript puzzle.",
+    desc: "A React implementation of a classic Javascript algorithm.",
     img: tnFizzBuzz,
   },
 ]
