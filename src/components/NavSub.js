@@ -1,7 +1,7 @@
 import React from "react"
 import { Fade } from "react-reveal"
 
-export default function SubNav(props) {
+export default function NavSub(props) {
   let text = { title: "", desc: "" }
   switch (props.location.pathname) {
     case "/menu":
@@ -48,7 +48,7 @@ export default function SubNav(props) {
         width: "100%",
       }}
     >
-      <Fade left>
+      <Fade left spy={props}>
         <table>
           <tbody>
             <tr style={{ verticalAlign: "top" }}>

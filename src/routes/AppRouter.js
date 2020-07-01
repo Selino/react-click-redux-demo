@@ -2,12 +2,12 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { Router, Route, Switch, Redirect } from "react-router-dom"
 import { createBrowserHistory } from "history"
-import GlobalNav from "../components/GlobalNav"
+import NavGlobal from "../components/NavGlobal"
 import Counter from "../components/Counter"
 import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
-import SubNav from "../components/SubNav"
+import NavSub from "../components/NavSub"
 import WordCounter from "../components/WordCounter"
 import GifCaller from "../components/GifCaller"
 import FizzBuzz from "../components/FizzBuzz"
@@ -40,8 +40,8 @@ const PublicRoute = ({ component: Component, ...rest }) => {
 
 const AppRouter = () => (
   <Router history={history}>
-    <PrivateRoute component={GlobalNav} />
-    <PrivateRoute component={SubNav} />
+    <PrivateRoute component={NavGlobal} />
+    <PrivateRoute component={NavSub} />
     <div className='body-container'>
       <Switch>
         <PublicRoute exact path='/login' component={LogIn} />

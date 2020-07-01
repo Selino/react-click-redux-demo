@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap"
 import { faCalculator } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Fade } from "react-reveal"
+import { Bounce } from "react-reveal"
 import TransitionGroup from "react-transition-group/TransitionGroup"
 
 function getString(item) {
@@ -25,7 +25,7 @@ export const AlertItem = (props) => {
   // const hasAnimation = props.displayStatus === "FIZZBUZZ!"
 
   return (
-    <Fade right>
+    <Bounce top>
       <Alert key={props.index} variant={props.variant}>
         <Container>
           <Row>
@@ -34,7 +34,7 @@ export const AlertItem = (props) => {
           </Row>
         </Container>
       </Alert>
-    </Fade>
+    </Bounce>
   )
 }
 
@@ -123,7 +123,17 @@ export default function FizzBuzz() {
           </Form>
         </Col>
         <Col>
-          <DisplayAlerts items={displayArray} />
+          <div
+            style={{
+              border: "solid 1px #CCC",
+              borderRadius: "4px",
+              height: "32vmax",
+              overflow: "auto",
+              padding: "1rem",
+            }}
+          >
+            <DisplayAlerts items={displayArray} />
+          </div>
         </Col>
       </Row>
     </Container>

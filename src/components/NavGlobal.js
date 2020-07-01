@@ -34,9 +34,13 @@ const Emotion = styled.div`
     box-shadow: 0px 0px 3px black;
     cursor: pointer;
   }
+
+  .btn:hover {
+    color: #999;
+  }
 `
 
-export function GlobalNav() {
+export function NavGlobal() {
   const dispatch = useDispatch()
   const handleSelect = (eventKey) => {
     switch (eventKey) {
@@ -68,7 +72,7 @@ export function GlobalNav() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.25rem;
+              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
@@ -81,7 +85,7 @@ export function GlobalNav() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.25rem;
+              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
@@ -111,6 +115,10 @@ export function GlobalNav() {
               <NavDropdown.Item>Counter</NavDropdown.Item>
             </LinkContainer>
 
+            <LinkContainer exact to='/gifcaller' active={false}>
+              <NavDropdown.Item>Gif Caller</NavDropdown.Item>
+            </LinkContainer>
+
             <LinkContainer exact to='/fizzbuzz' active={false}>
               <NavDropdown.Item>Fizz Buzz</NavDropdown.Item>
             </LinkContainer>
@@ -123,10 +131,6 @@ export function GlobalNav() {
               <NavDropdown.Item>Word Counter</NavDropdown.Item>
             </LinkContainer>
 
-            <LinkContainer exact to='/gifcaller' active={false}>
-              <NavDropdown.Item>Gif Caller</NavDropdown.Item>
-            </LinkContainer>
-
             <NavDropdown.Divider />
             <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
           </NavDropdown>
@@ -136,4 +140,4 @@ export function GlobalNav() {
   )
 }
 
-export default GlobalNav
+export default NavGlobal

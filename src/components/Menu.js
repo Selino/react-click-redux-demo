@@ -27,6 +27,13 @@ const myData = [
       "https://media2.giphy.com/media/Er3QVX48nt5ok/giphy-preview.mp4?cid=a9a0ef714a908254202b578f70a1faf7c19c9a517f3aa062&amp;rid=giphy-preview.mp4",
   },
   {
+    id: "5",
+    link: "/fizzbuzz",
+    title: "FizzBuzz",
+    desc: "A React implementation of a classic Javascript algorithm.",
+    img: tnFizzBuzz,
+  },
+  {
     id: "2",
     link: "/executivesummary",
     title: "Trilliant Executive Summary",
@@ -41,13 +48,6 @@ const myData = [
     desc:
       "I was given a white board test and I didn't have the algorithm for this function committed to memory. It was the only question I was given. I have it memorized now!",
     img: tnWordCounter,
-  },
-  {
-    id: "5",
-    link: "/fizzbuzz",
-    title: "FizzBuzz",
-    desc: "A React implementation of a classic Javascript algorithm.",
-    img: tnFizzBuzz,
   },
 ]
 
