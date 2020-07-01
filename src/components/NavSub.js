@@ -48,7 +48,7 @@ export default function NavSub(props) {
         width: "100%",
       }}
     >
-      <Fade left spy={props}>
+      <Fade left spy={props.location}>
         <table>
           <tbody>
             <tr style={{ verticalAlign: "top" }}>

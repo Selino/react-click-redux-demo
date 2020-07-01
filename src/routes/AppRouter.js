@@ -32,7 +32,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated ? <Redirect to='/counter' /> : <Component {...props} />
+        isAuthenticated ? <Redirect to='/menu' /> : <Component {...props} />
       }
     />
   )

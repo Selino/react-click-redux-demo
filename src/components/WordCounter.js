@@ -31,6 +31,7 @@ export default function WordCounter() {
               id='name'
               type='textarea'
               placeholder='Type text into this area.'
+              value={words}
               onChange={(e) => setWords(e.target.value)}
             />
             <div>{state}</div>
