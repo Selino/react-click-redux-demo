@@ -67,7 +67,7 @@
     "verbose": true,
     "setupFiles": [
       "raf/polyfill",
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/setupTests.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
