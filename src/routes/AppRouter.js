@@ -10,7 +10,7 @@ import Menu from "../components/Menu"
 import NavSub from "../components/NavSub"
 import WordCounter from "../components/WordCounter"
 import GifCaller from "../components/GifCaller"
-import FizzBuzz from "../components/FizzBuzz"
+import FizzBuzz from "../components/fizzbuzz/FizzBuzz"
 
 export const history = createBrowserHistory()
 
