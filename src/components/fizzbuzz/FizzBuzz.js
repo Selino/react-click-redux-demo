@@ -22,8 +22,6 @@ export const getString = (number) => {
 }
 
 export const AlertItem = (props) => {
-  // const hasAnimation = props.displayStatus === "FIZZBUZZ!"
-
   return (
     <Bounce top>
       <Alert key={props.index} variant={props.variant}>
