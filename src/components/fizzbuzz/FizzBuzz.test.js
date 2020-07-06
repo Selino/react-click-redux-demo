@@ -2,13 +2,6 @@ import React from "react"
 import { shallow, mount } from "enzyme"
 import FizzBuzz, { getString, AlertItem, DisplayAlerts } from "./FizzBuzz"
 
-// Test numbers 1 through 99
-// Under 1 and over 99
-
-// create array of numbers
-// loop over and create array of formatted objects
-// use formatted array of objects to feed components
-
 function range(start, end) {
   let foo = []
   for (let i = start; i <= end; i++) {
