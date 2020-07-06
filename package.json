@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.0.2",
     "@testing-library/user-event": "^10.1.0",
+    "add": "^2.0.6",
     "bootstrap": "^4.4.1",
     "dinero.js": "^1.8.1",
     "firebase": "^7.13.1",
@@ -33,7 +34,9 @@
     "react-scripts": "^3.4.0",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.0-rc.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "remove": "^0.1.5",
+    "yarn": "^1.22.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,6 +57,25 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "react-test-renderer": "^16.13.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageReporters": [
+      "text"
     ]
   }
 }
