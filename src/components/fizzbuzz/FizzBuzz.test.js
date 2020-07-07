@@ -1,13 +1,6 @@
 import React from "react"
-import { shallow, mount } from "enzyme"
+import { shallow, mount, render } from "enzyme"
 import FizzBuzz, { getString, AlertItem, DisplayAlerts } from "./FizzBuzz"
-
-// Test numbers 1 through 99
-// Under 1 and over 99
-
-// create array of numbers
-// loop over and create array of formatted objects
-// use formatted array of objects to feed components
 
 function range(start, end) {
   let foo = []
@@ -25,19 +18,43 @@ describe("getString - helper function", () => {
 })
 
 describe("AlertItem", () => {
-  it("should render a single Alert item", () => {
+  it("should render a single Alert item with displayStatus = Fizz, value = 3, and warning = variant.", () => {
     const wrapper = shallow(
-      <AlertItem key='1' variant='warning' displayStatus='Fizz' value={3} />
+      <AlertItem variant='warning' displayStatus='Fizz' value={3} />
     )
     expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("3")
+    expect(wrapper.find(".display-status").text()).toEqual("Fizz")
+    expect(wrapper.prop("variant")).toEqual("warning")
+  })
+
+  it("should render a single Alert item with displayStatus = Buzz, value = 5, and warning = success.", () => {
+    const wrapper = shallow(
+      <AlertItem variant='success' displayStatus='Buzz' value={5} />
+    )
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("5")
+    expect(wrapper.find(".display-status").text()).toEqual("Buzz")
+    expect(wrapper.prop("variant")).toEqual("success")
+  })
+
+  it("should render a single Alert item with displayStatus = FIZZBUZZ!, value = 15, and warning = danger.", () => {
+    const wrapper = shallow(
+      <AlertItem variant='danger' displayStatus='FIZZBUZZ!' value={15} />
+    )
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("15")
+    expect(wrapper.find(".display-status").text()).toEqual("FIZZBUZZ!")
+    expect(wrapper.prop("variant")).toEqual("danger")
   })
 })
 
 describe("DisplayAlerts", () => {
-  const testArray = range(0, 100)
-  let wrapper
-  beforeEach(() => {
-    wrapper = mount(<DisplayAlerts items={[]} />)
+  const testArray = range(1, 100)
+
+  it("should render DisplayAlerts alert for full range of numbers within given range().", () => {
+    const wrapper = shallow(<DisplayAlerts items={testArray} />)
+    expect(wrapper.find(AlertItem).length).toBe(100)
   })
 
   it("should render DisplayAlerts alert for full range of numbers within given range().", () => {
@@ -57,7 +74,12 @@ describe("FizzBuzz", () => {
   })
 
   it("should render the full component with default value in field, no alerts", () => {
-    const wrapper = shallow(<FizzBuzz />)
+    const input = wrapper.find("input")
+    const button = wrapper.find("Button")
+
+    input.simulate("focus")
+    input.simulate("change", { target: { value: "15" } })
+    button.simulate("click")
     expect(wrapper).toMatchSnapshot()
   })
 })

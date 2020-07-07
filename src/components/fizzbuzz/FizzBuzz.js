@@ -23,16 +23,18 @@ export const getString = (number) => {
 
 export const AlertItem = (props) => {
   return (
-    <Bounce top>
-      <Alert key={props.index} variant={props.variant}>
-        <Container>
-          <Row>
-            <Col xs={6}>{props.displayStatus}</Col>
-            <Col className='text-right font-weight-bold h2'>{props.value}</Col>
-          </Row>
-        </Container>
-      </Alert>
-    </Bounce>
+    <Alert variant={props.variant}>
+      <Container>
+        <Row>
+          <Col className='display-status' xs={6}>
+            {props.displayStatus}
+          </Col>
+          <Col className='text-right font-weight-bold h2 result-number'>
+            {props.value}
+          </Col>
+        </Row>
+      </Container>
+    </Alert>
   )
 }
 
@@ -46,12 +48,14 @@ export const DisplayAlerts = (props) => {
       else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
       else strVariant = "secondary"
       return (
-        <AlertItem
-          key={index}
-          variant={strVariant}
-          displayStatus={getString(i.num)}
-          value={i.num}
-        />
+        <Bounce top key={index}>
+          <AlertItem
+            key={index}
+            variant={strVariant}
+            displayStatus={getString(i.num)}
+            value={i.num}
+          />
+        </Bounce>
       )
     })
     .reverse()
