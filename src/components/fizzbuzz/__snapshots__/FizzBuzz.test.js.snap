@@ -1,48 +1,129 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AlertItem should render a single Alert item 1`] = `
-<Bounce
-  top={true}
->
-  <Alert
-    closeLabel="Close alert"
-    show={true}
-    transition={
-      Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "defaultProps": Object {
-          "appear": false,
-          "in": false,
-          "mountOnEnter": false,
-          "timeout": 300,
-          "unmountOnExit": false,
-        },
-        "displayName": "Fade",
-        "render": [Function],
-      }
+exports[`AlertItem should render a single Alert item with displayStatus = Buzz, value = 5, and warning = success. 1`] = `
+<Alert
+  closeLabel="Close alert"
+  show={true}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
     }
-    variant="warning"
+  }
+  variant="success"
+>
+  <Container
+    fluid={false}
   >
-    <Container
-      fluid={false}
+    <Row
+      noGutters={false}
     >
-      <Row
-        noGutters={false}
+      <Col
+        className="display-status"
+        xs={6}
       >
-        <Col
-          xs={6}
-        >
-          Fizz
-        </Col>
-        <Col
-          className="text-right font-weight-bold h2"
-        >
-          3
-        </Col>
-      </Row>
-    </Container>
-  </Alert>
-</Bounce>
+        Buzz
+      </Col>
+      <Col
+        className="text-right font-weight-bold h2"
+      >
+        5
+      </Col>
+    </Row>
+  </Container>
+</Alert>
+`;
+
+exports[`AlertItem should render a single Alert item with displayStatus = FIZZBUZZ!, value = 15, and warning = danger. 1`] = `
+<Alert
+  closeLabel="Close alert"
+  show={true}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      noGutters={false}
+    >
+      <Col
+        className="display-status"
+        xs={6}
+      >
+        FIZZBUZZ!
+      </Col>
+      <Col
+        className="text-right font-weight-bold h2"
+      >
+        15
+      </Col>
+    </Row>
+  </Container>
+</Alert>
+`;
+
+exports[`AlertItem should render a single Alert item with displayStatus = Fizz, value = 3, and warning = variant. 1`] = `
+<Alert
+  closeLabel="Close alert"
+  show={true}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="warning"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      noGutters={false}
+    >
+      <Col
+        className="display-status"
+        xs={6}
+      >
+        Fizz
+      </Col>
+      <Col
+        className="text-right font-weight-bold h2"
+      >
+        3
+      </Col>
+    </Row>
+  </Container>
+</Alert>
 `;
 
 exports[`DisplayAlerts should render DisplayAlerts alert for full range of numbers within given range(). 1`] = `
@@ -50,612 +131,1106 @@ exports[`DisplayAlerts should render DisplayAlerts alert for full range of numbe
   childFactory={[Function]}
   component="div"
 >
-  <AlertItem
-    displayStatus="Buzz"
-    key="100"
-    value={100}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+  <Bounce
     key="99"
-    value={99}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="99"
+      value={100}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="98"
-    value={98}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="98"
+      value={99}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="97"
-    value={97}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="97"
+      value={98}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="96"
-    value={96}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="96"
+      value={97}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="95"
-    value={95}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="95"
+      value={96}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="94"
-    value={94}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="94"
+      value={95}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="93"
-    value={93}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="93"
+      value={94}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="92"
-    value={92}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="92"
+      value={93}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="91"
-    value={91}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="91"
+      value={92}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="90"
-    value={90}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="90"
+      value={91}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="89"
-    value={89}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="89"
+      value={90}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="88"
-    value={88}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="88"
+      value={89}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="87"
-    value={87}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="87"
+      value={88}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="86"
-    value={86}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="86"
+      value={87}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="85"
-    value={85}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="85"
+      value={86}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="84"
-    value={84}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="84"
+      value={85}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="83"
-    value={83}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="83"
+      value={84}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="82"
-    value={82}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="82"
+      value={83}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="81"
-    value={81}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="81"
+      value={82}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="80"
-    value={80}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="80"
+      value={81}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="79"
-    value={79}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="79"
+      value={80}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="78"
-    value={78}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="78"
+      value={79}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="77"
-    value={77}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="77"
+      value={78}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="76"
-    value={76}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="76"
+      value={77}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="75"
-    value={75}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="75"
+      value={76}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="74"
-    value={74}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="74"
+      value={75}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="73"
-    value={73}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="73"
+      value={74}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="72"
-    value={72}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="72"
+      value={73}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="71"
-    value={71}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="71"
+      value={72}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="70"
-    value={70}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="70"
+      value={71}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="69"
-    value={69}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="69"
+      value={70}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="68"
-    value={68}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="68"
+      value={69}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="67"
-    value={67}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="67"
+      value={68}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="66"
-    value={66}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="66"
+      value={67}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="65"
-    value={65}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="65"
+      value={66}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="64"
-    value={64}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="64"
+      value={65}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="63"
-    value={63}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="63"
+      value={64}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="62"
-    value={62}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="62"
+      value={63}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="61"
-    value={61}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="61"
+      value={62}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="60"
-    value={60}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="60"
+      value={61}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="59"
-    value={59}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="59"
+      value={60}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="58"
-    value={58}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="58"
+      value={59}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="57"
-    value={57}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="57"
+      value={58}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="56"
-    value={56}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="56"
+      value={57}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="55"
-    value={55}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="55"
+      value={56}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="54"
-    value={54}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="54"
+      value={55}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="53"
-    value={53}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="53"
+      value={54}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="52"
-    value={52}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="52"
+      value={53}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="51"
-    value={51}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="51"
+      value={52}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="50"
-    value={50}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="50"
+      value={51}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="49"
-    value={49}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="49"
+      value={50}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="48"
-    value={48}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="48"
+      value={49}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="47"
-    value={47}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="47"
+      value={48}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="46"
-    value={46}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="46"
+      value={47}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="45"
-    value={45}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="45"
+      value={46}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="44"
-    value={44}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="44"
+      value={45}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="43"
-    value={43}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="43"
+      value={44}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="42"
-    value={42}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="42"
+      value={43}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="41"
-    value={41}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="41"
+      value={42}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="40"
-    value={40}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="40"
+      value={41}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="39"
-    value={39}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="39"
+      value={40}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="38"
-    value={38}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="38"
+      value={39}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="37"
-    value={37}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="37"
+      value={38}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="36"
-    value={36}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="36"
+      value={37}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="35"
-    value={35}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="35"
+      value={36}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="34"
-    value={34}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="34"
+      value={35}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="33"
-    value={33}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="33"
+      value={34}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="32"
-    value={32}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="32"
+      value={33}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="31"
-    value={31}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="31"
+      value={32}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="30"
-    value={30}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="30"
+      value={31}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="29"
-    value={29}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="29"
+      value={30}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="28"
-    value={28}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="28"
+      value={29}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="27"
-    value={27}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="27"
+      value={28}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="26"
-    value={26}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="26"
+      value={27}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="25"
-    value={25}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="25"
+      value={26}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="24"
-    value={24}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="24"
+      value={25}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="23"
-    value={23}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="23"
+      value={24}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="22"
-    value={22}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="22"
+      value={23}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="21"
-    value={21}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="21"
+      value={22}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="20"
-    value={20}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="20"
+      value={21}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="19"
-    value={19}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="19"
+      value={20}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="18"
-    value={18}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="18"
+      value={19}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="17"
-    value={17}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="17"
+      value={18}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="16"
-    value={16}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="16"
+      value={17}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="15"
-    value={15}
-    variant="danger"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="15"
+      value={16}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="14"
-    value={14}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="FIZZBUZZ!"
+      key="14"
+      value={15}
+      variant="danger"
+    />
+  </Bounce>
+  <Bounce
     key="13"
-    value={13}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="13"
+      value={14}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="12"
-    value={12}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="12"
+      value={13}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="11"
-    value={11}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="11"
+      value={12}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="10"
-    value={10}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="10"
+      value={11}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="9"
-    value={9}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="9"
+      value={10}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="8"
-    value={8}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="8"
+      value={9}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="7"
-    value={7}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="7"
+      value={8}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="6"
-    value={6}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus="Buzz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="6"
+      value={7}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="5"
-    value={5}
-    variant="success"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="5"
+      value={6}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="4"
-    value={4}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="Fizz"
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Buzz"
+      key="4"
+      value={5}
+      variant="success"
+    />
+  </Bounce>
+  <Bounce
     key="3"
-    value={3}
-    variant="warning"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="3"
+      value={4}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="2"
-    value={2}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus={null}
+    top={true}
+  >
+    <AlertItem
+      displayStatus="Fizz"
+      key="2"
+      value={3}
+      variant="warning"
+    />
+  </Bounce>
+  <Bounce
     key="1"
-    value={1}
-    variant="secondary"
-  />
-  <AlertItem
-    displayStatus="FIZZBUZZ!"
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="1"
+      value={2}
+      variant="secondary"
+    />
+  </Bounce>
+  <Bounce
     key="0"
-    value={0}
-    variant="danger"
-  />
+    top={true}
+  >
+    <AlertItem
+      displayStatus={null}
+      key="0"
+      value={1}
+      variant="secondary"
+    />
+  </Bounce>
 </TransitionGroup>
 `;
 

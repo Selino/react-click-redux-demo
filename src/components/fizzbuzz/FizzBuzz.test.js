@@ -18,19 +18,43 @@ describe("getString - helper function", () => {
 })
 
 describe("AlertItem", () => {
-  it("should render a single Alert item", () => {
+  it("should render a single Alert item with displayStatus = Fizz, value = 3, and warning = variant.", () => {
     const wrapper = shallow(
-      <AlertItem key='1' variant='warning' displayStatus='Fizz' value={3} />
+      <AlertItem variant='warning' displayStatus='Fizz' value={3} />
     )
     expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("3")
+    expect(wrapper.find(".display-status").text()).toEqual("Fizz")
+    expect(wrapper.prop("variant")).toEqual("warning")
+  })
+
+  it("should render a single Alert item with displayStatus = Buzz, value = 5, and warning = success.", () => {
+    const wrapper = shallow(
+      <AlertItem variant='success' displayStatus='Buzz' value={5} />
+    )
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("5")
+    expect(wrapper.find(".display-status").text()).toEqual("Buzz")
+    expect(wrapper.prop("variant")).toEqual("success")
+  })
+
+  it("should render a single Alert item with displayStatus = FIZZBUZZ!, value = 15, and warning = danger.", () => {
+    const wrapper = shallow(
+      <AlertItem variant='danger' displayStatus='FIZZBUZZ!' value={15} />
+    )
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find(".h2").text()).toEqual("15")
+    expect(wrapper.find(".display-status").text()).toEqual("FIZZBUZZ!")
+    expect(wrapper.prop("variant")).toEqual("danger")
   })
 })
 
 describe("DisplayAlerts", () => {
-  const testArray = range(0, 100)
-  let wrapper
-  beforeEach(() => {
-    wrapper = mount(<DisplayAlerts items={[]} />)
+  const testArray = range(1, 100)
+
+  it("should render DisplayAlerts alert for full range of numbers within given range().", () => {
+    const wrapper = shallow(<DisplayAlerts items={testArray} />)
+    expect(wrapper.find(AlertItem).length).toBe(100)
   })
 
   it("should render DisplayAlerts alert for full range of numbers within given range().", () => {
