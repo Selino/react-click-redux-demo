@@ -88,6 +88,7 @@ export default function FizzBuzz() {
           >
             <InputGroup className='mb-3'>
               <Form.Control
+                data-testid='number-input'
                 type='number'
                 value={inputNumber}
                 onChange={(e) => {
@@ -96,7 +97,7 @@ export default function FizzBuzz() {
                 ref={inputRef1}
               />
               <InputGroup.Append>
-                <Button type='submit'>
+                <Button data-testid='submit-button' type='submit'>
                   <FontAwesomeIcon
                     alt='Calculate'
                     icon={faCalculator}
@@ -122,6 +123,7 @@ export default function FizzBuzz() {
         </Col>
         <Col>
           <div
+            data-testid='list-area'
             style={{
               border: "solid 1px #CCC",
               borderRadius: "4px",
