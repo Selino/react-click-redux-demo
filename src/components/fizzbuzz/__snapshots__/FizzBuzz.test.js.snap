@@ -78,6 +78,7 @@ exports[`FizzBuzz should render an alert with Buzz 5. 1`] = `
           <div>
             <div
               class="react-reveal"
+              style="opacity: 1;"
             >
               <div
                 class="fade alert alert-success show"
@@ -90,12 +91,12 @@ exports[`FizzBuzz should render an alert with Buzz 5. 1`] = `
                     class="row"
                   >
                     <div
-                      class="col-6"
+                      class="display-status col-6"
                     >
                       Buzz
                     </div>
                     <div
-                      class="text-right font-weight-bold h2 col"
+                      class="text-right font-weight-bold h2 result-number col"
                     >
                       5
                     </div>
@@ -189,6 +190,7 @@ exports[`FizzBuzz should render an alert with FIZZBUZZ! 15. 1`] = `
           <div>
             <div
               class="react-reveal"
+              style="opacity: 1;"
             >
               <div
                 class="fade alert alert-danger show"
@@ -201,12 +203,12 @@ exports[`FizzBuzz should render an alert with FIZZBUZZ! 15. 1`] = `
                     class="row"
                   >
                     <div
-                      class="col-6"
+                      class="display-status col-6"
                     >
                       FIZZBUZZ!
                     </div>
                     <div
-                      class="text-right font-weight-bold h2 col"
+                      class="text-right font-weight-bold h2 result-number col"
                     >
                       15
                     </div>
@@ -300,6 +302,7 @@ exports[`FizzBuzz should render an alert with Fizz 3. 1`] = `
           <div>
             <div
               class="react-reveal"
+              style="opacity: 1;"
             >
               <div
                 class="fade alert alert-warning show"
@@ -312,12 +315,12 @@ exports[`FizzBuzz should render an alert with Fizz 3. 1`] = `
                     class="row"
                   >
                     <div
-                      class="col-6"
+                      class="display-status col-6"
                     >
                       Fizz
                     </div>
                     <div
-                      class="text-right font-weight-bold h2 col"
+                      class="text-right font-weight-bold h2 result-number col"
                     >
                       3
                     </div>
@@ -424,10 +427,10 @@ exports[`FizzBuzz should render the full component with default value in field, 
                     class="row"
                   >
                     <div
-                      class="col-6"
+                      class="display-status col-6"
                     />
                     <div
-                      class="text-right font-weight-bold h2 col"
+                      class="text-right font-weight-bold h2 result-number col"
                     >
                       1
                     </div>
