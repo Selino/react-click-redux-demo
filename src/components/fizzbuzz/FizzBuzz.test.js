@@ -1,5 +1,5 @@
 import React from "react"
-import { shallow, mount } from "enzyme"
+import { shallow, mount, render } from "enzyme"
 import FizzBuzz, { getString, AlertItem, DisplayAlerts } from "./FizzBuzz"
 
 function range(start, end) {
@@ -74,7 +74,12 @@ describe("FizzBuzz", () => {
   })
 
   it("should render the full component with default value in field, no alerts", () => {
-    const wrapper = shallow(<FizzBuzz />)
+    const input = wrapper.find("input")
+    const button = wrapper.find("Button")
+
+    input.simulate("focus")
+    input.simulate("change", { target: { value: "15" } })
+    button.simulate("click")
     expect(wrapper).toMatchSnapshot()
   })
 })

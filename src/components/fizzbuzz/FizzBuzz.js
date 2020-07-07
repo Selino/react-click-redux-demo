@@ -29,7 +29,9 @@ export const AlertItem = (props) => {
           <Col className='display-status' xs={6}>
             {props.displayStatus}
           </Col>
-          <Col className='text-right font-weight-bold h2'>{props.value}</Col>
+          <Col className='text-right font-weight-bold h2 result-number'>
+            {props.value}
+          </Col>
         </Row>
       </Container>
     </Alert>
