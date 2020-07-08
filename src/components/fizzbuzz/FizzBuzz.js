@@ -23,7 +23,7 @@ export const getString = (number) => {
 
 export const AlertItem = (props) => {
   return (
-    <Alert variant={props.variant}>
+    <Alert title={props.displayStatus} variant={props.variant}>
       <Container>
         <Row>
           <Col className='display-status' xs={6}>
@@ -131,7 +131,7 @@ export default function FizzBuzz() {
             style={{
               border: "solid 1px #CCC",
               borderRadius: "4px",
-              height: "32vmax",
+              height: "50vmin",
               overflow: "auto",
               padding: "1rem",
             }}

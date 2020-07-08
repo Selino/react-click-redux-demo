@@ -3,6 +3,16 @@ import { render, cleanup, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import FizzBuzz from "./FizzBuzz"
 
+function range(start, end) {
+  let foo = []
+  for (let i = start; i <= end; i++) {
+    foo.splice(i, 0, { num: i })
+  }
+  return foo
+}
+
+const testArray = range(0, 100)
+
 describe("FizzBuzz", () => {
   test("should render the full component with default value in field, no alerts", () => {
     const { asFragment } = render(<FizzBuzz />)
@@ -38,7 +48,7 @@ describe("FizzBuzz", () => {
     expect(numberInput.value).toEqual("15")
     fireEvent.click(screen.getByTestId("submit-button"))
     expect(screen.getByTestId("list-area")).toHaveTextContent("FIZZBUZZ!")
-    expect(asFragment()).toMatchSnapshot()
+    expect(screen.getByTitle("FIZZBUZZ!")).toHaveClass("alert-danger")
   })
 
   test("should render an alert with Fizz 3.", () => {
@@ -48,7 +58,7 @@ describe("FizzBuzz", () => {
     expect(numberInput.value).toEqual("3")
     fireEvent.click(screen.getByTestId("submit-button"))
     expect(screen.getByTestId("list-area")).toHaveTextContent("Fizz")
-    expect(asFragment()).toMatchSnapshot()
+    expect(screen.getByTitle("Fizz")).toHaveClass("alert-warning")
   })
 
   test("should render an alert with Buzz 5.", () => {
@@ -58,6 +68,6 @@ describe("FizzBuzz", () => {
     expect(numberInput.value).toEqual("5")
     fireEvent.click(screen.getByTestId("submit-button"))
     expect(screen.getByTestId("list-area")).toHaveTextContent("Buzz")
-    expect(asFragment()).toMatchSnapshot()
+    expect(screen.getByTitle("Buzz")).toHaveClass("alert-success")
   })
 })
