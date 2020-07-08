@@ -12,7 +12,7 @@ import {
   incrementCount,
   decrementCount,
   resetCount,
-} from "../actions/counter_actions"
+} from "../../actions/counter_actions"
 import { Bounce } from "react-reveal"
 
 function Counter() {
@@ -43,6 +43,7 @@ function Counter() {
                   Redux Counter: {counter}
                 </Card.Title>
                 <Button
+                  data-testid='decrement-button'
                   onClick={() => {
                     counter > 0
                       ? dispatch(decrementCount(1, counter))
@@ -51,10 +52,14 @@ function Counter() {
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </Button>
-                <Button onClick={() => dispatch(resetCount())}>
+                <Button
+                  data-testid='reset-button'
+                  onClick={() => dispatch(resetCount())}
+                >
                   <FontAwesomeIcon icon={faToiletPaper} />
                 </Button>
                 <Button
+                  data-testid='increment-button'
                   onClick={() => {
                     counter <= 24
                       ? dispatch(incrementCount(1, counter))
