@@ -91,10 +91,10 @@ exports[`FizzBuzz should render the full component with default value in field, 
                     class="row"
                   >
                     <div
-                      class="display-status col-6"
+                      class="display-status text-center text-md-left col-sm-6 col-12"
                     />
                     <div
-                      class="text-right font-weight-bold h2 result-number col"
+                      class="text-center text-md-right font-weight-bold h2 result-number col"
                     >
                       1
                     </div>
