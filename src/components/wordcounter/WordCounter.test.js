@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import WordCounter from "./WordCounter"
 
-const originalError = console.warn
 console.warn = jest.fn()
 
 describe("WordCounter", () => {
@@ -78,5 +77,3 @@ describe("WordCounter", () => {
     expect(screen.getByTestId("word-count")).toHaveTextContent("0")
   })
 })
-
-console.error = originalError

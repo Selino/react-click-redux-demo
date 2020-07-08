@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MiniBar should match snapshot at 33% width 1`] = `
+<DocumentFragment>
+  <div
+    class="react-reveal"
+    style="background-color: rgb(153, 153, 153); width: 60px; height: 16px; border-radius: 2px; overflow: hidden; display: inline-block; margin-left: .5rem; vertical-align: text-bottom;"
+  >
+    <div
+      style="background-color: rgb(204, 204, 204); width: 33%; height: 100%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MiniBar should match snapshot at 50% width 1`] = `
+<DocumentFragment>
+  <div
+    class="react-reveal"
+    style="background-color: rgb(153, 153, 153); width: 60px; height: 16px; border-radius: 2px; overflow: hidden; display: inline-block; margin-left: .5rem; vertical-align: text-bottom; opacity: 1;"
+  >
+    <div
+      style="background-color: rgb(204, 204, 204); width: 50%; height: 100%;"
+    />
+  </div>
+</DocumentFragment>
+`;

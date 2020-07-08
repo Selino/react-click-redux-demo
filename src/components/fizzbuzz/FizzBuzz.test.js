@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import FizzBuzz from "./FizzBuzz"
 
-const originalError = console.warn
 console.warn = jest.fn()
 
 function range(start, end) {
@@ -77,5 +76,3 @@ describe("FizzBuzz", () => {
     expect(screen.getByTitle("Buzz")).toHaveClass("alert-success")
   })
 })
-
-console.error = originalError
