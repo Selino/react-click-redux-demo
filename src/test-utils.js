@@ -5,7 +5,7 @@ import { createStore } from "redux"
 import { Provider } from "react-redux"
 import reducer, {
   initialState as reducerInitialState,
-} from "../../reducers/counter_reducer"
+} from "./reducers/counter_reducer"
 
 function render(
   ui,
