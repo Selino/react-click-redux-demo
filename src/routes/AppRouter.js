@@ -8,7 +8,7 @@ import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
 import Menu from "../components/Menu"
 import NavSub from "../components/NavSub"
-import WordCounter from "../components/WordCounter"
+import WordCounter from "../components/wordcounter/WordCounter"
 import GifCaller from "../components/GifCaller"
 import FizzBuzz from "../components/fizzbuzz/FizzBuzz"
 
