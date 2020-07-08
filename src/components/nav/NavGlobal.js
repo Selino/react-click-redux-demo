@@ -2,13 +2,13 @@
 import { Navbar, NavDropdown, Button } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
-import { startLogout } from "../actions/auth_actions"
+import { startLogout } from "../../actions/auth_actions"
 import { faBars, faHome } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
-import Logo from "../images/sv-logo.jpg"
+import Logo from "../../images/sv-logo.jpg"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
