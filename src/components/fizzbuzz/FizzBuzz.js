@@ -26,10 +26,14 @@ export const AlertItem = (props) => {
     <Alert title={props.displayStatus} variant={props.variant}>
       <Container>
         <Row>
-          <Col className='display-status' xs={6}>
+          <Col
+            className='display-status text-center text-md-left'
+            xs={12}
+            sm={6}
+          >
             {props.displayStatus}
           </Col>
-          <Col className='text-right font-weight-bold h2 result-number'>
+          <Col className='text-center text-md-right font-weight-bold h2 result-number'>
             {props.value}
           </Col>
         </Row>
