@@ -22,35 +22,20 @@ export default function WordCounter() {
       <Row>
         <Col xs={12} sm={6}>
           <textarea
-            id='name'
+            data-testid='text-input'
             value={words}
             type='textarea'
             placeholder='Type text into this area.'
             onChange={(e) => handleChange(e)}
             style={{ width: "100%", minHeight: "200px", resize: "none" }}
           />
-          <div>{count}</div>
+          <div data-testid='word-count'>{count}</div>
         </Col>
         <Col>
           <p>
             It took a while to figure out the method & regex combo to filter out
             the non-letters. I don't enjoy Regex.
           </p>
-          <code>
-            useEffect(() => &#123;
-            <br />
-            &nbsp; let regex = new RegExp(/\w/)
-            <br />
-            &nbsp; const aRaw = str.split(" ")
-            <br />
-            &nbsp; const clean = aRaw.filter((e) =>
-            <br />
-            &nbsp; e.match(regex))
-            <br />
-            &nbsp; setState(clean.length)
-            <br />
-            &#125;, [words])
-          </code>
         </Col>
       </Row>
     </Fade>

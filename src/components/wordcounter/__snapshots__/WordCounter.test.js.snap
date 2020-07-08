@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WordCounter should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="react-reveal"
+    style="opacity: 1;"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-sm-6 col-12"
+      >
+        <textarea
+          data-testid="text-input"
+          placeholder="Type text into this area."
+          style="width: 100%; min-height: 200px; resize: none;"
+          type="textarea"
+        />
+        <div
+          data-testid="word-count"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="col"
+      >
+        <p>
+          It took a while to figure out the method & regex combo to filter out the non-letters. I don't enjoy Regex.
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -3,6 +3,9 @@ import { render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import FizzBuzz from "./FizzBuzz"
 
+const originalError = console.warn
+console.warn = jest.fn()
+
 function range(start, end) {
   let foo = []
   for (let i = start; i <= end; i++) {
@@ -14,6 +17,10 @@ function range(start, end) {
 const testArray = range(0, 100)
 
 describe("FizzBuzz", () => {
+  test("should match snapshot", () => {
+    const { asFragment } = render(<FizzBuzz />)
+    expect(asFragment()).toMatchSnapshot()
+  })
   test("should render the full component with default value in field, no alerts", () => {
     const { asFragment } = render(<FizzBuzz />)
     expect(screen.getByTestId("number-input"))
@@ -22,7 +29,6 @@ describe("FizzBuzz", () => {
     expect(screen.getByDisplayValue("1"))
     fireEvent.click(screen.getByTestId("submit-button"))
     expect(screen.getByTestId("list-area")).toHaveTextContent("1")
-    expect(asFragment()).toMatchSnapshot()
   })
 
   test("should not let a user enter a number < 1", () => {
@@ -71,3 +77,5 @@ describe("FizzBuzz", () => {
     expect(screen.getByTitle("Buzz")).toHaveClass("alert-success")
   })
 })
+
+console.error = originalError
