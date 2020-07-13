@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from "react"
 import { css, jsx } from "@emotion/core"
 import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
@@ -31,6 +32,8 @@ function useGiphy(query) {
 
     if (query !== "") {
       fetchData()
+    } else {
+      setResults([])
     }
   }, [query])
 
@@ -42,15 +45,16 @@ export default function GifCaller() {
   const [query, setQuery] = useState("")
   const [results, loading] = useGiphy(query)
 
+  const formRef = React.createRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setQuery(search)
+  }
+
   return (
     <Container>
-      <Form
-        id='myForm'
-        onSubmit={(e) => {
-          e.preventDefault()
-          setQuery(search)
-        }}
-      >
+      <Form id='myForm' onSubmit={handleSubmit}>
         <InputGroup className='mb-3'>
           <Form.Control
             type='text'
@@ -73,8 +77,9 @@ export default function GifCaller() {
                   color: #666;
                 }
               `}
-              onClick={() => {
+              onClick={(e) => {
                 setSearch("")
+                setQuery("")
               }}
               icon={faTimesCircle}
               className={search ? "" : "d-none"}
