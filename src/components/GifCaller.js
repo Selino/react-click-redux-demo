@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react"
 import { css, jsx } from "@emotion/core"
 import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
@@ -19,7 +18,6 @@ function useGiphy(query) {
           `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&q=${query}&limit=10&offset=0&rating=G&lang=en`
         )
         const json = await response.json()
-
         setResults(
           json.data.map((item) => {
             return item.images.preview.mp4
@@ -29,12 +27,7 @@ function useGiphy(query) {
         setLoading(false)
       }
     }
-
-    if (query !== "") {
-      fetchData()
-    } else {
-      setResults([])
-    }
+    query !== "" ? fetchData() : setResults([])
   }, [query])
 
   return [results, loading]
@@ -44,8 +37,6 @@ export default function GifCaller() {
   const [search, setSearch] = useState("")
   const [query, setQuery] = useState("")
   const [results, loading] = useGiphy(query)
-
-  const formRef = React.createRef()
 
   const handleSubmit = (e) => {
     e.preventDefault()
