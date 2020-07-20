@@ -29,7 +29,7 @@ firebase.auth().onAuthStateChanged((user) => {
     renderApp()
     store.dispatch(login(user.uid))
     if (history.location.pathname === "/") {
-      history.push("/fizzbuzz")
+      history.push("/menu")
     }
   } else {
     renderApp()
