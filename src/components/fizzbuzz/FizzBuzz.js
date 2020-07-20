@@ -14,11 +14,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Bounce } from "react-reveal"
 import TransitionGroup from "react-transition-group/TransitionGroup"
 
-export const getString = (number) => {
-  if (number % 15 === 0) return "FIZZBUZZ!"
-  else if (number % 3 === 0) return "Fizz"
-  else if (number % 5 === 0) return "Buzz"
-  else return null
+const numbersArray = [
+  { num: 15, word: "FIZZBUZZ!", variant: "danger" },
+  { num: 5, word: "Buzz", variant: "success" },
+  { num: 3, word: "Fizz", variant: "warning" },
+  { num: null, word: null, variant: "secondary" },
+]
+
+const getString = (array, number) => {
+  const result = array.find(({ num }) => number % num === 0)
+  return result === undefined ? null : result.word
+}
+
+const setVariant = (array, match) => {
+  const result = array.find(({ word }) => word === match)
+  return result.variant
 }
 
 export const AlertItem = (props) => {
@@ -43,27 +53,21 @@ export const AlertItem = (props) => {
 }
 
 export const DisplayAlerts = (props) => {
-  let strVariant = ""
-  const result = props.items
+  const alertsToDisplay = props.items
     .map((i, index) => {
-      const stringResult = getString(i.num)
-      if (stringResult === "Fizz") strVariant = "warning"
-      else if (stringResult === "Buzz") strVariant = "success"
-      else if (stringResult === "FIZZBUZZ!") strVariant = "danger"
-      else strVariant = "secondary"
       return (
         <Bounce top key={index}>
           <AlertItem
             key={index}
-            variant={strVariant}
-            displayStatus={getString(i.num)}
+            variant={setVariant(props.array, getString(props.array, i.num))}
+            displayStatus={getString(props.array, i.num)}
             value={i.num}
           />
         </Bounce>
       )
     })
     .reverse()
-  return <TransitionGroup>{result}</TransitionGroup>
+  return <TransitionGroup>{alertsToDisplay}</TransitionGroup>
 }
 
 export default function FizzBuzz() {
@@ -140,7 +144,7 @@ export default function FizzBuzz() {
               padding: "1rem",
             }}
           >
-            <DisplayAlerts items={displayArray} />
+            <DisplayAlerts array={numbersArray} items={displayArray} />
           </div>
         </Col>
       </Row>
