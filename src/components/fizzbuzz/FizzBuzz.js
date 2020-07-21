@@ -55,7 +55,6 @@ export const AlertItem = (props) => {
 export const DisplayAlerts = (props) => {
   const alertsToDisplay = props.items
     .map((i, index) => {
-      console.log("test")
       return (
         <Bounce top key={index}>
           <AlertItem
