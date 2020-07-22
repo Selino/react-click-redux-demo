@@ -27,9 +27,8 @@ function useGiphy(query) {
         setLoading(false)
       }
     }
-    query !== "" ? fetchData() : setResults([])
+    query !== "" && query !== null ? fetchData() : setResults([])
   }, [query])
-
   return [results, loading]
 }
 

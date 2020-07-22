@@ -79,9 +79,10 @@ export default function FizzBuzz() {
     const regexp = new RegExp("^[0-9]+$")
     const cleanValue = value.match(regexp)
 
-    if (cleanValue >= 1 && cleanValue <= 99 && cleanValue != null) {
+    cleanValue >= 1 &&
+      cleanValue <= 99 &&
+      cleanValue != null &&
       setInputNumber(parseInt(cleanValue))
-    }
   }
 
   useEffect(() => {
