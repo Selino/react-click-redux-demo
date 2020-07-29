@@ -1,12 +1,14 @@
 import React from "react"
 import { Fade } from "react-reveal"
-import { getSubMenuText } from "../../fixtures/SubMenuText"
+import getMenuText from "../../fixtures/MenuText"
 
 export default function NavSub(props) {
-  const subMenuText = getSubMenuText()
+  const subMenuText = getMenuText()
   const text = {}
-  text.title = subMenuText.find((x) => x.url === props.location.pathname).title
-  text.desc = subMenuText.find((x) => x.url === props.location.pathname).desc
+  text.title = subMenuText.find((x) => x.link === props.location.pathname).title
+  text.desc = subMenuText.find(
+    (x) => x.link === props.location.pathname
+  ).subMenuText
 
   return (
     <div

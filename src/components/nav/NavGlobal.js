@@ -50,6 +50,7 @@ export function NavGlobal() {
       default:
         break
     }
+    const buildDropDownMenu = (params) => {}
   }
   return (
     <Emotion>
