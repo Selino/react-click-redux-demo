@@ -51,7 +51,7 @@ const getMenuData = () => [
   {
     id: "IDEXECSUMMARY",
     link: "/executivesummary",
-    title: "Trilliant Executive Summary",
+    title: "Trilliant Data Table",
     subMenuText: "A live data table with all the bells and whistles.",
     desc:
       "I thought I'd challenge myself by refactoring some of the Trilliant components from Angular into React. It wasn't without issues but it was fast. I literally spent one work day getting the functionality and the look into place.",

@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import Logo from "../../images/sv-logo.jpg"
+import getMenuData from "../../fixtures/MenuText"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
@@ -40,8 +41,22 @@ const Emotion = styled.div`
   }
 `
 
+export function DropDownItems(props) {
+  return props.items.map((item) => {
+    return (
+      <LinkContainer exact to={item.link} active={false}>
+        <NavDropdown.Item>{item.title}</NavDropdown.Item>
+      </LinkContainer>
+    )
+  })
+}
+
 export function NavGlobal() {
   const dispatch = useDispatch()
+  const dropDownMenuData = getMenuData().filter((menuitem) => {
+    return menuitem.link !== "/"
+  })
+
   const handleSelect = (eventKey) => {
     switch (eventKey) {
       case "logout":
@@ -50,7 +65,6 @@ export function NavGlobal() {
       default:
         break
     }
-    const buildDropDownMenu = (params) => {}
   }
   return (
     <Emotion>
@@ -108,29 +122,7 @@ export function NavGlobal() {
               />
             }
           >
-            <LinkContainer exact to='/menu' active={false}>
-              <NavDropdown.Item>Home</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/counter' active={false}>
-              <NavDropdown.Item>Counter</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/gifcaller' active={false}>
-              <NavDropdown.Item>Gif Caller</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/fizzbuzz' active={false}>
-              <NavDropdown.Item>Fizz Buzz</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/executivesummary' active={false}>
-              <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/wordcounter' active={false}>
-              <NavDropdown.Item>Word Counter</NavDropdown.Item>
-            </LinkContainer>
+            <DropDownItems items={dropDownMenuData} />
 
             <NavDropdown.Divider />
             <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>

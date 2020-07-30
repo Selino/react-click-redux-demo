@@ -33,8 +33,7 @@ export default function About() {
     (menuitem) =>
       menuitem.link !== "/" &&
       menuitem.link !== "/menu" &&
-      menuitem.desc != null &&
-      menuitem.img != null
+      menuitem.desc != null
   )
   return (
     <Emotion>
