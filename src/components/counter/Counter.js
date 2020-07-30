@@ -19,6 +19,12 @@ function Counter() {
   const counter = useSelector((state) => state.counter.count)
   const dispatch = useDispatch()
 
+  const spinItem = (strButtonId) => {
+    const element = document.getElementById(strButtonId)
+    element.classList.add("fa-spin")
+    setTimeout(() => element.classList.remove("fa-spin"), 500)
+  }
+
   const getStoredCount = async function () {
     try {
       dispatch(startCount())
@@ -45,12 +51,11 @@ function Counter() {
                 <Button
                   data-testid='decrement-button'
                   onClick={() => {
-                    counter > 0
-                      ? dispatch(decrementCount(1, counter))
-                      : dispatch({ type: "" })
+                    counter > 0 && dispatch(decrementCount(1, counter))
+                    spinItem("decrement-button")
                   }}
                 >
-                  <FontAwesomeIcon icon={faMinus} />
+                  <FontAwesomeIcon id='decrement-button' icon={faMinus} />
                 </Button>
                 <Button
                   data-testid='reset-button'
@@ -60,13 +65,12 @@ function Counter() {
                 </Button>
                 <Button
                   data-testid='increment-button'
-                  onClick={() => {
-                    counter <= 24
-                      ? dispatch(incrementCount(1, counter))
-                      : dispatch({ type: "" })
+                  onClick={(e) => {
+                    counter <= 24 && dispatch(incrementCount(1, counter))
+                    spinItem("increment-button")
                   }}
                 >
-                  <FontAwesomeIcon icon={faPlus} />
+                  <FontAwesomeIcon id='increment-button' icon={faPlus} />
                 </Button>
               </Card.Body>
             </Card>
