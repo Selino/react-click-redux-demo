@@ -15,7 +15,6 @@ import {
 } from "../../actions/counter_actions"
 import Bounce from "react-reveal/Bounce"
 import HeadShake from "react-reveal/HeadShake"
-import { animation } from "react-reveal/globals"
 
 function Counter() {
   const counter = useSelector((state) => state.counter.count)
