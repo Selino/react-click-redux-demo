@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {
   faPlus,
@@ -13,17 +13,14 @@ import {
   decrementCount,
   resetCount,
 } from "../../actions/counter_actions"
-import { Bounce } from "react-reveal"
+import Bounce from "react-reveal/Bounce"
+import HeadShake from "react-reveal/HeadShake"
+import { animation } from "react-reveal/globals"
 
 function Counter() {
   const counter = useSelector((state) => state.counter.count)
+  const [animateButton, setAnimateButton] = useState("")
   const dispatch = useDispatch()
-
-  const spinItem = (strButtonId) => {
-    const element = document.getElementById(strButtonId)
-    element.classList.add("fa-spin")
-    setTimeout(() => element.classList.remove("fa-spin"), 500)
-  }
 
   const getStoredCount = async function () {
     try {
@@ -31,6 +28,11 @@ function Counter() {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const animateButtonCycle = (strButtonName) => {
+    setAnimateButton(strButtonName)
+    setTimeout(() => setAnimateButton("off"), 300)
   }
 
   useEffect(() => {
@@ -51,26 +53,41 @@ function Counter() {
                 <Button
                   data-testid='decrement-button'
                   onClick={() => {
-                    counter > 0 && dispatch(decrementCount(1, counter))
-                    spinItem("decrement-button")
+                    if (counter > 0) {
+                      dispatch(decrementCount(1, counter))
+                      animateButtonCycle("decrement")
+                    }
                   }}
                 >
-                  <FontAwesomeIcon id='decrement-button' icon={faMinus} />
+                  <HeadShake when={animateButton === "decrement"}>
+                    <FontAwesomeIcon icon={faMinus} />
+                  </HeadShake>
                 </Button>
                 <Button
                   data-testid='reset-button'
-                  onClick={() => dispatch(resetCount())}
+                  onClick={() => {
+                    if (counter > 0) {
+                      dispatch(resetCount())
+                      animateButtonCycle("reset")
+                    }
+                  }}
                 >
-                  <FontAwesomeIcon icon={faToiletPaper} />
+                  <HeadShake when={animateButton === "reset"}>
+                    <FontAwesomeIcon icon={faToiletPaper} />
+                  </HeadShake>
                 </Button>
                 <Button
                   data-testid='increment-button'
                   onClick={(e) => {
-                    counter <= 24 && dispatch(incrementCount(1, counter))
-                    spinItem("increment-button")
+                    if (counter <= 24) {
+                      dispatch(incrementCount(1, counter))
+                      animateButtonCycle("increment")
+                    }
                   }}
                 >
-                  <FontAwesomeIcon id='increment-button' icon={faPlus} />
+                  <HeadShake when={animateButton === "increment"}>
+                    <FontAwesomeIcon icon={faPlus} />
+                  </HeadShake>
                 </Button>
               </Card.Body>
             </Card>
