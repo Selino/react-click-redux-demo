@@ -12,8 +12,6 @@ import styled from "@emotion/styled"
 import { Fade, Bounce } from "react-reveal"
 
 const Emotion = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-
   .login-area {
     text-align: center;
     position: absolute;
@@ -25,14 +23,14 @@ const Emotion = styled.div`
 
   .login-area .sub-text {
     font-family: "Roboto Slab", serif;
-    color: #333;
-    font-size: 1rem;
-    padding: 1rem;
+    font-size: 1.1rem;
+    padding: 2rem;
     padding-top: 5rem;
     color: white;
-    background-color: #333333;
     border-radius: 4px;
     position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .logo-pic {
@@ -49,22 +47,26 @@ const Emotion = styled.div`
     top: -50px;
     left: 0;
     right: 0;
-    box-shadow: 0px 0px 3px black;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 1;
   }
 
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
     width: 100%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+  }
+
+  .shadow {
+    box-shadow: 0px 0px 3px black;
   }
 
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
     .login-area {
       width: 50vmax;
-    }
-    .login-area .sub-text {
-      font-size: 1.2rem;
     }
   }
 
@@ -73,9 +75,6 @@ const Emotion = styled.div`
     .login-area {
       width: 50vmax;
     }
-    .login-area .sub-text {
-      font-size: 0.8rem;
-    }
   }
 
   /* // Large devices (desktops, 992px and up) */
@@ -83,18 +82,12 @@ const Emotion = styled.div`
     .login-area {
       width: 40vmax;
     }
-    .login-area .sub-text {
-      font-size: 1.1rem;
-    }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
       width: 50vmin;
-    }
-    .login-area .sub-text {
-      font-size: 1.2rem;
     }
   }
 `
