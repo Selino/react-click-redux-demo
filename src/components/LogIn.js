@@ -13,6 +13,7 @@ import styled from "@emotion/styled"
 import { Fade, Bounce } from "react-reveal"
 
 const Emotion = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
   .login-background {
     background-image: url(${BackgroundImg});
     background-size: cover;
