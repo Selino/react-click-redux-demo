@@ -61,7 +61,7 @@ const Emotion = styled.div`
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
     .login-area {
-      width: 70vmax;
+      width: 50vmax;
     }
     .login-area .sub-text {
       font-size: 1.2rem;
@@ -71,7 +71,7 @@ const Emotion = styled.div`
   /* // Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     .login-area {
-      width: 30vmax;
+      width: 50vmax;
     }
     .login-area .sub-text {
       font-size: 0.8rem;
