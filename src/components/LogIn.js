@@ -8,10 +8,23 @@ import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
+import BackgroundImg from "../images/wood_med.jpg"
 import styled from "@emotion/styled"
 import { Fade, Bounce } from "react-reveal"
 
 const Emotion = styled.div`
+  .login-background {
+    background-image: url(${BackgroundImg});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   .login-area {
     text-align: center;
     position: absolute;
@@ -100,42 +113,44 @@ export const LogIn = () => {
 
   return (
     <Emotion>
-      <div className='login-area'>
-        <Fade cascade when={animation > 2}>
-          <div className='sub-text'>
-            <Bounce top>
-              <div className='logo-pic'></div>
-            </Bounce>
-            <Bounce>
-              <img
-                onLoad={() => setAnimation(animation + 1)}
-                alt="Selino's ReactJS Demo"
-                style={{
-                  display: "block",
-                  margin: "-10px auto 1rem",
-                  width: "80%",
-                }}
-                src={BigTitle}
-              />
-            </Bounce>
-            Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
-            components hand crafted with React… and love.
-          </div>
-          <img
-            className='button-sign-in'
-            onLoad={() => setAnimation(animation + 1)}
-            onClick={startLoginGoogle}
-            src={imgGoogleSignIn}
-            alt='Sign in with Google'
-          />
-          <img
-            className='button-sign-in'
-            onLoad={() => setAnimation(animation + 1)}
-            onClick={startLoginGithub}
-            src={imgGitHubSignIn}
-            alt='Sign in with Google'
-          />
-        </Fade>
+      <div className='login-background'>
+        <div className='login-area'>
+          <Fade cascade when={animation > 2}>
+            <div className='sub-text'>
+              <Bounce top>
+                <div className='logo-pic'></div>
+              </Bounce>
+              <Bounce>
+                <img
+                  onLoad={() => setAnimation(animation + 1)}
+                  alt="Selino's ReactJS Demo"
+                  style={{
+                    display: "block",
+                    margin: "-10px auto 1rem",
+                    width: "80%",
+                  }}
+                  src={BigTitle}
+                />
+              </Bounce>
+              Welcome to Selino's ReactJS Demo! This is a live portfolio of
+              custom components hand crafted with React… and love.
+            </div>
+            <img
+              className='button-sign-in'
+              onLoad={() => setAnimation(animation + 1)}
+              onClick={startLoginGoogle}
+              src={imgGoogleSignIn}
+              alt='Sign in with Google'
+            />
+            <img
+              className='button-sign-in'
+              onLoad={() => setAnimation(animation + 1)}
+              onClick={startLoginGithub}
+              src={imgGitHubSignIn}
+              alt='Sign in with Google'
+            />
+          </Fade>
+        </div>
       </div>
     </Emotion>
   )

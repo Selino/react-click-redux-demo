@@ -44,7 +44,7 @@ const Emotion = styled.div`
 export function DropDownItems(props) {
   return props.items.map((item) => {
     return (
-      <LinkContainer exact to={item.link} active={false}>
+      <LinkContainer key={item.id} exact to={item.link} active={false}>
         <NavDropdown.Item>{item.title}</NavDropdown.Item>
       </LinkContainer>
     )
@@ -125,7 +125,9 @@ export function NavGlobal() {
             <DropDownItems items={dropDownMenuData} />
 
             <NavDropdown.Divider />
-            <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
+            <NavDropdown.Item key='IDLOGOUT' eventKey='logout'>
+              Logout
+            </NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>
       </Navbar>
