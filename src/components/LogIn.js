@@ -14,28 +14,30 @@ import { useSpring, a } from "react-spring"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
   .login-background {
     background-image: url(${BackgroundImg});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -5%;
+    left: -5%;
   }
+
   .login-area {
     font-family: "Roboto Slab", serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
-    padding: 3rem;
-    padding-top: 280px;
+    padding: 2.5rem;
+    padding-top: 300px;
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.8);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     width: 80%;
     position: absolute;
     top: 16%;
@@ -45,8 +47,8 @@ const Emotion = styled.div`
   }
 
   .logo-pic {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     border: solid 2px black;
     margin: auto;
@@ -63,8 +65,9 @@ const Emotion = styled.div`
   }
 
   .big-title {
+    width: 440px;
     position: absolute;
-    top: 24%;
+    top: 23%;
     left: 0;
     right: 0;
     margin: auto;
@@ -73,12 +76,17 @@ const Emotion = styled.div`
   .button-sign-in {
     cursor: pointer;
     margin: 0.5rem;
+    min-width: 250px;
   }
 
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
     .login-area {
-      width: 50vmax;
+      width: 48vmax;
+      padding-top: 250px;
+    }
+    .big-title {
+      width: 320px;
     }
   }
 
@@ -87,12 +95,19 @@ const Emotion = styled.div`
     .login-area {
       width: 50vmax;
     }
+    .big-title {
+      width: 340px;
+    }
   }
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
       width: 40vmax;
+      padding-top: 280px;
+    }
+    .big-title {
+      width: 390px;
     }
   }
 
@@ -130,16 +145,17 @@ export const LogIn = () => {
           className='login-area'
           style={{ transform: props.xy.interpolate(trans2) }}
         >
-          Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
-          components hand crafted with React… and love.
+          <a.p style={{ transform: props.xy.interpolate(trans3) }}>
+            Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
+            components hand crafted with React… and love.
+          </a.p>
           <img
             onClick={startLoginGoogle}
             src={imgGoogleSignIn}
             alt='Sign in with Google'
             className='button-sign-in'
             style={{
-              transform: props.xy.interpolate(trans3),
-              marginTop: "1rem",
+              marginTop: "0.5rem",
             }}
           />
           <img
@@ -147,7 +163,6 @@ export const LogIn = () => {
             src={imgGitHubSignIn}
             alt='Sign in with Google'
             className='button-sign-in'
-            style={{ transform: props.xy.interpolate(trans4) }}
           />
         </a.div>
         <a.div
@@ -168,23 +183,3 @@ export const LogIn = () => {
 }
 
 export default LogIn
-
-/*
-
-        <img
-          className='button-sign-in'
-          onLoad={() => setAnimation(animation + 1)}
-          onClick={startLoginGoogle}
-          src={imgGoogleSignIn}
-          alt='Sign in with Google'
-        />
-        <img
-          className='button-sign-in'
-          onLoad={() => setAnimation(animation + 1)}
-          onClick={startLoginGithub}
-          src={imgGitHubSignIn}
-          alt='Sign in with Google'
-        />
-
-
-*/
