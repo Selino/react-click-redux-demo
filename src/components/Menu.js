@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
 import styled from "@emotion/styled"
-import { Fade } from "react-reveal"
 import getMenuData from "../fixtures/MenuText"
 
 const Emotion = styled.div`
@@ -37,41 +36,39 @@ export default function About() {
   )
   return (
     <Emotion>
-      <Fade>
-        <div className='d-flex flex-wrap justify-content-center'>
-          {menuData.map((a) => {
-            return (
-              <LinkContainer key={a.id} exact to={a.link} active='false'>
-                <Card className='card-override'>
-                  {!a.video ? (
-                    <Card.Img
-                      onLoad={() => setAnimation(animation + 1)}
-                      variant='top'
-                      src={a.img}
-                    />
-                  ) : (
-                    <video
-                      autoPlay={true}
-                      loop={true}
-                      src={a.video}
-                      className='card-img-top'
-                      style={{
-                        animationFillMode: "both",
-                        animationDuration: "1000ms",
-                        animationDelay: "0ms",
-                      }}
-                    />
-                  )}
-                  <Card.Body>
-                    <Card.Title>{a.title}</Card.Title>
-                    <Card.Text>{a.desc}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </LinkContainer>
-            )
-          })}
-        </div>
-      </Fade>
+      <div className='d-flex flex-wrap justify-content-center'>
+        {menuData.map((a) => {
+          return (
+            <LinkContainer key={a.id} exact to={a.link} active='false'>
+              <Card className='card-override'>
+                {!a.video ? (
+                  <Card.Img
+                    onLoad={() => setAnimation(animation + 1)}
+                    variant='top'
+                    src={a.img}
+                  />
+                ) : (
+                  <video
+                    autoPlay={true}
+                    loop={true}
+                    src={a.video}
+                    className='card-img-top'
+                    style={{
+                      animationFillMode: "both",
+                      animationDuration: "1000ms",
+                      animationDelay: "0ms",
+                    }}
+                  />
+                )}
+                <Card.Body>
+                  <Card.Title>{a.title}</Card.Title>
+                  <Card.Text>{a.desc}</Card.Text>
+                </Card.Body>
+              </Card>
+            </LinkContainer>
+          )
+        })}
+      </div>
     </Emotion>
   )
 }

@@ -1,5 +1,4 @@
 import React from "react"
-import { Fade } from "react-reveal"
 import getMenuText from "../../fixtures/MenuText"
 
 export default function NavSub(props) {
@@ -22,25 +21,23 @@ export default function NavSub(props) {
         width: "100%",
       }}
     >
-      <Fade left spy={props.location}>
-        <table>
-          <tbody>
-            <tr style={{ verticalAlign: "top" }}>
-              <td
-                style={{
-                  color: "#FFD500",
-                  fontWeight: "bold",
-                  paddingRight: "1rem",
-                }}
-              >
-                {text.title}
-              </td>
+      <table>
+        <tbody>
+          <tr style={{ verticalAlign: "top" }}>
+            <td
+              style={{
+                color: "#FFD500",
+                fontWeight: "bold",
+                paddingRight: "1rem",
+              }}
+            >
+              {text.title}
+            </td>
 
-              <td>{text.desc}</td>
-            </tr>
-          </tbody>
-        </table>
-      </Fade>
+            <td>{text.desc}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
