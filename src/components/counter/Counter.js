@@ -13,10 +13,44 @@ import {
   decrementCount,
   resetCount,
 } from "../../actions/counter_actions"
+import { useSpring, a } from "react-spring"
+
+function AnimatedButton({ icon, onClick, testId }) {
+  const [state, toggle] = useState(true)
+  const { x } = useSpring({
+    from: { x: 0 },
+    x: state ? 1 : 0,
+    // config: { duration: 250 },
+    config: { tension: 300, friction: 10 },
+  })
+
+  return (
+    <a.div
+      style={{
+        display: "inline-block",
+        transform: x
+          .interpolate({
+            range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+            output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+          })
+          .interpolate((x) => `scale(${x})`),
+      }}
+    >
+      <Button
+        data-testid={testId}
+        onClick={() => {
+          onClick()
+          toggle(!state)
+        }}
+      >
+        <FontAwesomeIcon icon={icon} />
+      </Button>
+    </a.div>
+  )
+}
 
 function Counter() {
   const counter = useSelector((state) => state.counter.count)
-  const [animateButton, setAnimateButton] = useState("")
   const dispatch = useDispatch()
 
   const getStoredCount = async function () {
@@ -27,14 +61,9 @@ function Counter() {
     }
   }
 
-  const animateButtonCycle = (strButtonName) => {
-    setAnimateButton(strButtonName)
-    setTimeout(() => setAnimateButton("off"), 300)
-  }
-
   useEffect(() => {
     getStoredCount()
-  })
+  }, [])
 
   return (
     <Container>
@@ -46,39 +75,30 @@ function Counter() {
               <Card.Title className='counter-line'>
                 Redux Counter: {counter}
               </Card.Title>
-              <Button
-                data-testid='decrement-button'
+
+              <AnimatedButton
+                testId='decrement-button'
+                icon={faMinus}
                 onClick={() => {
-                  if (counter > 0) {
-                    dispatch(decrementCount(1, counter))
-                    animateButtonCycle("decrement")
-                  }
+                  counter > 0 && dispatch(decrementCount(1, counter))
                 }}
-              >
-                <FontAwesomeIcon icon={faMinus} />
-              </Button>
-              <Button
-                data-testid='reset-button'
+              />
+
+              <AnimatedButton
+                testId='reset-button'
+                icon={faToiletPaper}
                 onClick={() => {
-                  if (counter > 0) {
-                    dispatch(resetCount())
-                    animateButtonCycle("reset")
-                  }
+                  counter > 0 && dispatch(resetCount())
                 }}
-              >
-                <FontAwesomeIcon icon={faToiletPaper} />
-              </Button>
-              <Button
-                data-testid='increment-button'
-                onClick={(e) => {
-                  if (counter <= 24) {
-                    dispatch(incrementCount(1, counter))
-                    animateButtonCycle("increment")
-                  }
+              />
+
+              <AnimatedButton
+                testId='increment-button'
+                icon={faPlus}
+                onClick={() => {
+                  counter <= 24 && dispatch(incrementCount(1, counter))
                 }}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </Button>
+              />
             </Card.Body>
           </Card>
           <p style={{ marginTop: "1rem" }}>
