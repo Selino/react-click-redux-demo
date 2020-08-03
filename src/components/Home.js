@@ -51,6 +51,7 @@ function CardItem({ title, desc, img, video, link }) {
             <Card.Img variant='top' src={img} />
           ) : (
             <video
+              playsinline
               autoPlay={true}
               loop={true}
               src={video}
