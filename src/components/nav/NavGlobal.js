@@ -39,6 +39,13 @@ const Emotion = styled.div`
   .btn:hover {
     color: #999;
   }
+
+  /* // Small devices (landscape phones, 250px and up) */
+  @media (max-width: 380px) {
+    .app-name {
+      display: none;
+    }
+  }
 `
 
 export function DropDownItems(props) {
@@ -73,7 +80,7 @@ export function NavGlobal() {
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
-              Selino's ReactJS Demo
+              <span className='app-name'>Selino's ReactJS Demo</span>
             </div>
           </Navbar.Brand>
         </LinkContainer>
@@ -87,7 +94,6 @@ export function NavGlobal() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
@@ -100,7 +106,6 @@ export function NavGlobal() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
