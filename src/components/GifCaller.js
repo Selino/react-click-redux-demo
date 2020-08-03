@@ -92,7 +92,9 @@ export default function GifCaller() {
             <span className='sr-only'>Loading...</span>
           </Spinner>
         ) : (
-          results.map((item, index) => <video autoPlay loop src={item} />)
+          results.map((item, index) => (
+            <video key={index} autoPlay loop src={item} />
+          ))
         )}
       </div>
     </Container>
