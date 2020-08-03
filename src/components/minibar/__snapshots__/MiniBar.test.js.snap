@@ -3,7 +3,6 @@
 exports[`MiniBar should match snapshot at 33% width 1`] = `
 <DocumentFragment>
   <div
-    class="react-reveal"
     style="background-color: rgb(153, 153, 153); width: 60px; height: 16px; border-radius: 2px; overflow: hidden; display: inline-block; margin-left: .5rem; vertical-align: text-bottom;"
   >
     <div
@@ -16,8 +15,7 @@ exports[`MiniBar should match snapshot at 33% width 1`] = `
 exports[`MiniBar should match snapshot at 50% width 1`] = `
 <DocumentFragment>
   <div
-    class="react-reveal"
-    style="background-color: rgb(153, 153, 153); width: 60px; height: 16px; border-radius: 2px; overflow: hidden; display: inline-block; margin-left: .5rem; vertical-align: text-bottom; opacity: 1;"
+    style="background-color: rgb(153, 153, 153); width: 60px; height: 16px; border-radius: 2px; overflow: hidden; display: inline-block; margin-left: .5rem; vertical-align: text-bottom;"
   >
     <div
       style="background-color: rgb(204, 204, 204); width: 50%; height: 100%;"
