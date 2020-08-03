@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
 import styled from "@emotion/styled"
 import getMenuData from "../fixtures/MenuText"
+import { useSpring, animated } from "react-spring"
 
 const Emotion = styled.div`
   .card {
@@ -10,12 +11,13 @@ const Emotion = styled.div`
     margin-bottom: 2rem !important;
     min-width: 200px;
     max-width: 300px;
+    height: 87%;
     margin: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
   }
 
   .card-override:hover {
-    box-shadow: 0px 0px 4px#333;
+    box-shadow: 0px 30px 50px -10px rgba(0, 0, 0, 0.5);
   }
 
   @media (max-width: 768px) {
@@ -26,8 +28,52 @@ const Emotion = styled.div`
   }
 `
 
+function CardItem({ title, desc, img, video, link }) {
+  const calc = (x, y) => [
+    -(y - window.innerHeight / 2) / 20,
+    (x - window.innerWidth / 2) / 20,
+    1.05,
+  ]
+  const trans = (x, y, s) => `scale(${s})`
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+  }))
+
+  return (
+    <animated.div
+      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+      onMouseLeave={() => set({ xys: [0, 0, 1] })}
+      style={{ transform: props.xys.interpolate(trans) }}
+    >
+      <LinkContainer exact to={link} active='false'>
+        <Card className='card-override'>
+          {!video ? (
+            <Card.Img variant='top' src={img} />
+          ) : (
+            <video
+              autoPlay={true}
+              loop={true}
+              src={video}
+              variant='top'
+              className='card-img-top'
+              style={{
+                animationFillMode: "both",
+                animationDuration: "1000ms",
+                animationDelay: "0ms",
+              }}
+            />
+          )}
+          <Card.Body>
+            <Card.Title>{title}</Card.Title>
+            <Card.Text>{desc}</Card.Text>
+          </Card.Body>
+        </Card>
+      </LinkContainer>
+    </animated.div>
+  )
+}
+
 export default function About() {
-  const [animation, setAnimation] = useState(0)
   const menuData = getMenuData().filter(
     (menuitem) =>
       menuitem.link !== "/" &&
@@ -39,33 +85,15 @@ export default function About() {
       <div className='d-flex flex-wrap justify-content-center'>
         {menuData.map((a) => {
           return (
-            <LinkContainer key={a.id} exact to={a.link} active='false'>
-              <Card className='card-override'>
-                {!a.video ? (
-                  <Card.Img
-                    onLoad={() => setAnimation(animation + 1)}
-                    variant='top'
-                    src={a.img}
-                  />
-                ) : (
-                  <video
-                    autoPlay={true}
-                    loop={true}
-                    src={a.video}
-                    className='card-img-top'
-                    style={{
-                      animationFillMode: "both",
-                      animationDuration: "1000ms",
-                      animationDelay: "0ms",
-                    }}
-                  />
-                )}
-                <Card.Body>
-                  <Card.Title>{a.title}</Card.Title>
-                  <Card.Text>{a.desc}</Card.Text>
-                </Card.Body>
-              </Card>
-            </LinkContainer>
+            <CardItem
+              title={a.title}
+              desc={a.desc}
+              img={a.img}
+              video={a.video}
+              id={a.id}
+              link={a.link}
+              key={a.id}
+            />
           )
         })}
       </div>

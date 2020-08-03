@@ -14,7 +14,7 @@ const getMenuData = () => {
       img: null,
     },
     {
-      id: "IDMENU",
+      id: "IDHOME",
       link: "/home",
       title: "Home",
       subMenuText: "Choose an item from the list below.",
