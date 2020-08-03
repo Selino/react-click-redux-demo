@@ -63,7 +63,7 @@ function Counter() {
 
   useEffect(() => {
     getStoredCount()
-  }, [])
+  })
 
   return (
     <Container>

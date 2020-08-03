@@ -6,7 +6,7 @@ import NavGlobal from "../components/nav/NavGlobal"
 import Counter from "../components/counter/Counter"
 import ExecutiveSummary from "../components/ExecutiveSummary"
 import LogIn from "../components/LogIn"
-import Menu from "../components/Menu"
+import Home from "../components/Home"
 import NavSub from "../components/nav/NavSub"
 import WordCounter from "../components/wordcounter/WordCounter"
 import GifCaller from "../components/GifCaller"
@@ -32,7 +32,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated ? <Redirect to='/menu' /> : <Component {...props} />
+        isAuthenticated ? <Redirect to='/home' /> : <Component {...props} />
       }
     />
   )
@@ -45,7 +45,7 @@ const AppRouter = () => (
     <div className='body-container'>
       <Switch>
         <PublicRoute exact path='/login' component={LogIn} />
-        <PrivateRoute exact path='/menu' component={Menu} />
+        <PrivateRoute exact path='/home' component={Home} />
         <PrivateRoute exact path='/counter' component={Counter} />
         <PrivateRoute exact path='/gifcaller' component={GifCaller} />
         <PrivateRoute exact path='/fizzbuzz' component={FizzBuzz} />

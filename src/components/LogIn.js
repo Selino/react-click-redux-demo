@@ -136,6 +136,7 @@ export const LogIn = () => {
   const trans4 = (x, y) => `translate3d(${x / 120}px,${y / 120}px,0)`
   const trans5 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
+
   const [animation2] = useSpring(() => ({
     to: async (next, cancel) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })

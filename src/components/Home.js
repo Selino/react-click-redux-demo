@@ -31,7 +31,7 @@ export default function About() {
   const menuData = getMenuData().filter(
     (menuitem) =>
       menuitem.link !== "/" &&
-      menuitem.link !== "/menu" &&
+      menuitem.link !== "/home" &&
       menuitem.desc != null
   )
   return (
