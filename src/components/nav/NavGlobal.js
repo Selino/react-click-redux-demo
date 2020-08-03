@@ -69,7 +69,7 @@ export function NavGlobal() {
   return (
     <Emotion>
       <Navbar bg='dark' variant='dark' onSelect={handleSelect} fixed='top'>
-        <LinkContainer exact to='/menu' active='false'>
+        <LinkContainer exact to='/home' active='false'>
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
@@ -92,7 +92,7 @@ export function NavGlobal() {
               font-size: 1.2rem;
             `}
           >
-            <LinkContainer to='/menu' exact active='false'>
+            <LinkContainer to='/home' exact active='false'>
               <FontAwesomeIcon icon={faHome} />
             </LinkContainer>
           </Button>
