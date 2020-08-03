@@ -28,7 +28,7 @@ const getMenuData = () => {
       subMenuText:
         "An over-engineered counter as a sandbox for learning Redux & Firebase.",
       desc:
-        "It took a while to wrap my head around how Redux works and why it's handy on larger projects. It was helpful to learn by implemting on a simple component. I've also integrated Firebase serverless DB calls into the Redux actions.",
+        "It took a while to wrap my head around how Redux works and why it's handy on larger projects. It was helpful to learn by implementing a simple component. I've also integrated Firebase serverless DB calls into the Redux actions.",
       img: tnReduxCounter,
     },
     {
