@@ -25,8 +25,7 @@ const getMenuData = () => {
       id: "IDCOUNTER",
       link: "/counter",
       title: "Redux Counter",
-      subMenuText:
-        "An over-engineered counter as a sandbox for learning Redux & Firebase.",
+      subMenuText: "An over-engineered counter for learning Redux & Firebase.",
       desc:
         "It took a while to wrap my head around how Redux works and why it's handy on larger projects. It was helpful to learn by implementing a simple component. I've also integrated Firebase serverless DB calls into the Redux actions.",
       img: tnReduxCounter,
@@ -53,7 +52,7 @@ const getMenuData = () => {
     {
       id: "IDEXECSUMMARY",
       link: "/executivesummary",
-      title: "Trilliant Data Table",
+      title: "Data Table",
       subMenuText: "A live data table with all the bells and whistles.",
       desc:
         "I thought I'd challenge myself by refactoring some of the Trilliant components from Angular into React. It wasn't without issues but it was fast. I literally spent one work day getting the functionality and the look into place.",

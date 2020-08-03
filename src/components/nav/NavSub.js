@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
+import { useState, useEffect } from "react"
 import getMenuText from "../../fixtures/MenuText"
 import { useTransition, animated } from "react-spring"
 
@@ -51,16 +53,20 @@ export default function NavSub(props) {
 
   return (
     <div
+      css={css`
+        height: 2.5rem;
+        background-color: #333;
+        margin-top: 58px;
+        color: white;
+        padding: 1rem;
+        z-index: 5;
+        width: 100%;
+        /* // Small devices (landscape phones, 250px and up) */
+        @media (max-width: 375px) {
+          height: 4rem;
+        }
+      `}
       className='position-fixed'
-      style={{
-        height: "2.5rem",
-        marginTop: "58px",
-        backgroundColor: "#333",
-        color: "white",
-        padding: "1rem",
-        zIndex: "5",
-        width: "100%",
-      }}
     >
       <AnimatedTable title={state.title} desc={state.desc} />
     </div>
