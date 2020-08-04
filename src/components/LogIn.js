@@ -8,11 +8,32 @@ import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
+import BackgroundImg from "../images/wood_med.jpg"
 import styled from "@emotion/styled"
-import { Fade, Bounce } from "react-reveal"
+import { useSpring, a } from "react-spring"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+  .login-background {
+    background-image: url(${BackgroundImg});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    width: 104%;
+    height: 104%;
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+  }
 
   .login-area {
     text-align: center;
@@ -21,18 +42,14 @@ const Emotion = styled.div`
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
-  }
-
-  .login-area .sub-text {
     font-family: "Roboto Slab", serif;
-    color: #333;
-    font-size: 1rem;
-    padding: 1rem;
+    font-size: 1.2rem;
+    padding: 2rem;
     padding-top: 5rem;
     color: white;
-    background-color: #333333;
     border-radius: 4px;
-    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .logo-pic {
@@ -45,36 +62,49 @@ const Emotion = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: absolute;
-    top: -50px;
-    left: 0;
-    right: 0;
-    box-shadow: 0px 0px 3px black;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+  }
+
+  .big-title {
+    width: 90%;
+    position: relative;
+    margin: auto;
   }
 
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
-    width: 100%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    width: 50%;
+  }
+
+  .shadow {
+    box-shadow: 0px 0px 3px black;
+  }
+
+  /* // Small devices (landscape phones, 250px and up) */
+  @media (min-width: 250px) {
+    .button-sign-in {
+      width: 80%;
+    }
   }
 
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
     .login-area {
-      width: 70vmax;
+      width: 50vmax;
     }
-    .login-area .sub-text {
-      font-size: 1.2rem;
+    .button-sign-in {
+      width: 50%;
     }
   }
 
   /* // Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     .login-area {
-      width: 30vmax;
-    }
-    .login-area .sub-text {
-      font-size: 0.8rem;
+      width: 50vmax;
     }
   }
 
@@ -83,18 +113,12 @@ const Emotion = styled.div`
     .login-area {
       width: 40vmax;
     }
-    .login-area .sub-text {
-      font-size: 1.1rem;
-    }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
       width: 50vmin;
-    }
-    .login-area .sub-text {
-      font-size: 1.2rem;
     }
   }
 `
@@ -105,45 +129,72 @@ export const LogIn = () => {
   const startLoginGithub = dispatch(startLoginGithubAction)
   const startLoginGoogle = dispatch(startLoginGoogleAction)
 
+  const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
+  const trans1 = (x, y) => `translate3d(${x / 200}px,${y / 200}px,0)`
+  const trans2 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`
+  const trans3 = (x, y) => `translate3d(${x / 40}px,${y / 60}px,0)`
+  const trans4 = (x, y) => `translate3d(${x / 120}px,${y / 120}px,0)`
+  const trans5 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
+  const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
+
+  const [animation2] = useSpring(() => ({
+    to: async (next, cancel) => {
+      await next({ opacity: 0, marginTop: -500, width: 0 })
+      await next({ opacity: 1, marginTop: -150, width: 120 })
+    },
+    config: { tension: 300, friction: 10 },
+  }))
+
   return (
     <Emotion>
-      <div className='login-area'>
-        <Fade cascade when={animation > 2}>
-          <div className='sub-text'>
-            <Bounce top>
-              <div className='logo-pic'></div>
-            </Bounce>
-            <Bounce>
-              <img
-                onLoad={() => setAnimation(animation + 1)}
-                alt="Selino's ReactJS Demo"
-                style={{
-                  display: "block",
-                  margin: "-10px auto 1rem",
-                  width: "80%",
-                }}
-                src={BigTitle}
-              />
-            </Bounce>
+      <a.div
+        className='login-background'
+        onMouseMove={({ clientX: x, clientY: y }) =>
+          setParallax({ xy: calc(x, y) })
+        }
+        style={{ transform: parallax.xy.interpolate(trans1) }}
+      >
+        <a.div className='login-area'>
+          <a.div
+            className='logo-pic'
+            alt='test'
+            src={Logo}
+            style={{
+              ...animation2,
+              transform: parallax.xy.interpolate(trans2),
+            }}
+          ></a.div>
+
+          <a.img
+            id='big-title'
+            className='big-title'
+            alt="Selino's ReactJS Demo"
+            src={BigTitle}
+            style={{ transform: parallax.xy.interpolate(trans3) }}
+          />
+          <a.p style={{ transform: parallax.xy.interpolate(trans4) }}>
             Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
             components hand crafted with React… and love.
-          </div>
-          <img
-            className='button-sign-in'
-            onLoad={() => setAnimation(animation + 1)}
-            onClick={startLoginGoogle}
-            src={imgGoogleSignIn}
-            alt='Sign in with Google'
-          />
-          <img
-            className='button-sign-in'
-            onLoad={() => setAnimation(animation + 1)}
-            onClick={startLoginGithub}
-            src={imgGitHubSignIn}
-            alt='Sign in with Google'
-          />
-        </Fade>
-      </div>
+          </a.p>
+          <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
+            <img
+              className='button-sign-in'
+              onLoad={() => setAnimation(animation + 1)}
+              onClick={startLoginGoogle}
+              src={imgGoogleSignIn}
+              alt='Sign in with Google'
+            />
+            <br />
+            <img
+              className='button-sign-in'
+              onLoad={() => setAnimation(animation + 1)}
+              onClick={startLoginGithub}
+              src={imgGitHubSignIn}
+              alt='Sign in with Google'
+            />
+          </a.p>
+        </a.div>
+      </a.div>
     </Emotion>
   )
 }

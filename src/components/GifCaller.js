@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
-import { Fade } from "react-reveal"
 
 function useGiphy(query) {
   const [results, setResults] = useState([])
@@ -27,9 +26,8 @@ function useGiphy(query) {
         setLoading(false)
       }
     }
-    query !== "" ? fetchData() : setResults([])
+    query !== "" && query !== null ? fetchData() : setResults([])
   }, [query])
-
   return [results, loading]
 }
 
@@ -95,9 +93,7 @@ export default function GifCaller() {
           </Spinner>
         ) : (
           results.map((item, index) => (
-            <Fade cascade key={index}>
-              <video autoPlay loop src={item} />
-            </Fade>
+            <video key={index} autoPlay loop src={item} />
           ))
         )}
       </div>

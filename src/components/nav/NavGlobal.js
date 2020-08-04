@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import Logo from "../../images/sv-logo.jpg"
+import getMenuData from "../../fixtures/MenuText"
 
 const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
@@ -38,10 +39,31 @@ const Emotion = styled.div`
   .btn:hover {
     color: #999;
   }
+
+  /* // Small devices (landscape phones, 250px and up) */
+  @media (max-width: 420px) {
+    .app-name {
+      display: none;
+    }
+  }
 `
+
+export function DropDownItems(props) {
+  return props.items.map((item) => {
+    return (
+      <LinkContainer key={item.id} exact to={item.link} active={false}>
+        <NavDropdown.Item>{item.title}</NavDropdown.Item>
+      </LinkContainer>
+    )
+  })
+}
 
 export function NavGlobal() {
   const dispatch = useDispatch()
+  const dropDownMenuData = getMenuData().filter((menuitem) => {
+    return menuitem.link !== "/"
+  })
+
   const handleSelect = (eventKey) => {
     switch (eventKey) {
       case "logout":
@@ -54,11 +76,11 @@ export function NavGlobal() {
   return (
     <Emotion>
       <Navbar bg='dark' variant='dark' onSelect={handleSelect} fixed='top'>
-        <LinkContainer exact to='/menu' active='false'>
+        <LinkContainer exact to='/home' active='false'>
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
-              Selino's ReactJS Demo
+              <span className='app-name'>Selino's ReactJS Demo</span>
             </div>
           </Navbar.Brand>
         </LinkContainer>
@@ -72,12 +94,11 @@ export function NavGlobal() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
           >
-            <LinkContainer to='/menu' exact active='false'>
+            <LinkContainer to='/home' exact active='false'>
               <FontAwesomeIcon icon={faHome} />
             </LinkContainer>
           </Button>
@@ -85,7 +106,6 @@ export function NavGlobal() {
           <Button
             variant=''
             css={css`
-              margin-right: 0.2rem;
               color: white;
               font-size: 1.2rem;
             `}
@@ -107,32 +127,12 @@ export function NavGlobal() {
               />
             }
           >
-            <LinkContainer exact to='/menu' active={false}>
-              <NavDropdown.Item>Home</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/counter' active={false}>
-              <NavDropdown.Item>Counter</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/gifcaller' active={false}>
-              <NavDropdown.Item>Gif Caller</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/fizzbuzz' active={false}>
-              <NavDropdown.Item>Fizz Buzz</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/executivesummary' active={false}>
-              <NavDropdown.Item>Trilliant Data Table</NavDropdown.Item>
-            </LinkContainer>
-
-            <LinkContainer exact to='/wordcounter' active={false}>
-              <NavDropdown.Item>Word Counter</NavDropdown.Item>
-            </LinkContainer>
+            <DropDownItems items={dropDownMenuData} />
 
             <NavDropdown.Divider />
-            <NavDropdown.Item eventKey='logout'>Logout</NavDropdown.Item>
+            <NavDropdown.Item key='IDLOGOUT' eventKey='logout'>
+              Logout
+            </NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>
       </Navbar>

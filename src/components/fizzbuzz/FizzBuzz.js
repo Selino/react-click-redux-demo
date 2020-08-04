@@ -11,7 +11,6 @@ import {
 } from "react-bootstrap"
 import { faCalculator } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Bounce } from "react-reveal"
 import TransitionGroup from "react-transition-group/TransitionGroup"
 
 const numbersArray = [
@@ -56,14 +55,12 @@ export const DisplayAlerts = (props) => {
   const alertsToDisplay = props.items
     .map((i, index) => {
       return (
-        <Bounce top key={index}>
-          <AlertItem
-            key={index}
-            variant={setVariant(props.array, getString(props.array, i.num))}
-            displayStatus={getString(props.array, i.num)}
-            value={i.num}
-          />
-        </Bounce>
+        <AlertItem
+          key={index}
+          variant={setVariant(props.array, getString(props.array, i.num))}
+          displayStatus={getString(props.array, i.num)}
+          value={i.num}
+        />
       )
     })
     .reverse()
@@ -79,9 +76,10 @@ export default function FizzBuzz() {
     const regexp = new RegExp("^[0-9]+$")
     const cleanValue = value.match(regexp)
 
-    if (cleanValue >= 1 && cleanValue <= 99 && cleanValue != null) {
+    cleanValue >= 1 &&
+      cleanValue <= 99 &&
+      cleanValue != null &&
       setInputNumber(parseInt(cleanValue))
-    }
   }
 
   useEffect(() => {
