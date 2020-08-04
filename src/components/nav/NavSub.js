@@ -62,7 +62,7 @@ export default function NavSub(props) {
         z-index: 5;
         width: 100%;
         /* // Small devices (landscape phones, 250px and up) */
-        @media (max-width: 375px) {
+        @media (max-width: 420px) {
           height: 4rem;
         }
       `}

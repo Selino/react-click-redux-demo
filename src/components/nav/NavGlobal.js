@@ -41,7 +41,7 @@ const Emotion = styled.div`
   }
 
   /* // Small devices (landscape phones, 250px and up) */
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
     .app-name {
       display: none;
     }
