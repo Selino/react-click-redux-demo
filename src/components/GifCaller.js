@@ -10,7 +10,7 @@ function useGiphy(query) {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
         setLoading(true)
         const response = await fetch(

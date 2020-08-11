@@ -16,11 +16,10 @@ const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
   .login-background {
-    background-image: url(${BackgroundImg});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
+    background-color: red;
     width: 104%;
     height: 104%;
     position: absolute;
@@ -42,14 +41,11 @@ const Emotion = styled.div`
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
-    font-family: "Roboto Slab", serif;
-    font-size: 1.2rem;
     padding: 2rem;
     padding-top: 5rem;
-    color: white;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+    border-radius: 4%;
+    background: rgba(0, 0, 0, 0.25);
   }
 
   .logo-pic {
@@ -72,12 +68,20 @@ const Emotion = styled.div`
     margin: auto;
   }
 
+  .sub-text {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  }
+
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     width: 50%;
+    overflow: hidden;
   }
 
   .shadow {
@@ -87,7 +91,7 @@ const Emotion = styled.div`
   /* // Small devices (landscape phones, 250px and up) */
   @media (min-width: 250px) {
     .button-sign-in {
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -111,7 +115,7 @@ const Emotion = styled.div`
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 40vmax;
+      width: 60vmax;
     }
   }
 
@@ -172,9 +176,12 @@ export const LogIn = () => {
             src={BigTitle}
             style={{ transform: parallax.xy.interpolate(trans3) }}
           />
-          <a.p style={{ transform: parallax.xy.interpolate(trans4) }}>
-            Welcome to Selino's ReactJS Demo! This is a live portfolio of custom
-            components hand crafted with React… and love.
+          <a.p
+            className='sub-text'
+            style={{ transform: parallax.xy.interpolate(trans4) }}
+          >
+            Welcome! This is a live portfolio of custom components hand crafted
+            with React… and love.
           </a.p>
           <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
             <img
