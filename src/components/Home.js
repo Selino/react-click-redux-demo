@@ -25,6 +25,10 @@ const Emotion = styled.div`
       max-width: 100%;
       min-width: 96%;
     }
+
+    .flex-wrap > div {
+      width: 100%;
+    }
   }
 `
 
