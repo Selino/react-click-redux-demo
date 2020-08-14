@@ -8,7 +8,6 @@ import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
-import BackgroundImg from "../images/wood_med.jpg"
 import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
 
