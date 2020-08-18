@@ -30,11 +30,10 @@ export default function WordCounter() {
         <div data-testid='word-count'>{count}</div>
       </Col>
       <Col>
-        <p>
-          It took a while to figure out the method & regex combo to filter out
-          the non-letters. I don't enjoy Regex.
-        </p>
+        <p>A simple pattern matcher in real time.</p>
       </Col>
     </Row>
   )
 }
+
+// Lorem ipsum dolar sit amet.
