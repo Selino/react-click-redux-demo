@@ -169,7 +169,7 @@ export const LogIn = () => {
         break
       default:
         // red
-        colorName = "#C32517"
+        colorName = "#f12417"
     }
     document.getElementById("backGround").style.backgroundColor = colorName
   }
