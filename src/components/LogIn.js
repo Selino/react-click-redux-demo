@@ -35,15 +35,14 @@ const Emotion = styled.div`
   .login-area {
     text-align: center;
     position: absolute;
-    top: 52%;
+    top: 54%;
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
     padding: 2rem;
     padding-top: 5rem;
-
     border-radius: 4%;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.15);
   }
 
   .logo-pic {
@@ -156,16 +155,12 @@ export const LogIn = () => {
         colorName = "#29AC35"
         break
       case 1:
-        // yellow
-        colorName = "#dbbd00"
+        // orange
+        colorName = "#ff9200"
         break
       case 2:
         // blue
         colorName = "#016a98"
-        break
-      case 3:
-        // orange
-        colorName = "#ff9200"
         break
       default:
         // red
@@ -175,7 +170,7 @@ export const LogIn = () => {
   }
 
   useEffect(() => {
-    pickColor(5)
+    pickColor(4)
   }, [])
 
   return (
