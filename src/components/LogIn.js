@@ -47,21 +47,14 @@ const Emotion = styled.div`
   }
 
   .logo-pic {
-    width: 120px;
-    height: 120px;
     border-radius: 50%;
     border: solid 3px black;
-    margin: auto;
-    background-image: url(${Logo});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
 
   .big-title {
-    width: 90%;
+    width: 100%;
     position: relative;
     margin: auto;
   }
@@ -142,7 +135,7 @@ export const LogIn = () => {
   const [animation2] = useSpring(() => ({
     to: async (next) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
-      await next({ opacity: 1, marginTop: -150, width: 120 })
+      await next({ opacity: 1, marginTop: -150, width: 160 })
     },
     config: { tension: 300, friction: 10 },
   }))
@@ -171,8 +164,8 @@ export const LogIn = () => {
   }
 
   useEffect(() => {
-    pickColor(4)
     if (animation >= 4) {
+      pickColor(4)
       document.getElementById("login-area").style.display = "block"
     }
   }, [animation])
@@ -198,7 +191,6 @@ export const LogIn = () => {
             }}
             onLoad={() => setAnimation(animation + 1)}
           />
-
           <a.img
             id='big-title'
             className='big-title'
