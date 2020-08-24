@@ -35,5 +35,3 @@ export default function WordCounter() {
     </Row>
   )
 }
-
-// Lorem ipsum dolar sit amet.
