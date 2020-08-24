@@ -172,7 +172,7 @@ export const LogIn = () => {
 
   useEffect(() => {
     pickColor(4)
-    if (animation >= 5) {
+    if (animation >= 4) {
       document.getElementById("login-area").style.display = "block"
     }
   }, [animation])
@@ -233,11 +233,6 @@ export const LogIn = () => {
           </a.p>
         </a.div>
       </a.div>
-      <img
-        src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Wikidata_Map_July_2017_Huge.png/1600px-Wikidata_Map_July_2017_Huge.png'
-        alt='Sign in with Google'
-        onLoad={() => setAnimation(animation + 1)}
-      />
     </Emotion>
   )
 }
