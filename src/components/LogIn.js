@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import {
   startLoginGoogleAction,
@@ -18,7 +18,6 @@ const Emotion = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: red;
     width: 104%;
     height: 104%;
     position: absolute;
@@ -51,7 +50,7 @@ const Emotion = styled.div`
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: solid 2px black;
+    border: solid 3px black;
     margin: auto;
     background-image: url(${Logo});
     background-size: cover;
@@ -148,6 +147,37 @@ export const LogIn = () => {
     config: { tension: 300, friction: 10 },
   }))
 
+  const pickColor = (max) => {
+    const colorNum = Math.floor(Math.random() * Math.floor(max))
+    let colorName
+    switch (colorNum) {
+      case 0:
+        // green
+        colorName = "#29AC35"
+        break
+      case 1:
+        // yellow
+        colorName = "#dbbd00"
+        break
+      case 2:
+        // blue
+        colorName = "#016a98"
+        break
+      case 3:
+        // orange
+        colorName = "#ff9200"
+        break
+      default:
+        // red
+        colorName = "#C32517"
+    }
+    document.getElementById("backGround").style.backgroundColor = colorName
+  }
+
+  useEffect(() => {
+    pickColor(5)
+  }, [])
+
   return (
     <Emotion>
       <a.div
@@ -156,6 +186,7 @@ export const LogIn = () => {
           setParallax({ xy: calc(x, y) })
         }
         style={{ transform: parallax.xy.interpolate(trans1) }}
+        id='backGround'
       >
         <a.div className='login-area'>
           <a.div
