@@ -33,6 +33,7 @@ const Emotion = styled.div`
   }
 
   .login-area {
+    display: none;
     text-align: center;
     position: absolute;
     top: 54%;
@@ -139,7 +140,7 @@ export const LogIn = () => {
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
 
   const [animation2] = useSpring(() => ({
-    to: async (next, cancel) => {
+    to: async (next) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
       await next({ opacity: 1, marginTop: -150, width: 120 })
     },
@@ -171,7 +172,15 @@ export const LogIn = () => {
 
   useEffect(() => {
     pickColor(4)
-  }, [])
+    if (animation >= 3) {
+      document.getElementById("login-area").style.display = "block"
+    }
+  }, [animation])
+
+  const test = () => {
+    const final = { ...animation2, transform: parallax.xy.interpolate(trans2) }
+    return final
+  }
 
   return (
     <Emotion>
@@ -183,15 +192,12 @@ export const LogIn = () => {
         style={{ transform: parallax.xy.interpolate(trans1) }}
         id='backGround'
       >
-        <a.div className='login-area'>
+        <a.div id='login-area' className='login-area'>
           <a.div
             className='logo-pic'
             alt='test'
             src={Logo}
-            style={{
-              ...animation2,
-              transform: parallax.xy.interpolate(trans2),
-            }}
+            style={test()}
           ></a.div>
 
           <a.img
@@ -200,6 +206,7 @@ export const LogIn = () => {
             alt="Selino's ReactJS Demo"
             src={BigTitle}
             style={{ transform: parallax.xy.interpolate(trans3) }}
+            onLoad={() => setAnimation(animation + 1)}
           />
           <a.p
             className='sub-text'
@@ -211,18 +218,18 @@ export const LogIn = () => {
           <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
             <img
               className='button-sign-in'
-              onLoad={() => setAnimation(animation + 1)}
-              onClick={startLoginGoogle}
               src={imgGoogleSignIn}
+              onClick={startLoginGoogle}
               alt='Sign in with Google'
+              onLoad={() => setAnimation(animation + 1)}
             />
             <br />
             <img
               className='button-sign-in'
-              onLoad={() => setAnimation(animation + 1)}
               onClick={startLoginGithub}
               src={imgGitHubSignIn}
               alt='Sign in with Google'
+              onLoad={() => setAnimation(animation + 1)}
             />
           </a.p>
         </a.div>
