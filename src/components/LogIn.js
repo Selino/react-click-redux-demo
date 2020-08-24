@@ -113,14 +113,14 @@ const Emotion = styled.div`
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 60vmax;
+      width: 45vmax;
     }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
-      width: 50vmin;
+      width: 70vmin;
     }
   }
 `
