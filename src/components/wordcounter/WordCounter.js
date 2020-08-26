@@ -34,11 +34,33 @@ function AnimatedCount({ count }) {
 export default function WordCounter() {
   const [count, setCount] = useState(0)
   const [words, setWords] = useState("")
+  const [curseWords, setCurseWords] = useState({ fuck: 0, shit: 0, damn: 0 })
 
   useEffect(() => {
+    const lookForIt = (words) => {
+      let objCurseCount = {}
+      let regex = new RegExp(buildRegex(["fuck", "shit", "damn"]) + "gi")
+      const matchedCurses = words.split(" ").filter((e) => e.match(regex))
+
+      matchedCurses.forEach((word) => {
+        if (!objCurseCount[word]) objCurseCount[word] = 0
+        objCurseCount[word]++
+      })
+      return objCurseCount
+    }
+
+    const buildRegex = (curseWords) => {
+      let regex = ""
+      curseWords.forEach((word) => {
+        regex += `^${word}$|`
+      })
+      return regex.slice(0, -1)
+    }
+
     let regex = new RegExp(/\w/)
     const aRaw = words.split(" ")
     const clean = aRaw.filter((e) => e.match(regex))
+    setCurseWords(lookForIt(words))
     setCount(clean.length)
   }, [words])
 
@@ -74,6 +96,13 @@ export default function WordCounter() {
             </div>
           </Card.Body>
         </Card>
+        {Object.keys(curseWords).map(function (key) {
+          return (
+            <div key={key}>
+              {key}: {curseWords[key]}
+            </div>
+          )
+        })}
       </Col>
     </Row>
   )
