@@ -20,7 +20,6 @@ function AnimatedButton({ icon, onClick, testId }) {
   const { x } = useSpring({
     from: { x: 0 },
     x: state ? 1 : 0,
-    // config: { duration: 250 },
     config: { tension: 300, friction: 10 },
   })
 
