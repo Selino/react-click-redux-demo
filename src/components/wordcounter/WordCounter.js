@@ -37,14 +37,15 @@ export default function WordCounter() {
   const [curseWords, setCurseWords] = useState({ fuck: 0, shit: 0, damn: 0 })
 
   useEffect(() => {
-    const lookForIt = (words) => {
+    const lookForIt = (arrWords) => {
       let objCurseCount = {}
-      let regex = new RegExp(buildRegex(["fuck", "shit", "damn"]) + "gi")
-      const matchedCurses = words.split(" ").filter((e) => e.match(regex))
+      let regex = new RegExp(buildRegex(["fuck", "shit", "damn"]), "i")
+      const matchedCurses = arrWords.split(" ").filter((e) => e.match(regex))
 
       matchedCurses.forEach((word) => {
-        if (!objCurseCount[word]) objCurseCount[word] = 0
-        objCurseCount[word]++
+        const wordLower = word.toLowerCase()
+        if (!objCurseCount[wordLower]) objCurseCount[wordLower] = 0
+        objCurseCount[wordLower]++
       })
       return objCurseCount
     }
