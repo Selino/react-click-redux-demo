@@ -67,7 +67,11 @@ export default function WordCounter() {
   }, [words])
 
   const handleChange = (e) => {
-    setWords(e.target.value)
+    const temp = e.target.value.split(" ")
+    const status = temp.find((i) => i.length > 15)
+    if (!status) {
+      e.target.value.length <= 280 && setWords(e.target.value)
+    }
   }
 
   return (
@@ -77,12 +81,24 @@ export default function WordCounter() {
           data-testid='text-input'
           value={words}
           type='textarea'
-          placeholder='Type text into this area.'
+          placeholder='Type into this area. Words must be 15 characters or less.'
           onChange={(e) => handleChange(e)}
-          style={{ width: "100%", minHeight: "200px", resize: "none" }}
+          style={{
+            width: "100%",
+            minHeight: "200px",
+            resize: "none",
+            border: "none",
+            outline: "none",
+            backgroundColor: "#f6f7f6",
+            padding: "1rem",
+            borderRadius: ".25rem",
+          }}
         />
+        <p style={{ color: "#666", fontSize: ".8rem", marginLeft: "1rem" }}>
+          280 max characters
+        </p>
       </Col>
-      <Col xs={12} sm={3}>
+      <Col xs={12} sm={4}>
         <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
           <Card.Body>
             <Card.Title>Total Words</Card.Title>
@@ -99,6 +115,7 @@ export default function WordCounter() {
           </Card.Body>
         </Card>
         <div style={{ marginTop: "1rem" }}>
+          <h6>Total Curse Words: {Object.keys(curseWords).length}</h6>
           {Object.keys(curseWords).map(function (key) {
             return (
               <Badge

@@ -61,11 +61,10 @@ const getMenuData = () => {
     {
       id: "IDWORDCOUNTER",
       link: "/wordcounter",
-      title: "Word Counter",
-      subMenuText:
-        "Type is some words and watch the count change! Exciting, right?",
+      title: "Fucking Word Counter",
+      subMenuText: "You talk to your mother with that mouth? 😮",
       desc:
-        "I was given a white board test and I didn't have the algorithm for this function committed to memory. It was the only question I was given. I have it memorized now!",
+        "A standard word counter with curse word detection and reporting. That's what the world needs!",
       img: tnWordCounter,
     },
   ]
