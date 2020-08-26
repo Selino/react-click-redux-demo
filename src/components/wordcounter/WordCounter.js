@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Row, Col, Card } from "react-bootstrap"
+import { Row, Col, Card, Badge } from "react-bootstrap"
 import { useSpring, a } from "react-spring"
 
 function AnimatedCount({ count }) {
@@ -37,13 +37,14 @@ export default function WordCounter() {
   const [curseWords, setCurseWords] = useState({ fuck: 0, shit: 0, damn: 0 })
 
   useEffect(() => {
+    const curseWordsList = ["fuck", "shit", "asshole"]
     const lookForIt = (arrWords) => {
       let objCurseCount = {}
-      let regex = new RegExp(buildRegex(["fuck", "shit", "damn"]), "i")
+      let regex = new RegExp(buildRegex(curseWordsList), "gi")
       const matchedCurses = arrWords.split(" ").filter((e) => e.match(regex))
 
       matchedCurses.forEach((word) => {
-        const wordLower = word.toLowerCase()
+        const wordLower = word.toLowerCase().replace(/\W/, "")
         if (!objCurseCount[wordLower]) objCurseCount[wordLower] = 0
         objCurseCount[wordLower]++
       })
@@ -53,7 +54,7 @@ export default function WordCounter() {
     const buildRegex = (curseWords) => {
       let regex = ""
       curseWords.forEach((word) => {
-        regex += `^${word}$|`
+        regex += `${word}|`
       })
       return regex.slice(0, -1)
     }
@@ -71,7 +72,7 @@ export default function WordCounter() {
 
   return (
     <Row>
-      <Col xs={12} sm={8}>
+      <Col xs={12} sm={6}>
         <textarea
           data-testid='text-input'
           value={words}
@@ -81,7 +82,7 @@ export default function WordCounter() {
           style={{ width: "100%", minHeight: "200px", resize: "none" }}
         />
       </Col>
-      <Col>
+      <Col xs={12} sm={3}>
         <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
           <Card.Body>
             <Card.Title>Total Words</Card.Title>
@@ -97,13 +98,22 @@ export default function WordCounter() {
             </div>
           </Card.Body>
         </Card>
-        {Object.keys(curseWords).map(function (key) {
-          return (
-            <div key={key}>
-              {key}: {curseWords[key]}
-            </div>
-          )
-        })}
+        <div style={{ marginTop: "1rem" }}>
+          {Object.keys(curseWords).map(function (key) {
+            return (
+              <Badge
+                variant='danger'
+                key={key}
+                style={{ marginRight: ".25rem" }}
+              >
+                {key}{" "}
+                <Badge pill variant='light'>
+                  {curseWords[key]}
+                </Badge>
+              </Badge>
+            )
+          })}
+        </div>
       </Col>
     </Row>
   )
