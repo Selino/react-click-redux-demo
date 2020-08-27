@@ -85,7 +85,7 @@ export default function WordCounter() {
           onChange={(e) => handleChange(e)}
           style={{
             width: "100%",
-            minHeight: "200px",
+            minHeight: "8rem",
             resize: "none",
             border: "none",
             outline: "none",
@@ -95,7 +95,7 @@ export default function WordCounter() {
           }}
         />
         <p style={{ color: "#666", fontSize: ".8rem", marginLeft: "1rem" }}>
-          280 max characters
+          {words.length}/280 max characters
         </p>
       </Col>
       <Col xs={12} sm={4}>
