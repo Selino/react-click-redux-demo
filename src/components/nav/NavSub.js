@@ -62,8 +62,8 @@ export default function NavSub(props) {
         z-index: 5;
         width: 100%;
         /* // Small devices (landscape phones, 250px and up) */
-        @media (max-width: 420px) {
-          height: 4rem;
+        @media (max-width: 768px) {
+          height: 3.5rem;
         }
       `}
       className='position-fixed'

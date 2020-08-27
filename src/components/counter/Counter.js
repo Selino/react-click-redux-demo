@@ -67,18 +67,7 @@ function Counter() {
   return (
     <Container fluid>
       <Row>
-        <Col xs={12} sm={5} md={7} style={{ marginBottom: "1rem" }}>
-          <Card>
-            <Card.Header>Summary</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Count between 0 - 25. Data is persistent across sessions. Enjoy!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} sm={7} md={5}>
+        <Col xs={12} sm={7} md={5} style={{ marginBottom: "1rem" }}>
           <Card className='main-counter'>
             <Card.Body>
               <Card.Title className='counter-line'>
@@ -108,6 +97,16 @@ function Counter() {
                   counter <= 24 && dispatch(incrementCount(1, counter))
                 }}
               />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} sm={5} md={7}>
+          <Card>
+            <Card.Header>Summary</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                Count between 0 - 25. Data is persistent across sessions. Enjoy!
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>
