@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Row, Col, Card, Badge } from "react-bootstrap"
+import { Row, Col, Card, Badge, Container, Button } from "react-bootstrap"
 import { useSpring, a } from "react-spring"
 
 function AnimatedCount({ count }) {
@@ -95,9 +95,30 @@ export default function WordCounter() {
             borderRadius: ".25rem",
           }}
         />
-        <p style={{ color: "#666", fontSize: ".8rem", marginLeft: "1rem" }}>
-          {words.length}/280 max characters
-        </p>
+        <Row className='no-gutters'>
+          <Col>
+            <span style={{ color: "#666", fontSize: ".8rem" }}>
+              {words.length}/280 max characters
+            </span>
+          </Col>
+          <Col style={{ textAlign: "right" }}>
+            <Button
+              onClick={() =>
+                setWords(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus nulla, molestie a volutpat vel, sollicitudin nec enim. Cras facilisis nunc enim, quis tempor nulla scelerisque a."
+                )
+              }
+              variant='secondary'
+              size='sm'
+            >
+              Auto Fill
+            </Button>
+            &nbsp;
+            <Button onClick={() => setWords("")} variant='warning' size='sm'>
+              Clear
+            </Button>
+          </Col>
+        </Row>
       </Col>
       <Col xs={12} sm={4}>
         <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
