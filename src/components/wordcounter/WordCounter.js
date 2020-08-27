@@ -35,6 +35,7 @@ export default function WordCounter() {
   const [count, setCount] = useState(0)
   const [words, setWords] = useState("")
   const [curseWords, setCurseWords] = useState({ fuck: 0, shit: 0, damn: 0 })
+  const maxWordlength = 15
 
   useEffect(() => {
     const curseWordsList = ["fuck", "shit", "asshole"]
@@ -68,7 +69,7 @@ export default function WordCounter() {
 
   const handleChange = (e) => {
     const temp = e.target.value.split(" ")
-    const status = temp.find((i) => i.length > 15)
+    const status = temp.find((i) => i.length > maxWordlength)
     if (!status) {
       e.target.value.length <= 280 && setWords(e.target.value)
     }
@@ -81,7 +82,7 @@ export default function WordCounter() {
           data-testid='text-input'
           value={words}
           type='textarea'
-          placeholder='Type into this area. Words must be 15 characters or less.'
+          placeholder={`Type into this area. Words can be ${maxWordlength} characters or less.`}
           onChange={(e) => handleChange(e)}
           style={{
             width: "100%",

@@ -62,7 +62,7 @@ const getMenuData = () => {
       id: "IDWORDCOUNTER",
       link: "/wordcounter",
       title: "Fucking Word Counter",
-      subMenuText: "You talk to your mother with that mouth? 😮",
+      subMenuText: "You kiss your mother with that mouth? 😮",
       desc:
         "A standard word counter with curse word detection and reporting. That's what the world needs!",
       img: tnWordCounter,
