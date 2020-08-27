@@ -65,10 +65,21 @@ function Counter() {
   })
 
   return (
-    <Container>
+    <Container fluid>
       <Row>
-        <Col>&nbsp;</Col>
-        <Col xs={12} sm={8} md={6} lg={4}>
+        <Col sm={2}>&nbsp;</Col>
+        <Col xs={12} sm={4} style={{ marginBottom: "1rem" }}>
+          <Card>
+            <Card.Header>Summary</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                Count between 0 - 25. Data is persistent across sessions. Enjoy!
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col xs={12} sm={4}>
           <Card className='main-counter'>
             <Card.Body>
               <Card.Title className='counter-line'>
@@ -100,13 +111,8 @@ function Counter() {
               />
             </Card.Body>
           </Card>
-          <p style={{ marginTop: "1rem" }}>
-            Count between 0 - 25.
-            <br />
-            Data is persistent across sessions. Enjoy!
-          </p>
         </Col>
-        <Col>&nbsp;</Col>
+        <Col sm={2}>&nbsp;</Col>
       </Row>
     </Container>
   )
