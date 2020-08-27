@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Row, Col, Card, Badge } from "react-bootstrap"
+import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap"
 import { useSpring, a } from "react-spring"
 
 function AnimatedCount({ count }) {
@@ -35,7 +35,7 @@ export default function WordCounter() {
   const [count, setCount] = useState(0)
   const [words, setWords] = useState("")
   const [curseWords, setCurseWords] = useState({ fuck: 0, shit: 0, damn: 0 })
-  const maxWordlength = 15
+  const maxWordlength = 32
 
   useEffect(() => {
     const curseWordsList = ["fuck", "shit", "asshole"]
@@ -76,63 +76,104 @@ export default function WordCounter() {
   }
 
   return (
-    <Row>
-      <Col xs={12} sm={6}>
-        <textarea
-          data-testid='text-input'
-          value={words}
-          type='textarea'
-          placeholder={`Type into this area. Words can be ${maxWordlength} characters or less.`}
-          onChange={(e) => handleChange(e)}
-          style={{
-            width: "100%",
-            minHeight: "8rem",
-            resize: "none",
-            border: "none",
-            outline: "none",
-            backgroundColor: "#f6f7f6",
-            padding: "1rem",
-            borderRadius: ".25rem",
-          }}
-        />
-        <p style={{ color: "#666", fontSize: ".8rem", marginLeft: "1rem" }}>
-          {words.length}/280 max characters
-        </p>
-      </Col>
-      <Col xs={12} sm={4}>
-        <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
-          <Card.Body>
-            <Card.Title>Total Words</Card.Title>
-            <div
-              data-testid='word-count'
-              style={{
-                fontSize: "6rem",
-                fontWeight: "bold",
-                lineHeight: "5rem",
-              }}
-            >
-              <AnimatedCount count={count} />
-            </div>
-          </Card.Body>
-        </Card>
-        <div style={{ marginTop: "1rem" }}>
-          <h6>Total Curse Words: {Object.keys(curseWords).length}</h6>
-          {Object.keys(curseWords).map(function (key) {
-            return (
-              <Badge
-                variant='danger'
-                key={key}
-                style={{ marginRight: ".25rem" }}
+    <Container fluid>
+      <Row>
+        <Col style={{ marginBottom: "1rem" }}>
+          <Card>
+            <Card.Header>Summary</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                Demonstrates simple text manipulation on input using RegExp and
+                "gutter talk". Hit auto fill if you're feeling lazy.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} sm={6}>
+          <textarea
+            data-testid='text-input'
+            value={words}
+            type='textarea'
+            placeholder={`Type into this area. Words can be ${maxWordlength} characters or less.`}
+            onChange={(e) => handleChange(e)}
+            style={{
+              width: "100%",
+              minHeight: "10rem",
+              resize: "none",
+              border: "none",
+              outline: "none",
+              backgroundColor: "#f6f7f6",
+              padding: "1rem",
+              borderRadius: ".25rem",
+            }}
+          />
+          <Row style={{ marginBottom: "1rem" }}>
+            <Col>
+              <span style={{ color: "#666", fontSize: ".8rem" }}>
+                {words.length}/280 max characters
+              </span>
+            </Col>
+            <Col style={{ textAlign: "right" }}>
+              <Button
+                onClick={() =>
+                  setWords(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus nulla, molestie a volutpat vel shit, sollicitudin nec enim. Cras facilisis nunc enim, quis tempor nulla fuckster scelerisque a."
+                  )
+                }
+                variant='secondary'
+                size='sm'
+                alt='Fill text area with sample text'
               >
-                {key}{" "}
-                <Badge pill variant='light'>
-                  {curseWords[key]}
+                Auto Fill
+              </Button>
+              &nbsp;
+              <Button
+                onClick={() => setWords("")}
+                variant='warning'
+                size='sm'
+                disabled={!words}
+                alt='Reset all text.'
+              >
+                Reset
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={12} sm={2}>
+          <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
+            <Card.Body>
+              <Card.Title>Total Words</Card.Title>
+              <div
+                data-testid='word-count'
+                style={{
+                  fontSize: "6rem",
+                  fontWeight: "bold",
+                  lineHeight: "5rem",
+                }}
+              >
+                <AnimatedCount count={count} />
+              </div>
+            </Card.Body>
+          </Card>
+          <div style={{ marginTop: "1rem" }}>
+            <h6>Total Curse Words: {Object.keys(curseWords).length}</h6>
+            {Object.keys(curseWords).map(function (key) {
+              return (
+                <Badge
+                  variant='danger'
+                  key={key}
+                  style={{ marginRight: ".25rem" }}
+                >
+                  {key}{" "}
+                  <Badge pill variant='light'>
+                    {curseWords[key]}
+                  </Badge>
                 </Badge>
-              </Badge>
-            )
-          })}
-        </div>
-      </Col>
-    </Row>
+              )
+            })}
+          </div>
+        </Col>
+      </Row>
+    </Container>
   )
 }
