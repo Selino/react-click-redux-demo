@@ -67,8 +67,7 @@ function Counter() {
   return (
     <Container fluid>
       <Row>
-        <Col sm={2}>&nbsp;</Col>
-        <Col xs={12} sm={4} style={{ marginBottom: "1rem" }}>
+        <Col xs={12} sm={5} md={7} style={{ marginBottom: "1rem" }}>
           <Card>
             <Card.Header>Summary</Card.Header>
             <Card.Body>
@@ -79,7 +78,7 @@ function Counter() {
           </Card>
         </Col>
 
-        <Col xs={12} sm={4}>
+        <Col xs={12} sm={7} md={5}>
           <Card className='main-counter'>
             <Card.Body>
               <Card.Title className='counter-line'>
@@ -112,7 +111,6 @@ function Counter() {
             </Card.Body>
           </Card>
         </Col>
-        <Col sm={2}>&nbsp;</Col>
       </Row>
     </Container>
   )

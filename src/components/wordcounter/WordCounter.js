@@ -78,7 +78,7 @@ export default function WordCounter() {
   return (
     <Container fluid>
       <Row>
-        <Col style={{ marginBottom: "1rem" }}>
+        <Col sm={12} md={12} lg={3} style={{ marginBottom: "1rem" }}>
           <Card>
             <Card.Header>Summary</Card.Header>
             <Card.Body>
@@ -89,7 +89,7 @@ export default function WordCounter() {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={12} sm={6}>
+        <Col xs={12} sm={8} md={9} lg={6}>
           <textarea
             data-testid='text-input'
             value={words}
@@ -139,7 +139,7 @@ export default function WordCounter() {
             </Col>
           </Row>
         </Col>
-        <Col xs={12} sm={2}>
+        <Col xs={12} sm={4} md={3} lg={3}>
           <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
             <Card.Body>
               <Card.Title>Total Words</Card.Title>
