@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Row, Col, Card, Badge, Container, Button } from "react-bootstrap"
+import { Row, Col, Card, Badge, Button } from "react-bootstrap"
 import { useSpring, a } from "react-spring"
 
 function AnimatedCount({ count }) {
@@ -105,17 +105,24 @@ export default function WordCounter() {
             <Button
               onClick={() =>
                 setWords(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus nulla, molestie a volutpat vel, sollicitudin nec enim. Cras facilisis nunc enim, quis tempor nulla scelerisque a."
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus nulla, molestie a volutpat vel shit, sollicitudin nec enim. Cras facilisis nunc enim, quis tempor nulla fuckster scelerisque a."
                 )
               }
               variant='secondary'
               size='sm'
+              alt='Fill text area with sample text'
             >
               Auto Fill
             </Button>
             &nbsp;
-            <Button onClick={() => setWords("")} variant='warning' size='sm'>
-              Clear
+            <Button
+              onClick={() => setWords("")}
+              variant='warning'
+              size='sm'
+              disabled={!words}
+              alt='Reset all text.'
+            >
+              Reset
             </Button>
           </Col>
         </Row>
