@@ -36,13 +36,12 @@ const Emotion = styled.div`
   .login-area {
     text-align: center;
     position: absolute;
-    top: 52%;
+    top: 54%;
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
     padding: 2rem;
     padding-top: 5rem;
-
     border-radius: 4%;
     background: rgba(0, 0, 0, 0.25);
   }
@@ -88,7 +87,15 @@ const Emotion = styled.div`
   }
 
   /* // Small devices (landscape phones, 250px and up) */
-  @media (min-width: 250px) {
+  @media (max-width: 450px) {
+    .login-area {
+      max-height: 430px;
+    }
+
+    .sub-text {
+      font-size: 1rem;
+    }
+
     .button-sign-in {
       width: 100%;
     }
@@ -99,6 +106,7 @@ const Emotion = styled.div`
     .login-area {
       width: 50vmax;
     }
+
     .button-sign-in {
       width: 50%;
     }
