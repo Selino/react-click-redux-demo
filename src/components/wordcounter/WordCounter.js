@@ -78,6 +78,17 @@ export default function WordCounter() {
   return (
     <Container fluid>
       <Row>
+        <Col sm={12} md={12} lg={3} style={{ marginBottom: "1rem" }}>
+          <Card>
+            <Card.Header>Summary</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                Demonstrates simple text manipulation on input using RegExp and
+                "gutter talk". Hit auto fill if you're feeling lazy.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
         <Col xs={12} sm={8} md={9} lg={6}>
           <textarea
             data-testid='text-input'
@@ -161,17 +172,6 @@ export default function WordCounter() {
               )
             })}
           </div>
-        </Col>
-        <Col sm={12} md={12} lg={3} style={{ marginBottom: "1rem" }}>
-          <Card>
-            <Card.Header>Summary</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Demonstrates simple text manipulation on input using RegExp and
-                "gutter talk". Hit auto fill if you're feeling lazy.
-              </Card.Text>
-            </Card.Body>
-          </Card>
         </Col>
       </Row>
     </Container>

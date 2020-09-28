@@ -89,7 +89,23 @@ export default function FizzBuzz() {
   return (
     <Container>
       <Row>
-        <Col xs={6}>
+        <Col xs={12} sm={6}>
+          <p>
+            Enter a number between 1 & 99 to determine if it is a factor of
+            (divides evenly into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by 5,
+            and "<strong>FIZZBUZZ</strong>" if both!
+          </p>
+
+          <p>
+            This is a classic JS algorithm that I've been asked to write more
+            than once during white boarding interviews. I have not remembered it
+            yet.{" "}
+            <span role='img' aria-label='grimmace'>
+              😬
+            </span>
+          </p>
+        </Col>
+        <Col>
           <Form
             onSubmit={(e) => {
               e.preventDefault()
@@ -115,23 +131,8 @@ export default function FizzBuzz() {
                 </Button>
               </InputGroup.Append>
             </InputGroup>
-            <p>
-              Enter a number between 1 & 99 to determine if it is a factor of
-              (divides evenly into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by
-              5, and "<strong>FIZZBUZZ</strong>" if both!
-            </p>
-
-            <p>
-              This is a classic JS algorithm that I've been asked to write more
-              than once during white boarding interviews. I have not remembered
-              it yet.{" "}
-              <span role='img' aria-label='grimmace'>
-                😬
-              </span>
-            </p>
           </Form>
-        </Col>
-        <Col>
+
           <div
             data-testid='list-area'
             style={{
