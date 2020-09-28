@@ -20,6 +20,7 @@ function AnimatedButton({ icon, onClick, testId }) {
   const { x } = useSpring({
     from: { x: 0 },
     x: state ? 1 : 0,
+    // config: { duration: 250 },
     config: { tension: 300, friction: 10 },
   })
 
@@ -65,9 +66,10 @@ function Counter() {
   })
 
   return (
-    <Container fluid>
+    <Container>
       <Row>
-        <Col xs={12} sm={7} md={5} style={{ marginBottom: "1rem" }}>
+        <Col>&nbsp;</Col>
+        <Col xs={12} sm={8} md={6} lg={4}>
           <Card className='main-counter'>
             <Card.Body>
               <Card.Title className='counter-line'>
@@ -99,17 +101,13 @@ function Counter() {
               />
             </Card.Body>
           </Card>
+          <p style={{ marginTop: "1rem" }}>
+            Count between 0 - 25.
+            <br />
+            Data is persistent across sessions. Enjoy!
+          </p>
         </Col>
-        <Col xs={12} sm={5} md={7}>
-          <Card>
-            <Card.Header>Summary</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Count between 0 - 25. Data is persistent across sessions. Enjoy!
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+        <Col>&nbsp;</Col>
       </Row>
     </Container>
   )

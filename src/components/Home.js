@@ -25,10 +25,6 @@ const Emotion = styled.div`
       max-width: 100%;
       min-width: 96%;
     }
-
-    .flex-wrap > div {
-      width: 100%;
-    }
   }
 `
 
@@ -55,7 +51,7 @@ function CardItem({ title, desc, img, video, link }) {
             <Card.Img variant='top' src={img} />
           ) : (
             <video
-              playsInline='playsinline'
+              playsinline='playsinline'
               autoPlay={true}
               loop={true}
               src={video}

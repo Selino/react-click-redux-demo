@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import {
   startLoginGoogleAction,
@@ -8,6 +8,7 @@ import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
 import Logo from "../images/sv-logo.jpg"
+import BackgroundImg from "../images/wood_med.jpg"
 import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
 
@@ -18,6 +19,7 @@ const Emotion = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: red;
     width: 104%;
     height: 104%;
     position: absolute;
@@ -33,28 +35,35 @@ const Emotion = styled.div`
   }
 
   .login-area {
-    display: none;
     text-align: center;
     position: absolute;
-    top: 54%;
+    top: 52%;
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
     padding: 2rem;
     padding-top: 5rem;
+
     border-radius: 4%;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.25);
   }
 
   .logo-pic {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: solid 3px black;
+    border: solid 2px black;
+    margin: auto;
+    background-image: url(${Logo});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
 
   .big-title {
-    width: 100%;
+    width: 90%;
     position: relative;
     margin: auto;
   }
@@ -106,14 +115,14 @@ const Emotion = styled.div`
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 45vmax;
+      width: 60vmax;
     }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .login-area {
-      width: 70vmin;
+      width: 50vmin;
     }
   }
 `
@@ -133,42 +142,12 @@ export const LogIn = () => {
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
 
   const [animation2] = useSpring(() => ({
-    to: async (next) => {
+    to: async (next, cancel) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
-      await next({ opacity: 1, marginTop: -150, width: 160 })
+      await next({ opacity: 1, marginTop: -150, width: 120 })
     },
     config: { tension: 300, friction: 10 },
   }))
-
-  const pickColor = (max) => {
-    const colorNum = Math.floor(Math.random() * Math.floor(max))
-    let colorName
-    switch (colorNum) {
-      case 0:
-        // green
-        colorName = "#29AC35"
-        break
-      case 1:
-        // orange
-        colorName = "#ff9200"
-        break
-      case 2:
-        // blue
-        colorName = "#016a98"
-        break
-      default:
-        // red
-        colorName = "#f12417"
-    }
-    document.getElementById("backGround").style.backgroundColor = colorName
-  }
-
-  useEffect(() => {
-    if (animation >= 4) {
-      pickColor(4)
-      document.getElementById("login-area").style.display = "block"
-    }
-  }, [animation])
 
   return (
     <Emotion>
@@ -178,10 +157,9 @@ export const LogIn = () => {
           setParallax({ xy: calc(x, y) })
         }
         style={{ transform: parallax.xy.interpolate(trans1) }}
-        id='backGround'
       >
-        <a.div id='login-area' className='login-area'>
-          <a.img
+        <a.div className='login-area'>
+          <a.div
             className='logo-pic'
             alt='test'
             src={Logo}
@@ -189,15 +167,14 @@ export const LogIn = () => {
               ...animation2,
               transform: parallax.xy.interpolate(trans2),
             }}
-            onLoad={() => setAnimation(animation + 1)}
-          />
+          ></a.div>
+
           <a.img
             id='big-title'
             className='big-title'
             alt="Selino's ReactJS Demo"
             src={BigTitle}
             style={{ transform: parallax.xy.interpolate(trans3) }}
-            onLoad={() => setAnimation(animation + 1)}
           />
           <a.p
             className='sub-text'
@@ -209,18 +186,18 @@ export const LogIn = () => {
           <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
             <img
               className='button-sign-in'
-              src={imgGoogleSignIn}
-              onClick={startLoginGoogle}
-              alt='Sign in with Google'
               onLoad={() => setAnimation(animation + 1)}
+              onClick={startLoginGoogle}
+              src={imgGoogleSignIn}
+              alt='Sign in with Google'
             />
             <br />
             <img
               className='button-sign-in'
+              onLoad={() => setAnimation(animation + 1)}
               onClick={startLoginGithub}
               src={imgGitHubSignIn}
               alt='Sign in with Google'
-              onLoad={() => setAnimation(animation + 1)}
             />
           </a.p>
         </a.div>
