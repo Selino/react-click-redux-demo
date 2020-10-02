@@ -89,7 +89,7 @@ export default function WordCounter() {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={12} sm={8} md={9} lg={6}>
+        <Col xs={12} sm={8} md={8} lg={6}>
           <textarea
             data-testid='text-input'
             value={words}
@@ -139,7 +139,7 @@ export default function WordCounter() {
             </Col>
           </Row>
         </Col>
-        <Col xs={12} sm={4} md={3} lg={3}>
+        <Col xs={12} sm={4} md={4} lg={3}>
           <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
             <Card.Body>
               <Card.Title>Total Words</Card.Title>

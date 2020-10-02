@@ -89,7 +89,7 @@ const Emotion = styled.div`
   /* // Small devices (landscape phones, 250px and up) */
   @media (max-width: 450px) {
     .login-area {
-      max-height: 430px;
+      max-height: 470px;
     }
 
     .sub-text {
