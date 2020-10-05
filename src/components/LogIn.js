@@ -91,6 +91,15 @@ const Emotion = styled.div`
     .logo-pic {
       width: 120px !important;
     }
+    .login-area {
+      max-height: 84%;
+    }
+    .sub-text {
+      font-size: 1rem;
+    }
+    .button-sign-in {
+      width: 100%;
+    }
   }
 
   /* // Small devices (landscape phones, 576px and up) */
