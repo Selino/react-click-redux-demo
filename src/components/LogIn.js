@@ -98,7 +98,7 @@ const Emotion = styled.div`
       font-size: 1rem;
     }
     .button-sign-in {
-      width: 100%;
+      width: 90%;
     }
   }
 
