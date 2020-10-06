@@ -60,7 +60,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/dom": "^7.20.0",
+    "@testing-library/dom": "^7.24.4",
     "eslint-plugin-react-hooks": "^4.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest-dom": "^4.0.0",
