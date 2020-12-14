@@ -126,7 +126,7 @@ const Emotion = styled.div`
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 60vmax;
+      width: 38vmax;
     }
     .logo-pic {
       width: 200px !important;
