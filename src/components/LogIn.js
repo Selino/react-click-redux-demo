@@ -7,12 +7,12 @@ import {
 import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
 import BigTitle from "../images/big-title.svg"
-import Logo from "../images/sv-logo.jpg"
+import Logo from "../images/sv-logo.svg"
 import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
 
 const Emotion = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
   .login-background {
     background-size: cover;
@@ -34,7 +34,6 @@ const Emotion = styled.div`
 
   .login-area {
     display: none;
-    text-align: center;
     position: absolute;
     top: 54%;
     left: 50%;
@@ -42,13 +41,10 @@ const Emotion = styled.div`
     width: 80%;
     padding: 2rem;
     padding-top: 5rem;
-    border-radius: 4%;
-    background: rgba(0, 0, 0, 0.15);
   }
   .logo-pic {
     border-radius: 50%;
-    border: solid 3px black;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border: solid 4px black;
     opacity: 1;
   }
 
@@ -58,20 +54,20 @@ const Emotion = styled.div`
     margin: auto;
   }
   .sub-text {
-    font-family: "Roboto Slab", serif;
+    font-family: "Bebas Neue", serif;
     font-size: 1.3rem;
-    color: white;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    color: black;
   }
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
-    border-radius: 6px;
     width: 50%;
     overflow: hidden;
   }
-  .shadow {
-    box-shadow: 0px 0px 3px black;
+
+  .url {
+    color: #e48811;
+    margin-right: 1rem;
   }
 
   /* // Small devices (landscape phones, 250px and up) */
@@ -88,13 +84,13 @@ const Emotion = styled.div`
       width: 100%;
     }
     .logo-pic {
-      width: 120px !important;
+      width: 150px !important;
     }
     .login-area {
       max-height: 84%;
     }
     .sub-text {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     .button-sign-in {
       width: 90%;
@@ -106,7 +102,6 @@ const Emotion = styled.div`
     .login-area {
       width: 50vmax;
     }
-
     .button-sign-in {
       width: 50%;
     }
@@ -128,7 +123,7 @@ const Emotion = styled.div`
       width: 38vmax;
     }
     .logo-pic {
-      width: 200px !important;
+      width: 150px !important;
     }
   }
 
@@ -185,7 +180,7 @@ export const LogIn = () => {
         // red
         colorName = "#f12417"
     }
-    document.getElementById("backGround").style.backgroundColor = "#016a98"
+    document.getElementById("backGround").style.backgroundColor = "#ffffff"
   }
 
   useEffect(() => {
@@ -228,8 +223,8 @@ export const LogIn = () => {
             className='sub-text'
             style={{ transform: parallax.xy.interpolate(trans4) }}
           >
-            Welcome! This is a live portfolio of custom components hand crafted
-            with React… and love.
+            <span class='url'>selino.com</span> portfolio / coding demos / case
+            studies
           </a.p>
           <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
             <img

@@ -12,14 +12,8 @@ import Logo from "../../images/sv-logo.jpg"
 import getMenuData from "../../fixtures/MenuText"
 
 const Emotion = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-
   .dropdown-toggle:after {
     content: none !important;
-  }
-
-  .navbar-brand {
-    font-family: "Roboto Slab", serif !important;
   }
 
   .logo {
@@ -80,7 +74,6 @@ export function NavGlobal() {
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
-              <span className='app-name'>Selino's ReactJS Demo</span>
             </div>
           </Navbar.Brand>
         </LinkContainer>
