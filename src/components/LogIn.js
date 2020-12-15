@@ -226,7 +226,7 @@ export const LogIn = () => {
             <span class='url'>selino.com</span> portfolio / coding demos / case
             studies
           </a.p>
-          <a.p style={{ transform: parallax.xy.interpolate(trans5) }}>
+          <a.p>
             <img
               className='button-sign-in'
               src={imgGoogleSignIn}
