@@ -13,11 +13,6 @@ const Emotion = styled.div`
     max-width: 300px;
     height: 87%;
     margin: 1rem;
-    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-  }
-
-  .card-override:hover {
-    box-shadow: 0px 30px 50px -10px rgba(0, 0, 0, 0.5);
   }
 
   @media (max-width: 768px) {

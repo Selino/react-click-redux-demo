@@ -66,8 +66,7 @@ const Emotion = styled.div`
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
+    border-radius: 6px;
     width: 50%;
     overflow: hidden;
   }
@@ -186,7 +185,7 @@ export const LogIn = () => {
         // red
         colorName = "#f12417"
     }
-    document.getElementById("backGround").style.backgroundColor = colorName
+    document.getElementById("backGround").style.backgroundColor = "#016a98"
   }
 
   useEffect(() => {
