@@ -39,13 +39,17 @@ const Emotion = styled.div`
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
-    padding: 2rem;
     padding-top: 5rem;
   }
+
   .logo-pic {
     border-radius: 50%;
     border: solid 4px black;
     opacity: 1;
+  }
+
+  .btn-area {
+    text-align: center;
   }
 
   .big-title {
@@ -71,7 +75,7 @@ const Emotion = styled.div`
   }
 
   /* // Small devices (landscape phones, 250px and up) */
-  @media (max-width: 450px) {
+  @media (min-width: 250px) {
     .login-area {
       max-height: 470px;
     }
@@ -88,12 +92,13 @@ const Emotion = styled.div`
     }
     .login-area {
       max-height: 84%;
+      padding-top: 0;
     }
     .sub-text {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     .button-sign-in {
-      width: 90%;
+      width: 70%;
     }
   }
 
@@ -103,7 +108,10 @@ const Emotion = styled.div`
       width: 50vmax;
     }
     .button-sign-in {
-      width: 50%;
+      width: 70%;
+    }
+    .sub-text {
+      font-size: 1.2rem;
     }
   }
 
@@ -115,6 +123,10 @@ const Emotion = styled.div`
     .logo-pic {
       width: 150px !important;
     }
+    .button-sign-in {
+      width: 50%;
+      margin-right: 20px;
+    }
   }
 
   /* // Large devices (desktops, 992px and up) */
@@ -124,6 +136,10 @@ const Emotion = styled.div`
     }
     .logo-pic {
       width: 150px !important;
+    }
+    .button-sign-in {
+      width: 33%;
+      margin-right: 20px;
     }
   }
 
@@ -226,7 +242,7 @@ export const LogIn = () => {
             <span class='url'>selino.com</span> portfolio / coding demos / case
             studies
           </a.p>
-          <a.p>
+          <a.p className='btn-area'>
             <img
               className='button-sign-in'
               src={imgGoogleSignIn}
@@ -234,7 +250,7 @@ export const LogIn = () => {
               alt='Sign in with Google'
               onLoad={() => setAnimation(animation + 1)}
             />
-            <br />
+
             <img
               className='button-sign-in'
               onClick={startLoginGithub}
