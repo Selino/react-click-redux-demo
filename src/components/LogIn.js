@@ -171,7 +171,7 @@ export const LogIn = () => {
   const trans2 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`
   const trans3 = (x, y) => `translate3d(${x / 40}px,${y / 60}px,0)`
   const trans4 = (x, y) => `translate3d(${x / 120}px,${y / 120}px,0)`
-  const trans5 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
+  // const trans5 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
 
   const [animation2] = useSpring(() => ({
@@ -183,25 +183,25 @@ export const LogIn = () => {
   }))
 
   const pickColor = (max) => {
-    const colorNum = Math.floor(Math.random() * Math.floor(max))
-    let colorName
-    switch (colorNum) {
-      case 0:
-        // green
-        colorName = "#29AC35"
-        break
-      case 1:
-        // orange
-        colorName = "#ff9200"
-        break
-      case 2:
-        // blue
-        colorName = "#016a98"
-        break
-      default:
-        // red
-        colorName = "#f12417"
-    }
+    // const colorNum = Math.floor(Math.random() * Math.floor(max))
+    // let colorName
+    // switch (colorNum) {
+    //   case 0:
+    //     // green
+    //     colorName = "#29AC35"
+    //     break
+    //   case 1:
+    //     // orange
+    //     colorName = "#ff9200"
+    //     break
+    //   case 2:
+    //     // blue
+    //     colorName = "#016a98"
+    //     break
+    //   default:
+    //     // red
+    //     colorName = "#f12417"
+    // }
     document.getElementById("backGround").style.backgroundColor = "#ffffff"
   }
 
