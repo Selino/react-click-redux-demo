@@ -35,7 +35,7 @@ const Emotion = styled.div`
   .login-area {
     display: none;
     position: absolute;
-    top: 54%;
+    top: 62%;
     left: 50%;
     transform: translate(-52%, -50%);
     width: 80%;
@@ -76,10 +76,6 @@ const Emotion = styled.div`
 
   /* // Small devices (landscape phones, 250px and up) */
   @media (min-width: 250px) {
-    .login-area {
-      max-height: 470px;
-    }
-
     .sub-text {
       font-size: 1rem;
     }
@@ -95,7 +91,7 @@ const Emotion = styled.div`
       padding-top: 0;
     }
     .sub-text {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     .button-sign-in {
       width: 70%;
@@ -111,7 +107,7 @@ const Emotion = styled.div`
       width: 70%;
     }
     .sub-text {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -128,7 +124,7 @@ const Emotion = styled.div`
       margin-right: 20px;
     }
     .sub-text {
-      font-size: 1.4rem;
+      font-size: 1.7rem;
     }
   }
 
@@ -245,8 +241,7 @@ export const LogIn = () => {
             className='sub-text'
             style={{ transform: parallax.xy.interpolate(trans4) }}
           >
-            <span class='url'>selino.com</span> portfolio / coding demos / case
-            studies
+            <span class='url'>selino.com</span> portfolio / coding demos
           </a.p>
           <a.p className='btn-area'>
             <img
