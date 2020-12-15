@@ -113,14 +113,14 @@ const Emotion = styled.div`
       width: 50vmax;
     }
     .logo-pic {
-      width: 170px !important;
+      width: 150px !important;
     }
   }
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .login-area {
-      width: 38vmax;
+      width: 50vmax;
     }
     .logo-pic {
       width: 150px !important;
@@ -155,7 +155,7 @@ export const LogIn = () => {
   const [animation2] = useSpring(() => ({
     to: async (next, cancel) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
-      await next({ opacity: 1, marginTop: -150, width: 120 })
+      await next({ opacity: 1, marginTop: -150, width: 150 })
     },
     config: { tension: 300, friction: 10 },
   }))

@@ -12,8 +12,15 @@ import Logo from "../../images/sv-logo.jpg"
 import getMenuData from "../../fixtures/MenuText"
 
 const Emotion = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
   .dropdown-toggle:after {
     content: none !important;
+  }
+
+  .navbar-brand {
+    font-family: "Bebas Neue", serif;
+    font-size: 1.5rem;
   }
 
   .logo {
@@ -74,6 +81,7 @@ export function NavGlobal() {
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
+              <span className='app-name'>Selino.com</span>
             </div>
           </Navbar.Brand>
         </LinkContainer>
@@ -84,18 +92,6 @@ export function NavGlobal() {
             font-size: 1.2rem;
           `}
         >
-          <Button
-            variant=''
-            css={css`
-              color: white;
-              font-size: 1.2rem;
-            `}
-          >
-            <LinkContainer to='/home' exact active='false'>
-              <FontAwesomeIcon icon={faHome} />
-            </LinkContainer>
-          </Button>
-
           <Button
             variant=''
             css={css`
