@@ -62,3 +62,22 @@ code {
   outline: none !important;
   box-shadow: none;
 }
+
+/* text styles for copywriting */
+.copy-info {
+  line-height: 2rem;
+}
+
+.copy-info-secondary {
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+
+.copy-info-secondary .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.copy-info-secondary .row {
+  margin-bottom: 2rem;
+}

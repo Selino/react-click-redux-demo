@@ -22,6 +22,14 @@ const getMenuData = () => {
       img: null,
     },
     {
+      id: "IDABOUT",
+      link: "/about",
+      title: "About",
+      subMenuText: "Get to know me!",
+      desc:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra aliquet viverra. Nulla eget nunc mattis, sagittis nunc at, accumsan eros. Morbi libero augue, euismod ac auctor vel, posuere nec libero.",
+    },
+    {
       id: "IDWORDCOUNTER",
       link: "/wordcounter",
       title: "F'ing Word Counter",
