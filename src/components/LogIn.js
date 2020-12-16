@@ -35,17 +35,17 @@ const Emotion = styled.div`
   .login-area {
     display: none;
     position: absolute;
-    top: 62%;
+    top: 50%;
     left: 50%;
-    transform: translate(-52%, -50%);
     width: 80%;
-    padding-top: 5rem;
+    transform: translate(-50%, -50%);
   }
 
   .logo-pic {
     border-radius: 50%;
     border: solid 4px black;
     opacity: 1;
+    margin-bottom: 1rem;
   }
 
   .btn-area {
@@ -65,8 +65,9 @@ const Emotion = styled.div`
   .button-sign-in {
     cursor: pointer;
     margin-top: 1rem;
-    width: 50%;
+    max-width: 300px;
     overflow: hidden;
+    margin-right: 1rem;
   }
 
   .url {
@@ -79,33 +80,10 @@ const Emotion = styled.div`
     .sub-text {
       font-size: 1rem;
     }
-
-    .button-sign-in {
-      width: 100%;
-    }
-    .logo-pic {
-      width: 150px !important;
-    }
-    .login-area {
-      max-height: 84%;
-      padding-top: 0;
-    }
-    .sub-text {
-      font-size: 1.5rem;
-    }
-    .button-sign-in {
-      width: 70%;
-    }
   }
 
   /* // Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
-    .login-area {
-      width: 50vmax;
-    }
-    .button-sign-in {
-      width: 70%;
-    }
     .sub-text {
       font-size: 1.6rem;
     }
@@ -113,16 +91,6 @@ const Emotion = styled.div`
 
   /* // Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
-    .login-area {
-      width: 50vmax;
-    }
-    .logo-pic {
-      width: 150px !important;
-    }
-    .button-sign-in {
-      width: 50%;
-      margin-right: 20px;
-    }
     .sub-text {
       font-size: 1.7rem;
     }
@@ -130,16 +98,6 @@ const Emotion = styled.div`
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    .login-area {
-      width: 50vmax;
-    }
-    .logo-pic {
-      width: 150px !important;
-    }
-    .button-sign-in {
-      width: 33%;
-      margin-right: 20px;
-    }
     .sub-text {
       font-size: 1.8rem;
     }
@@ -147,12 +105,6 @@ const Emotion = styled.div`
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    .login-area {
-      width: 50vmin;
-    }
-    .logo-pic {
-      width: 160px !important;
-    }
   }
 `
 
