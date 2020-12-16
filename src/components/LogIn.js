@@ -61,6 +61,7 @@ const Emotion = styled.div`
     font-family: "Bebas Neue", serif;
     font-size: 1.5rem;
     color: black;
+    margin-top: -0.5rem;
   }
   .button-sign-in {
     cursor: pointer;
@@ -78,7 +79,7 @@ const Emotion = styled.div`
   /* // Small devices (landscape phones, 250px and up) */
   @media (min-width: 250px) {
     .sub-text {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -100,11 +101,19 @@ const Emotion = styled.div`
   @media (min-width: 992px) {
     .sub-text {
       font-size: 1.8rem;
+      margin-top: -1.2rem;
     }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
+    .login-area {
+      top: 58%;
+      transform: translate(-50%, -50%);
+    }
+    .sub-text {
+      margin-top: -1.5rem;
+    }
   }
 `
 
