@@ -56,11 +56,12 @@ export default function NavSub(props) {
       css={css`
         height: 2.5rem;
         background-color: #333;
-        margin-top: 58px;
+        margin-top: 66px;
         color: white;
         padding: 1rem;
         z-index: 5;
         width: 100%;
+
         /* // Small devices (landscape phones, 250px and up) */
         @media (max-width: 420px) {
           height: 4rem;

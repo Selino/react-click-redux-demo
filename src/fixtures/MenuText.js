@@ -24,10 +24,10 @@ const getMenuData = () => {
     {
       id: "IDABOUT",
       link: "/about",
-      title: "About",
+      title: "Biography",
       subMenuText: "Get to know me!",
       desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra aliquet viverra. Nulla eget nunc mattis, sagittis nunc at, accumsan eros. Morbi libero augue, euismod ac auctor vel, posuere nec libero.",
+        "Who am I, what do I bring to the team, and how will I work with you to achieve our goals?",
     },
     {
       id: "IDWORDCOUNTER",

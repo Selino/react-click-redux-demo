@@ -15,14 +15,8 @@ const Emotion = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
   .login-background {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 104%;
-    height: 104%;
-    position: absolute;
-    top: -2%;
-    left: -2%;
+    width: 100vw;
+    height: 100vh;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -30,15 +24,15 @@ const Emotion = styled.div`
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .login-area {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
+    width: 70%;
   }
 
   .logo-pic {
@@ -48,27 +42,30 @@ const Emotion = styled.div`
     margin-bottom: 1rem;
   }
 
-  .btn-area {
-    text-align: center;
-  }
-
   .big-title {
     width: 100%;
-    position: relative;
-    margin: auto;
   }
+
   .sub-text {
     font-family: "Bebas Neue", serif;
     font-size: 1.5rem;
     color: black;
-    margin-top: -0.5rem;
   }
-  .button-sign-in {
+
+  .btn-area {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    flex-wrap: wrap;
+  }
+
+  .btn-sign-in {
     cursor: pointer;
     margin-top: 1rem;
-    max-width: 300px;
     overflow: hidden;
-    margin-right: 1rem;
+    width: 40%;
+    min-width: 240px;
+    max-width: 400px;
   }
 
   .url {
@@ -101,19 +98,11 @@ const Emotion = styled.div`
   @media (min-width: 992px) {
     .sub-text {
       font-size: 1.8rem;
-      margin-top: -1.2rem;
     }
   }
 
   /* // Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    .login-area {
-      top: 58%;
-      transform: translate(-50%, -50%);
-    }
-    .sub-text {
-      margin-top: -1.5rem;
-    }
   }
 `
 
@@ -134,37 +123,13 @@ export const LogIn = () => {
   const [animation2] = useSpring(() => ({
     to: async (next, cancel) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
-      await next({ opacity: 1, marginTop: -150, width: 150 })
+      await next({ opacity: 1, marginTop: 0, width: 150 })
     },
     config: { tension: 300, friction: 10 },
   }))
 
-  const pickColor = (max) => {
-    // const colorNum = Math.floor(Math.random() * Math.floor(max))
-    // let colorName
-    // switch (colorNum) {
-    //   case 0:
-    //     // green
-    //     colorName = "#29AC35"
-    //     break
-    //   case 1:
-    //     // orange
-    //     colorName = "#ff9200"
-    //     break
-    //   case 2:
-    //     // blue
-    //     colorName = "#016a98"
-    //     break
-    //   default:
-    //     // red
-    //     colorName = "#f12417"
-    // }
-    document.getElementById("backGround").style.backgroundColor = "#ffffff"
-  }
-
   useEffect(() => {
     if (animation >= 4) {
-      pickColor(4)
       document.getElementById("login-area").style.display = "block"
     }
   }, [animation])
@@ -206,7 +171,7 @@ export const LogIn = () => {
           </a.p>
           <a.p className='btn-area'>
             <img
-              className='button-sign-in'
+              className='btn-sign-in'
               src={imgGoogleSignIn}
               onClick={startLoginGoogle}
               alt='Sign in with Google'
@@ -214,7 +179,7 @@ export const LogIn = () => {
             />
 
             <img
-              className='button-sign-in'
+              className='btn-sign-in'
               onClick={startLoginGithub}
               src={imgGitHubSignIn}
               alt='Sign in with Google'

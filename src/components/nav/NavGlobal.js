@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch } from "react-redux"
 import { startLogout } from "../../actions/auth_actions"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
@@ -20,12 +20,13 @@ const Emotion = styled.div`
 
   .navbar-brand {
     font-family: "Bebas Neue", serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
   }
 
   .logo {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: solid 1px black;
     background-image: url(${Logo});
@@ -37,15 +38,17 @@ const Emotion = styled.div`
     cursor: pointer;
   }
 
+  .btn {
+    padding: 0;
+    margin-left: 1rem;
+  }
+
   .btn:hover {
     color: #999;
   }
 
   /* // Small devices (landscape phones, 250px and up) */
   @media (max-width: 420px) {
-    .app-name {
-      display: none;
-    }
   }
 `
 
@@ -81,22 +84,28 @@ export function NavGlobal() {
           <Navbar.Brand>
             <div>
               <div className='d-inline-block align-top logo'></div>
-              <span className='app-name'>Selino.com</span>
+              <span className='app-name'>Selino Valdes</span>
             </div>
           </Navbar.Brand>
         </LinkContainer>
-        <Navbar.Collapse
-          className='justify-content-end'
-          css={css`
-            color: white;
-            font-size: 1.2rem;
-          `}
-        >
+        <Navbar.Collapse className='justify-content-end'>
           <Button
             variant=''
             css={css`
               color: white;
-              font-size: 1.2rem;
+              font-size: 2rem;
+            `}
+            href='https://linkedin.com/in/selino'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </Button>
+          <Button
+            variant=''
+            css={css`
+              color: white;
+              font-size: 2rem;
             `}
             href='https://github.com/Selino/react-click-redux-demo'
             target='_blank'
@@ -112,6 +121,7 @@ export function NavGlobal() {
                 icon={faBars}
                 css={css`
                   color: #ffd500;
+                  font-size: 2rem;
                 `}
               />
             }
