@@ -22,15 +22,6 @@ function AnimatedTable({ title, desc }) {
         <animated.table key={key} style={props}>
           <tbody>
             <tr style={{ verticalAlign: "top" }}>
-              <td
-                style={{
-                  color: "#FFD500",
-                  fontWeight: "bold",
-                  paddingRight: "1rem",
-                }}
-              >
-                {title}
-              </td>
               <td>{desc}</td>
             </tr>
           </tbody>
@@ -55,12 +46,12 @@ export default function NavSub(props) {
     <div
       css={css`
         height: 2.5rem;
-        background-color: #333;
         margin-top: 66px;
-        color: white;
+        color: #333333;
         padding: 1rem;
         z-index: 5;
         width: 100%;
+        font-weight: 33;
 
         /* // Small devices (landscape phones, 250px and up) */
         @media (max-width: 420px) {

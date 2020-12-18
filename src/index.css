@@ -83,3 +83,17 @@ code {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
+.copy-quote {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #999999;
+  line-height: 3.5rem;
+}
+
+.copy-quote-src {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: right;
+}

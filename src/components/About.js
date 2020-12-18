@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import Standing from "../images/IMG_1308.svg"
 
 function About() {
   return (
@@ -40,13 +41,26 @@ function About() {
               millions of users within 2-3 week agile release cycles. Give me an
               endpoint and I can give you the world!
             </p>
-            <p>
-              "Selino is an ultimate triple-threat web developer. He brings an
-              amazing amount of UX and UI experience to the table along with the
-              technical abilities to make them happen in HTML and Javascript.
-              He's that all-in-one UI guy that is always needed and rarely
-              found." Paul Clegg Senior Web Developer, Collabnet
-            </p>
+            <Container>
+              <Row className='align-items-end'>
+                <Col>
+                  <img src={Standing} alt='Selino standing' width={"100%"} />
+                </Col>
+                <Col xs={12} sm={8} md={10}>
+                  <p className='copy-quote'>
+                    "Selino is an ultimate triple-threat web developer. He
+                    brings an amazing amount of UX and UI experience to the
+                    table along with the technical abilities to make them happen
+                    in HTML and Javascript. He's that all-in-one UI guy that is
+                    always needed and rarely found."
+                  </p>
+                  <p className='copy-quote-src'>
+                    Paul Clegg <br />
+                    Senior Web Developer, Collabnet
+                  </p>
+                </Col>
+              </Row>
+            </Container>
           </Col>
         </Row>
       </Container>
@@ -57,7 +71,7 @@ function About() {
             <h5>Designer + Coder</h5>
           </Col>
           <Col>
-            I belive that building software interfaces is programming… and it's
+            I believe that building software interfaces is programming… and it's
             UX… and it's design. At this point I couldn't do frontend
             development without knowing the fundamentals of typography, color
             theory, and user behavior as it pertains to software. As a 21st
@@ -73,12 +87,17 @@ function About() {
             <h5>Collaboration Style</h5>
           </Col>
           <Col>
-            When it comes to building applications I tend to value information
-            from stakeholders as much possible during the entire process, not at
-            just the beginning phase.
+            Building applications with solid teams has provided the most
+            satisfying experiences of my professional life. Awards and kudos are
+            great but it's the time spent with teammates that has made me a
+            better creator. That said, there's difenitely a pattern to how I
+            generally approach collaborating on a project. I tend to value
+            information from stakeholders as much possible during the entire
+            process, not at just the beginning phase. A typical rapid
+            design/build cycle may look like this…
             <ul>
               <li>Gather Requirements</li>
-              <li>Draft a Design</li>
+              <li>Draft a UI/UX Design/Coded Prototype</li>
               <li>Gather Feedback</li>
               <li>Iterate</li>
               <li>Gather Feedback</li>
