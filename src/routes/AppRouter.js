@@ -43,10 +43,14 @@ const AppRouter = () => (
   <Router history={history}>
     <PrivateRoute component={NavGlobal} />
     <PrivateRoute component={NavSub} />
+
     <Switch>
       <PublicRoute exact path='/login' component={LogIn} />
       <Route exact path='/' component={LogIn} />
-      <div className='body-container'>
+    </Switch>
+
+    <div className='body-container'>
+      <Switch>
         <PrivateRoute exact path='/home' component={Home} />
         <PrivateRoute exact path='/about' component={About} />
         <PrivateRoute exact path='/counter' component={Counter} />
@@ -58,8 +62,8 @@ const AppRouter = () => (
           component={ExecutiveSummary}
         />
         <PrivateRoute exact path='/wordcounter' component={WordCounter} />
-      </div>
-    </Switch>
+      </Switch>
+    </div>
   </Router>
 )
 
