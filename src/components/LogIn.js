@@ -167,7 +167,7 @@ export const LogIn = () => {
             className='sub-text'
             style={{ transform: parallax.xy.interpolate(trans4) }}
           >
-            <span className='url'>selino.com</span> portfolio / coding demos
+            <span className='url'>selino.com</span> coding demos
           </a.p>
           <a.p className='btn-area'>
             <img

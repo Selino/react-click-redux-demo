@@ -45,6 +45,7 @@ export default function NavSub(props) {
   return (
     <div
       css={css`
+        background-color: white;
         height: 2.5rem;
         margin-top: 66px;
         color: #333333;

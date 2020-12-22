@@ -10,9 +10,20 @@ const Emotion = styled.div`
     cursor: pointer;
     margin-bottom: 2rem !important;
     min-width: 200px;
-    max-width: 300px;
+    max-width: 340px;
     height: 87%;
-    margin: 1rem;
+  }
+
+  /* highlight the Biography section */
+  .Biography {
+    background-color: #ffd500;
+  }
+
+  /* // Small devices (landscape phones, 250px and up) */
+  @media (min-width: 250px) {
+    .sub-text {
+      font-size: 1.2rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -44,7 +55,7 @@ function CardItem({ title, desc, img, video, link }) {
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
       style={{ transform: props.xys.interpolate(trans) }}
     >
-      <LinkContainer exact to={link} active='false'>
+      <LinkContainer exact to={link} active='false' className={title}>
         <Card className='card-override'>
           {!video ? (
             <Card.Img variant='top' src={img} />
@@ -82,7 +93,7 @@ export default function About() {
   )
   return (
     <Emotion>
-      <div className='d-flex flex-wrap justify-content-center'>
+      <div className='d-flex flex-wrap justify-content-around align-items-stretch'>
         {menuData.map((a) => {
           return (
             <CardItem

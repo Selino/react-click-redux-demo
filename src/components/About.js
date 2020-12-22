@@ -19,7 +19,7 @@ function About() {
               Hello!
             </h3>
             <p>
-              My name is Sleino.I design and build UI with HTML/CSS/JS. I'm
+              My name is Selino.I design and build UI with HTML/CSS/JS. I'm
               mostly self taught, bootcamp taught, and team member taught. I
               have spent the last decade in vanilla JS, frameworks like Angular
               , and libraries like React. Much of that time has been in software
