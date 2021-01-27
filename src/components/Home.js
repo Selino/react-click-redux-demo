@@ -1,43 +1,9 @@
 import React from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
-// import styled from "@emotion/styled"
 import getMenuData from "../fixtures/MenuText"
 import { useSpring, animated } from "react-spring"
 import "./Home.scss"
-
-// const Emotion = styled.div`
-//   .card {
-//     cursor: pointer;
-//     margin-bottom: 2rem !important;
-//     min-width: 200px;
-//     max-width: 340px;
-//     height: 87%;
-//   }
-
-//   /* highlight the Biography section */
-//   .Biography {
-//     background-color: #ffd500;
-//   }
-
-//   /* // Small devices (landscape phones, 250px and up) */
-//   @media (min-width: 250px) {
-//     .sub-text {
-//       font-size: 1.2rem;
-//     }
-//   }
-
-//   @media (max-width: 768px) {
-//     .card {
-//       max-width: 100%;
-//       min-width: 96%;
-//     }
-
-//     .flex-wrap > div {
-//       width: 100%;
-//     }
-//   }
-// `
 
 function CardItem({ title, desc, img, video, link }) {
   const calc = (x, y) => [
