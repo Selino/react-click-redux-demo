@@ -6,7 +6,6 @@ import AppRouter, { history } from "./routes/AppRouter"
 import configureStore from "./store/configureStore"
 import { login, logout } from "./actions/auth_actions"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./tokens.scss"
 import "./index.scss"
 
 const store = configureStore()
