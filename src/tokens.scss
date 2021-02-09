@@ -3,11 +3,25 @@
  * @presenter Color
  */
 
-$n0: #cce5ff; /* Token Description */
-$n100: #fbfbfb;
-$n200: #edeeef;
+$n0: #007cff; /* Primary */
+$n1: #0169d9; /* Primary Dark */
+$n2: #ebe5fc; /* Primary Light */
+
+$n3: #6c757d; /* Secondary */
+$n4: #54595e; /* Secondary Dark */
+$n5: #abb5be; /* Secondary Light */
+
+$n100: #6d757d;
+$n200: #29a745;
 $n300: #e4e5e7;
 $primary: $n0;
+$primaryDark: $n1;
+$primaryLight: $n2;
+$secondary: $n3;
+$secondaryDark: $n4;
+$secondaryLight: $n5;
+
+$success: $n200;
 
 /**
   * @tokens Border Radius

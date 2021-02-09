@@ -4,5 +4,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "storybook-design-token",
+    "storybook-addon-designs",
   ],
 }
