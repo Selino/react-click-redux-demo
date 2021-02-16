@@ -7,4 +7,4 @@ const shadows = {
  "soft": "0px 0px 5px rgba(196, 196, 196, 1)"
 }
 
-export default shadows;
+module.exports = shadows;

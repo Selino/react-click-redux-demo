@@ -6,4 +6,4 @@ const easings = {
  "easeInSine": "cubic-bezier(0.12, 0, 0.39, 0)"
 }
 
-export default easings;
+module.exports = easings;

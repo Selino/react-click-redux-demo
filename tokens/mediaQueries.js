@@ -12,4 +12,4 @@ const mediaQueries = {
  "wide": "1920px"
 }
 
-export default mediaQueries;
+module.exports = mediaQueries;

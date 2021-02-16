@@ -9,7 +9,7 @@ const colors = {
  "blue1": "rgba(47, 128, 237, 1)",
  "yellow": "rgba(242, 201, 76, 1)",
  "orange": "rgba(242, 153, 74, 1)",
- "red": "rgba(235, 87, 87, 1)",
+ "red": "rgba(220, 53, 69, 1)",
  "neon": "rgba(228, 255, 193, 1)",
  "gray5": "rgba(242, 242, 242, 1)",
  "gray4": "rgba(224, 224, 224, 1)",
@@ -20,4 +20,4 @@ const colors = {
  "black": "rgba(51, 51, 51, 1)"
 }
 
-export default colors;
+module.exports = colors;

@@ -11,4 +11,4 @@ const fontSizes = {
  "h1": "3rem"
 }
 
-export default fontSizes;
+module.exports = fontSizes;

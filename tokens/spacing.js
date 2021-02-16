@@ -9,4 +9,4 @@ const spacing = {
  "tiny": "0.5rem"
 }
 
-export default spacing;
+module.exports = spacing;
