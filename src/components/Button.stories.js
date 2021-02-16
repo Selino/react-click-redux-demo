@@ -19,7 +19,7 @@ Primary.parameters = {
   design: {
     type: "figma",
     url:
-      "https://www.figma.com/file/O4I9xlnDKGJfN8dnqDSfqw/Bootstrap-Component-Library?node-id=50%3A0",
+      "https://www.figma.com/file/zoCj8ujtkP33lG6CKgZht9/React-Bootstrap-Component-Library?node-id=1664%3A440",
   },
 }
 
