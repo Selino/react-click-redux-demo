@@ -14,6 +14,7 @@ import {
   resetCount,
 } from "../../actions/counter_actions"
 import { useSpring, a } from "react-spring"
+import colors from "../../tokens/colors"
 
 function AnimatedButton({ icon, onClick, testId }) {
   const [state, toggle] = useState(true)
@@ -37,6 +38,7 @@ function AnimatedButton({ icon, onClick, testId }) {
       }}
     >
       <Button
+        style={{ color: colors.white, backgroundColor: colors.primaryInactive }}
         data-testid={testId}
         onClick={() => {
           onClick()
@@ -72,7 +74,10 @@ function Counter() {
         <Col xs={12} sm={8} md={6} lg={4}>
           <Card className='main-counter'>
             <Card.Body>
-              <Card.Title className='counter-line'>
+              <Card.Title
+                className='counter-line'
+                style={{ visibility: "hidden", color: colors.graysGray1 }}
+              >
                 Redux Counter: {counter}
               </Card.Title>
 
@@ -101,7 +106,7 @@ function Counter() {
               />
             </Card.Body>
           </Card>
-          <p style={{ marginTop: "1rem" }}>
+          <p style={{ marginTop: "1rem", color: colors.graysGray1 }}>
             Count between 0 - 25.
             <br />
             Data is persistent across sessions. Enjoy!

@@ -1,7 +1,7 @@
 import React from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { Card } from "react-bootstrap"
-import getMenuData from "../fixtures/MenuText"
+import getMenuData from "../../fixtures/MenuText"
 import { useSpring, animated } from "react-spring"
 import "./Home.scss"
 

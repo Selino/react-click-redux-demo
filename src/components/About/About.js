@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import Standing from "../images/IMG_1308.svg"
+import Standing from "../../images/IMG_1308.svg"
 
 function About() {
   return (

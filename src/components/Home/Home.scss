@@ -1,5 +1,3 @@
-@import "../tokens";
-
 .card {
   cursor: pointer;
   margin-bottom: 2rem !important;
@@ -8,10 +6,10 @@
   height: 87%;
 }
 
-/* highlight the Biography section */
-.Biography {
-  background-color: $primaryLight !important;
-}
+// /* highlight the Biography section */
+// .Biography {
+//   background-color: Blue !important;
+// }
 
 /* // Small devices (landscape phones, 250px and up) */
 @media (min-width: 250px) {

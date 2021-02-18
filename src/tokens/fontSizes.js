@@ -2,6 +2,7 @@
 
 const fontSizes = {
  "sub": "0.75rem",
+ "tiny": "0.625rem",
  "paragraph": "1rem",
  "h6": "1.125rem",
  "h5": "1.25rem",

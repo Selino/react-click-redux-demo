@@ -6,7 +6,8 @@ const spacing = {
  "big": "3rem",
  "medium": "2rem",
  "small": "1rem",
- "tiny": "0.5rem"
+ "tiny": "0.5rem",
+ "micro": "0.25rem"
 }
 
 module.exports = spacing;

@@ -1,14 +1,16 @@
 import React from "react"
-import { getSampleData } from "../fixtures/ExecutiveSummaryData"
-import { Badge } from "react-bootstrap"
+import { getSampleData } from "../../fixtures/ExecutiveSummaryData"
+// import { Badge } from "react-bootstrap"
+import Badge from "../Badge/Badge"
 import BootstrapTable from "react-bootstrap-table-next"
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit"
-import MiniBar from "../components/minibar/MiniBar"
+import MiniBar from "../MiniBar/MiniBar"
 import moment from "moment"
 import Dinero from "dinero.js"
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"
 import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css"
 import styled from "@emotion/styled"
+import colors from "../../tokens/colors"
 
 const Emotion = styled.div`
   table {
@@ -61,7 +63,6 @@ export default function ExecutiveSummary() {
         <MiniBar
           Perc={Math.round(myPerc)}
           daysInMarket={row.daysInMarket}
-          backGroundColor='#E5E5E5'
           forGroundColor='#428BCA'
         />
       </div>
@@ -82,8 +83,7 @@ export default function ExecutiveSummary() {
         <MiniBar
           Perc={Math.round(myPerc)}
           daysInMarket={row.daysInMarket}
-          backGroundColor='#E5E5E5'
-          forGroundColor='#4C9D2F'
+          forGroundColor={colors.alertSuccess}
         />
       </div>
     )
@@ -100,15 +100,11 @@ export default function ExecutiveSummary() {
   }
 
   const displayStatus = (status) => {
-    let variant = "secondary"
+    let variant = colors.graysGray2
     if (status === "live") {
-      variant = "primary"
+      variant = colors.primaryInactive
     }
-    return (
-      <Badge variant={variant} style={{ width: "100%", padding: "4px" }}>
-        {status}
-      </Badge>
-    )
+    return <Badge text={status} variant={variant} />
   }
 
   const { SearchBar } = Search

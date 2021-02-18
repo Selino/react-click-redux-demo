@@ -1,8 +1,15 @@
 import React from "react"
+import colors from "../../tokens/colors"
 
 export default function MiniBar(props) {
+  let backGroundColor = props.backGroundColor
+    ? props.backGroundColor
+    : colors.graysGray4
+  let forGroundColor = props.forGroundColor
+    ? props.forGroundColor
+    : colors.primaryInactive
   const myBarBackGround = {
-    backgroundColor: props.backGroundColor,
+    backgroundColor: backGroundColor,
     width: "60px",
     height: "16px",
     borderRadius: "2px",
@@ -12,7 +19,7 @@ export default function MiniBar(props) {
     verticalAlign: "text-bottom",
   }
   const myBarForGround = {
-    backgroundColor: props.forGroundColor,
+    backgroundColor: forGroundColor,
     width: props.Perc + "%",
     height: "100%",
   }

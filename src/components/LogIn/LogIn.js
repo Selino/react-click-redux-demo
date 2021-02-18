@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux"
 import {
   startLoginGoogleAction,
   startLoginGithubAction,
-} from "../actions/auth_actions"
-import imgGoogleSignIn from "../images/btn-sign-in-g.svg"
-import imgGitHubSignIn from "../images/btn-sign-in-github.svg"
-import BigTitle from "../images/big-title.svg"
-import Logo from "../images/sv-logo.svg"
+} from "../../actions/auth_actions"
+import imgGoogleSignIn from "../../images/btn-sign-in-g.svg"
+import imgGitHubSignIn from "../../images/btn-sign-in-github.svg"
+import BigTitle from "../../images/big-title.svg"
+import Logo from "../../images/sv-logo.svg"
 import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
 
