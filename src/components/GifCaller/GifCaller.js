@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { Form, InputGroup, Button, Container, Spinner } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import colors from "../../tokens/colors"
+import fontSizes from "../../tokens/fontSizes"
 
 function useGiphy(query) {
   const [results, setResults] = useState([])
@@ -58,12 +60,12 @@ export default function GifCaller() {
                 top: 50%;
                 right: 3rem;
                 transform: translate(-50%, -50%);
-                color: #e5e5e5;
+                color: ${colors.graysGray3};
                 cursor: pointer;
                 z-index: 5;
-                font-size: 1.3rem;
+                font-size: ${fontSizes.h6};
                 &:hover {
-                  color: #666;
+                  color: ${colors.graysGray2};
                 }
               `}
               onClick={(e) => {
@@ -74,7 +76,17 @@ export default function GifCaller() {
               className={search ? "" : "d-none"}
             />
 
-            <Button type='submit'>
+            <Button
+              type='submit'
+              css={css`
+                background-color: ${colors.primaryInactive}
+                border-color: none;
+                &:hover {
+                  background-color: ${colors.primaryHover};
+                  border-color: ${colors.primarySelected};
+                }
+              `}
+            >
               <FontAwesomeIcon icon={faSearch} />
             </Button>
           </InputGroup.Append>
