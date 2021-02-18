@@ -12,6 +12,9 @@ import {
 import { faCalculator } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import TransitionGroup from "react-transition-group/TransitionGroup"
+import colors from "../../tokens/colors"
+import fontWeights from "../../tokens/fontWeights"
+import fontSizes from "../../tokens/fontSizes"
 
 const numbersArray = [
   { num: 15, word: "FIZZBUZZ!", variant: "danger" },
@@ -31,18 +34,48 @@ const setVariant = (array, match) => {
 }
 
 export const AlertItem = (props) => {
+  let x = {}
+  switch (props.variant) {
+    case "danger":
+      x.color = colors.alertDanger
+      x.backgroundColor = colors.alertDangerBackground
+      break
+    case "success":
+      x.color = colors.alertSuccess
+      x.backgroundColor = colors.alertSuccessBackground
+      break
+    case "warning":
+      x.color = colors.alertWarning
+      x.backgroundColor = colors.alertWarningBackground
+      break
+    default:
+      x.color = colors.graysGray1
+      x.backgroundColor = colors.graysGray4
+      break
+  }
+
   return (
-    <Alert title={props.displayStatus} variant={props.variant}>
+    <Alert
+      title={props.displayStatus}
+      style={{
+        color: x.color,
+        backgroundColor: x.backgroundColor,
+      }}
+    >
       <Container>
         <Row>
           <Col
             className='display-status text-center text-md-left'
+            style={{ fontWeight: fontWeights.medium, fontSize: fontSizes.h5 }}
             xs={12}
             sm={6}
           >
             {props.displayStatus}
           </Col>
-          <Col className='text-center text-md-right font-weight-bold h2 result-number'>
+          <Col
+            className='text-center text-md-right result-number'
+            style={{ fontWeight: fontWeights.bold, fontSize: fontSizes.h3 }}
+          >
             {props.value}
           </Col>
         </Row>
@@ -89,7 +122,7 @@ export default function FizzBuzz() {
   return (
     <Container>
       <Row>
-        <Col xs={12} sm={6}>
+        <Col xs={12} sm={6} style={{ color: colors.black }}>
           <p>
             Enter a number between 1 & 99 to determine if it is a factor of
             (divides evenly into) 3 or 5. Get a "Fizz" if by 3, "Buzz" if by 5,
@@ -123,7 +156,14 @@ export default function FizzBuzz() {
                 ref={inputRef1}
               />
               <InputGroup.Append>
-                <Button data-testid='submit-button' type='submit'>
+                <Button
+                  data-testid='submit-button'
+                  type='submit'
+                  style={{
+                    color: colors.white,
+                    backgroundColor: colors.primaryInactive,
+                  }}
+                >
                   <FontAwesomeIcon
                     alt='Calculate'
                     icon={faCalculator}
