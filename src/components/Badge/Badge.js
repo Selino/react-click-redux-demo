@@ -4,6 +4,7 @@ import colors from "../../tokens/colors"
 import fontSizes from "../../tokens/fontSizes"
 import spacing from "../../tokens/spacing"
 import fontWeights from "../../tokens/fontWeights"
+import radii from "../../tokens/radii"
 
 export default function Badge(props) {
   const { variant } = props
@@ -18,6 +19,7 @@ export default function Badge(props) {
         background-color: ${variant};
         text-transform: uppercase;
         width: 100%;
+        border-radius: ${radii.circle};
       `}
     >
       {props.text}
