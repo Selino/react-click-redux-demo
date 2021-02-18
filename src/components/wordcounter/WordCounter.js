@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap"
 import { useSpring, a } from "react-spring"
+import colors from "../../tokens/colors"
+import shadows from "../../tokens/shadows"
 
 function AnimatedCount({ count }) {
   const [state, toggle] = useState(true)
@@ -123,6 +125,7 @@ export default function WordCounter() {
                 variant='secondary'
                 size='sm'
                 alt='Fill text area with sample text'
+                style={{ backgroundColor: colors.graysGray1 }}
               >
                 Auto Fill
               </Button>
@@ -133,6 +136,7 @@ export default function WordCounter() {
                 size='sm'
                 disabled={!words}
                 alt='Reset all text.'
+                style={{ backgroundColor: colors.alertWarning }}
               >
                 Reset
               </Button>
@@ -140,7 +144,7 @@ export default function WordCounter() {
           </Row>
         </Col>
         <Col xs={12} sm={4} md={4} lg={3}>
-          <Card style={{ boxShadow: "1px 2px 4px #CCC" }}>
+          <Card style={{ boxShadow: shadows.deep }}>
             <Card.Body>
               <Card.Title>Total Words</Card.Title>
               <div
