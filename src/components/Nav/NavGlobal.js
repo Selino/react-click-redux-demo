@@ -8,43 +8,49 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
-import Logo from "../../images/sv-logo.jpg"
+import Logo from "../../images/sv-logo.svg"
 import getMenuData from "../../fixtures/MenuText"
 
 const Emotion = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
   .dropdown-toggle:after {
     content: none !important;
   }
 
   .navbar-brand {
-    font-family: "Bebas Neue", serif;
     font-size: 2rem;
     line-height: 2.8rem;
+    color: #333;
+    font-weight: bold;
   }
 
   .logo {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    border: solid 1px black;
     background-image: url(${Logo});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 0.5rem;
-    box-shadow: 0px 0px 3px black;
     cursor: pointer;
   }
 
   .btn {
     padding: 0;
     margin-left: 1rem;
+    color: #333;
+    font-size: 2rem;
   }
 
   .btn:hover {
-    color: #999;
+    color: black;
+  }
+
+  .nav-link {
+    padding: 0 !important;
+  }
+
+  .dropdown-item.active {
+    background-color: #69bac9;
   }
 
   /* // Small devices (landscape phones, 250px and up) */
@@ -79,7 +85,11 @@ export function NavGlobal() {
   }
   return (
     <Emotion>
-      <Navbar bg='dark' variant='dark' onSelect={handleSelect} fixed='top'>
+      <Navbar
+        style={{ backgroundColor: "#69BAC9" }}
+        onSelect={handleSelect}
+        fixed='top'
+      >
         <LinkContainer exact to='/home' active='false'>
           <Navbar.Brand>
             <div>
@@ -91,10 +101,7 @@ export function NavGlobal() {
         <Navbar.Collapse className='justify-content-end'>
           <Button
             variant=''
-            css={css`
-              color: white;
-              font-size: 2rem;
-            `}
+            className='btn'
             href='https://linkedin.com/in/selino'
             target='_blank'
             rel='noopener noreferrer'
@@ -103,10 +110,7 @@ export function NavGlobal() {
           </Button>
           <Button
             variant=''
-            css={css`
-              color: white;
-              font-size: 2rem;
-            `}
+            className='btn'
             href='https://github.com/Selino/react-click-redux-demo'
             target='_blank'
             rel='noopener noreferrer'
@@ -116,18 +120,9 @@ export function NavGlobal() {
 
           <NavDropdown
             alignRight
-            title={
-              <FontAwesomeIcon
-                icon={faBars}
-                css={css`
-                  color: #ffd500;
-                  font-size: 2rem;
-                `}
-              />
-            }
+            title={<FontAwesomeIcon icon={faBars} className='btn' />}
           >
             <DropDownItems items={dropDownMenuData} />
-
             <NavDropdown.Divider />
             <NavDropdown.Item key='IDLOGOUT' eventKey='logout'>
               Logout
