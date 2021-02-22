@@ -19,7 +19,7 @@ const Emotion = styled.div`
   .navbar-brand {
     font-size: 2rem;
     line-height: 2.8rem;
-    color: #333;
+    color: black;
     font-weight: bold;
   }
 
@@ -37,12 +37,12 @@ const Emotion = styled.div`
   .btn {
     padding: 0;
     margin-left: 1rem;
-    color: #333;
+    color: black;
     font-size: 2rem;
   }
 
   .btn:hover {
-    color: black;
+    color: #333;
   }
 
   .nav-link {
