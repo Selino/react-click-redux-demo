@@ -55,6 +55,9 @@ const Emotion = styled.div`
 
   /* // Small devices (landscape phones, 250px and up) */
   @media (max-width: 420px) {
+    .navbar-brand {
+      font-size: 1.4rem;
+    }
   }
 `
 
