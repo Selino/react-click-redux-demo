@@ -13,8 +13,6 @@ import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
 
 const Emotion = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
   .login-background {
     width: 100vw;
     height: 100vh;
@@ -41,12 +39,8 @@ const Emotion = styled.div`
     margin-bottom: 1rem;
   }
 
-  .big-title {
-    width: 100%;
-  }
-
   .sub-text {
-    font-family: "Bebas Neue", serif;
+    font-weight: bold;
     font-size: 1.5rem;
     color: black;
   }
@@ -65,11 +59,6 @@ const Emotion = styled.div`
     width: 40%;
     min-width: 240px;
     max-width: 400px;
-  }
-
-  .url {
-    color: #999;
-    margin-right: 1rem;
   }
 
   /* // Small devices (landscape phones, 250px and up) */
@@ -175,7 +164,7 @@ export const LogIn = () => {
             className='sub-text'
             // style={{ transform: parallax.xy.interpolate(trans5) }}
           >
-            DesOps & coding demos
+            with Selino Valdes
           </a.p>
           <a.p className='btn-area'>
             <img
