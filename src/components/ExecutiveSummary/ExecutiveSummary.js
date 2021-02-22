@@ -181,7 +181,7 @@ export default function ExecutiveSummary() {
         search
       >
         {(props) => (
-          <div className='table-container'>
+          <div className='body-container table-container'>
             <div className='search-container'>
               <div className='table-name-container'>Strategy List</div>
               <div className='searchbar-container'>

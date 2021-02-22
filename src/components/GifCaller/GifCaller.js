@@ -44,7 +44,7 @@ export default function GifCaller() {
   }
 
   return (
-    <Container>
+    <Container className='body-container'>
       <Form id='myForm' onSubmit={handleSubmit}>
         <InputGroup className='mb-3'>
           <Form.Control

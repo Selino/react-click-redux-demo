@@ -120,7 +120,7 @@ export default function FizzBuzz() {
   }, [displayArray, inputRef1])
 
   return (
-    <Container>
+    <Container className='body-container'>
       <Row>
         <Col xs={12} sm={6} style={{ color: colors.black }}>
           <p>

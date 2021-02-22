@@ -4,7 +4,7 @@ import Standing from "../../images/IMG_1308.svg"
 
 function About() {
   return (
-    <div className='copy-info'>
+    <div className='body-container copy-info'>
       <Container style={{ marginBottom: "2rem" }}>
         <Row>
           <Col>

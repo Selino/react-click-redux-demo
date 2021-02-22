@@ -6,7 +6,8 @@ import {
 } from "../../actions/auth_actions"
 import imgGoogleSignIn from "../../images/btn-sign-in-g.svg"
 import imgGitHubSignIn from "../../images/btn-sign-in-github.svg"
-import BigTitle from "../../images/big-title.svg"
+import BigTitle from "../../images/ui-design.svg"
+import BigTitle2 from "../../images/development.svg"
 import Logo from "../../images/sv-logo.svg"
 import styled from "@emotion/styled"
 import { useSpring, a } from "react-spring"
@@ -36,8 +37,6 @@ const Emotion = styled.div`
   }
 
   .logo-pic {
-    border-radius: 50%;
-    border: solid 4px black;
     opacity: 1;
     margin-bottom: 1rem;
   }
@@ -69,7 +68,7 @@ const Emotion = styled.div`
   }
 
   .url {
-    color: #e48811;
+    color: #999;
     margin-right: 1rem;
   }
 
@@ -116,20 +115,20 @@ export const LogIn = () => {
   const trans1 = (x, y) => `translate3d(${x / 200}px,${y / 200}px,0)`
   const trans2 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`
   const trans3 = (x, y) => `translate3d(${x / 40}px,${y / 60}px,0)`
-  const trans4 = (x, y) => `translate3d(${x / 120}px,${y / 120}px,0)`
-  // const trans5 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
+  const trans4 = (x, y) => `translate3d(${x / 320}px,${y / 320}px,0)`
+  // const trans5 = (x, y) => `translate3d(${x / 420}px,${y / 420}px,0)`
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
 
   const [animation2] = useSpring(() => ({
     to: async (next, cancel) => {
       await next({ opacity: 0, marginTop: -500, width: 0 })
-      await next({ opacity: 1, marginTop: 0, width: 150 })
+      await next({ opacity: 1, marginTop: 0, width: 130 })
     },
     config: { tension: 300, friction: 10 },
   }))
 
   useEffect(() => {
-    if (animation >= 4) {
+    if (animation >= 5) {
       document.getElementById("login-area").style.display = "block"
     }
   }, [animation])
@@ -147,11 +146,11 @@ export const LogIn = () => {
         <a.div id='login-area' className='login-area'>
           <a.img
             className='logo-pic'
-            alt='test'
+            alt='selino.com'
             src={Logo}
             style={{
               ...animation2,
-              transform: parallax.xy.interpolate(trans2),
+              // transform: parallax.xy.interpolate(trans2),
             }}
             onLoad={() => setAnimation(animation + 1)}
           />
@@ -160,14 +159,23 @@ export const LogIn = () => {
             className='big-title'
             alt="Selino's ReactJS Demo"
             src={BigTitle}
-            style={{ transform: parallax.xy.interpolate(trans3) }}
+            // style={{ transform: parallax.xy.interpolate(trans3) }}
+            onLoad={() => setAnimation(animation + 1)}
+          />
+          <br />
+          <a.img
+            id='big-title-2'
+            className='big-title-2'
+            alt="Selino's ReactJS Demo"
+            src={BigTitle2}
+            // style={{ transform: parallax.xy.interpolate(trans4) }}
             onLoad={() => setAnimation(animation + 1)}
           />
           <a.p
             className='sub-text'
-            style={{ transform: parallax.xy.interpolate(trans4) }}
+            // style={{ transform: parallax.xy.interpolate(trans5) }}
           >
-            <span className='url'>selino.com</span> coding demos
+            DesOps & coding demos
           </a.p>
           <a.p className='btn-area'>
             <img

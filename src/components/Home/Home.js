@@ -59,7 +59,7 @@ export default function About() {
       menuitem.desc != null
   )
   return (
-    <div className='d-flex flex-wrap justify-content-around align-items-stretch'>
+    <div className='d-flex flex-wrap justify-content-around align-items-stretch body-container'>
       {menuData.map((a) => {
         return (
           <CardItem

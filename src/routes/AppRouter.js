@@ -49,21 +49,19 @@ const AppRouter = () => (
       <Route exact path='/' component={LogIn} />
     </Switch>
 
-    <div className='body-container'>
-      <Switch>
-        <PrivateRoute exact path='/home' component={Home} />
-        <PrivateRoute exact path='/about' component={About} />
-        <PrivateRoute exact path='/counter' component={Counter} />
-        <PrivateRoute exact path='/gifcaller' component={GifCaller} />
-        <PrivateRoute exact path='/fizzbuzz' component={FizzBuzz} />
-        <PrivateRoute
-          exact
-          path='/executivesummary'
-          component={ExecutiveSummary}
-        />
-        <PrivateRoute exact path='/wordcounter' component={WordCounter} />
-      </Switch>
-    </div>
+    <Switch>
+      <PrivateRoute exact path='/home' component={Home} />
+      <PrivateRoute exact path='/about' component={About} />
+      <PrivateRoute exact path='/counter' component={Counter} />
+      <PrivateRoute exact path='/gifcaller' component={GifCaller} />
+      <PrivateRoute exact path='/fizzbuzz' component={FizzBuzz} />
+      <PrivateRoute
+        exact
+        path='/executivesummary'
+        component={ExecutiveSummary}
+      />
+      <PrivateRoute exact path='/wordcounter' component={WordCounter} />
+    </Switch>
   </Router>
 )
 

@@ -68,7 +68,7 @@ function Counter() {
   })
 
   return (
-    <Container>
+    <Container className='body-container'>
       <Row>
         <Col>&nbsp;</Col>
         <Col xs={12} sm={8} md={6} lg={4}>

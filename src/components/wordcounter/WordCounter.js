@@ -78,7 +78,7 @@ export default function WordCounter() {
   }
 
   return (
-    <Container fluid>
+    <Container fluid className='body-container'>
       <Row>
         <Col sm={12} md={12} lg={3} style={{ marginBottom: "1rem" }}>
           <Card>
