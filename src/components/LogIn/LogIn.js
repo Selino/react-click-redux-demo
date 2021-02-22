@@ -101,10 +101,10 @@ export const LogIn = () => {
   const startLoginGoogle = dispatch(startLoginGoogleAction)
 
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-  const trans1 = (x, y) => `translate3d(${x / 200}px,${y / 200}px,0)`
-  const trans2 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`
-  const trans3 = (x, y) => `translate3d(${x / 40}px,${y / 60}px,0)`
-  const trans4 = (x, y) => `translate3d(${x / 320}px,${y / 320}px,0)`
+  // const trans1 = (x, y) => `translate3d(${x / 200}px,${y / 200}px,0)`
+  // const trans2 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`
+  // const trans3 = (x, y) => `translate3d(${x / 40}px,${y / 60}px,0)`
+  // const trans4 = (x, y) => `translate3d(${x / 320}px,${y / 320}px,0)`
   // const trans5 = (x, y) => `translate3d(${x / 420}px,${y / 420}px,0)`
   const [parallax, setParallax] = useSpring(() => ({ xy: [0, 0] }))
 
@@ -129,7 +129,7 @@ export const LogIn = () => {
         onMouseMove={({ clientX: x, clientY: y }) =>
           setParallax({ xy: calc(x, y) })
         }
-        style={{ transform: parallax.xy.interpolate(trans1) }}
+        // style={{ transform: parallax.xy.interpolate(trans1) }}
         id='backGround'
       >
         <a.div id='login-area' className='login-area'>
