@@ -45,26 +45,22 @@ const Emotion = styled.div`
     color: black;
   }
 
-  .btn-area {
-    display: flex;
-    justify-content: space-around;
-    height: 100px;
-    flex-wrap: wrap;
-  }
-
   .btn-sign-in {
     cursor: pointer;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     overflow: hidden;
-    width: 40%;
-    min-width: 240px;
-    max-width: 400px;
   }
 
   /* // Small devices (landscape phones, 250px and up) */
   @media (min-width: 250px) {
     .sub-text {
       font-size: 1.2rem;
+    }
+    .btn-area {
+      display: block;
+    }
+    .btn-sign-in {
+      width: 100%;
     }
   }
 
@@ -73,12 +69,21 @@ const Emotion = styled.div`
     .sub-text {
       font-size: 1.6rem;
     }
+    .btn-area {
+      display: flex;
+    }
+    .btn-sign-in {
+      height: 40px;
+    }
   }
 
   /* // Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     .sub-text {
       font-size: 1.7rem;
+    }
+    .btn-sign-in {
+      height: 50px;
     }
   }
 
