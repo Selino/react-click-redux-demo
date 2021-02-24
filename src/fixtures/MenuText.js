@@ -31,6 +31,7 @@ const getMenuData = () => {
     },
     {
       id: "IDWORDCOUNTER",
+      type: "React",
       link: "/wordcounter",
       title: "F'ing Word Counter",
       subMenuText: "You kiss your mother with that mouth? 😮",
@@ -40,6 +41,7 @@ const getMenuData = () => {
     },
     {
       id: "IDGIFCALLER",
+      type: "React",
       link: "/gifcaller",
       title: "Gif Caller",
       subMenuText: "A Giphy API caller using Async React Hooks.",
@@ -50,6 +52,7 @@ const getMenuData = () => {
     },
     {
       id: "IDFIZZBUZZ",
+      type: "React",
       link: "/fizzbuzz",
       title: "FizzBuzz",
       subMenuText: "A React implementation of a classic Javascript algorithm.",
@@ -58,6 +61,7 @@ const getMenuData = () => {
     },
     {
       id: "IDCOUNTER",
+      type: "React",
       link: "/counter",
       title: "Redux Counter",
       subMenuText: "An over-engineered counter for learning Redux & Firebase.",
@@ -68,6 +72,7 @@ const getMenuData = () => {
 
     {
       id: "IDEXECSUMMARY",
+      type: "React",
       link: "/executivesummary",
       title: "Data Table",
       subMenuText: "A live data table with all the bells and whistles.",
