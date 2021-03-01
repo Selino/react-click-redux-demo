@@ -1,6 +1,6 @@
 import React from "react"
 import ExecutiveSummary from "./ExecutiveSummary"
-import MiniBar from "../minibar/MiniBar"
+import MiniBar from "../MiniBar/MiniBar"
 
 // This default export determines where your story goes in the story list
 export default {
