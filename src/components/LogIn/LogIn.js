@@ -45,9 +45,9 @@ const Emotion = styled.div`
     color: black;
   }
 
-  .intro {
+  .intro ul {
     width: 100%;
-    margin: 2em 0;
+    margin: 0 0 2rem 0;
     display: none;
   }
 
@@ -95,7 +95,7 @@ const Emotion = styled.div`
     .btn-sign-in {
       height: 50px;
     }
-    .intro {
+    .intro ul {
       display: block;
     }
   }
@@ -106,7 +106,7 @@ const Emotion = styled.div`
       font-size: 1.8rem;
     }
     .intro {
-      width: 50%;
+      width: 66%;
     }
   }
 
@@ -194,7 +194,7 @@ export const LogIn = () => {
             <ul>
               <li>
                 I'm currently focused on designing & implementing DesOps
-                workflows between the Figma API, React/Node deploys, and
+                workflows between the Figma API, React App deploys, and
                 Storybook dev tools. I like helping designers and engineers get
                 stuff done.
               </li>
