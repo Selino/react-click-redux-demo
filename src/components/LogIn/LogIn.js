@@ -45,6 +45,16 @@ const Emotion = styled.div`
     color: black;
   }
 
+  .intro {
+    width: 100%;
+    margin: 2em 0;
+    display: none;
+  }
+
+  .intro li {
+    margin-top: 1rem;
+  }
+
   .btn-sign-in {
     cursor: pointer;
     margin-bottom: 1rem;
@@ -85,12 +95,18 @@ const Emotion = styled.div`
     .btn-sign-in {
       height: 50px;
     }
+    .intro {
+      display: block;
+    }
   }
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .sub-text {
       font-size: 1.8rem;
+    }
+    .intro {
+      width: 50%;
     }
   }
 
@@ -169,8 +185,29 @@ export const LogIn = () => {
             className='sub-text'
             // style={{ transform: parallax.xy.interpolate(trans5) }}
           >
-            with Selino Valdes
+            with Selino 👋🏽
           </a.p>
+          <p className='intro'>
+            Hi, friend! My name is Selino and I love designing and building web
+            apps. This is a coding sandbox I use to explore various libraries,
+            frameworks, and patterns. Feel free to login and check it out.
+            <ul>
+              <li>
+                I'm currently focused on designing & implementing DesOps
+                workflows between the Figma API, React/Node deploys, and
+                Storybook dev tools. I like helping designers and engineers get
+                stuff done.
+              </li>
+              <li>
+                TailwindCSS is all kinds of cool! Ripping out EmotionCSS is in
+                the pipeline.
+              </li>
+              <li>
+                The next project will likely be implementing some WebObjects
+                within this collection of simple React components.
+              </li>
+            </ul>
+          </p>
           <a.p className='btn-area'>
             <img
               className='btn-sign-in'

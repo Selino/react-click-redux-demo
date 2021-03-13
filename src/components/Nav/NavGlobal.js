@@ -10,6 +10,7 @@ import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import Logo from "../../images/sv-logo.svg"
 import getMenuData from "../../fixtures/MenuText"
+import titleImg from "../../images/logo-selinos-demo.svg"
 
 const Emotion = styled.div`
   .dropdown-toggle:after {
@@ -34,15 +35,19 @@ const Emotion = styled.div`
     cursor: pointer;
   }
 
+  .selino-title {
+    height: 40px;
+  }
+
   .btn {
     padding: 0;
     margin-left: 1rem;
-    color: black;
+    color: white;
     font-size: 2rem;
   }
 
   .btn:hover {
-    color: #333;
+    color: #e5e5e5;
   }
 
   .nav-link {
@@ -96,8 +101,11 @@ export function NavGlobal() {
         <LinkContainer exact to='/home' active='false'>
           <Navbar.Brand>
             <div>
-              <div className='d-inline-block align-top logo'></div>
-              <span className='app-name'>Selino Valdes</span>
+              <img src={Logo} className='d-inline-block align-top logo' />
+              <img
+                src={titleImg}
+                className='d-inline-block align-top selino-title'
+              />
             </div>
           </Navbar.Brand>
         </LinkContainer>
