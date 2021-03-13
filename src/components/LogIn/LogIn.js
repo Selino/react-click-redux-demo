@@ -45,13 +45,13 @@ const Emotion = styled.div`
     color: black;
   }
 
-  .intro ul {
+  .latest-points {
     width: 100%;
     margin: 0 0 2rem 0;
     display: none;
   }
 
-  .intro li {
+  .latest-points li {
     margin-top: 1rem;
   }
 
@@ -95,7 +95,7 @@ const Emotion = styled.div`
     .btn-sign-in {
       height: 50px;
     }
-    .intro ul {
+    .latest-points {
       display: block;
     }
   }
@@ -105,7 +105,7 @@ const Emotion = styled.div`
     .sub-text {
       font-size: 1.8rem;
     }
-    .intro {
+    .latest-points {
       width: 66%;
     }
   }
@@ -195,7 +195,7 @@ export const LogIn = () => {
             apps. This is a coding sandbox I use to explore various libraries,
             frameworks, and patterns. Feel free to login and check it out.
           </p>
-          <ul>
+          <ul className='latest-points'>
             <li>
               I'm currently focused on designing & implementing DesOps workflows
               between the Figma API, React App deploys, and Storybook dev tools.
