@@ -185,29 +185,32 @@ export const LogIn = () => {
             className='sub-text'
             // style={{ transform: parallax.xy.interpolate(trans5) }}
           >
-            with Selino 👋🏽
+            with Selino{" "}
+            <span role='img' aria-label='wave hello'>
+              👋🏽
+            </span>
           </a.p>
           <p className='intro'>
             Hi, friend! My name is Selino and I love designing and building web
             apps. This is a coding sandbox I use to explore various libraries,
             frameworks, and patterns. Feel free to login and check it out.
-            <ul>
-              <li>
-                I'm currently focused on designing & implementing DesOps
-                workflows between the Figma API, React App deploys, and
-                Storybook dev tools. I like helping designers and engineers get
-                stuff done.
-              </li>
-              <li>
-                TailwindCSS is all kinds of cool! Ripping out EmotionCSS is in
-                the pipeline.
-              </li>
-              <li>
-                The next project will likely be implementing some WebObjects
-                within this collection of simple React components.
-              </li>
-            </ul>
           </p>
+          <ul>
+            <li>
+              I'm currently focused on designing & implementing DesOps workflows
+              between the Figma API, React App deploys, and Storybook dev tools.
+              I like helping designers and engineers get stuff done.
+            </li>
+            <li>
+              TailwindCSS is all kinds of cool! Ripping out EmotionCSS is in the
+              pipeline.
+            </li>
+            <li>
+              The next project will likely be implementing some WebObjects
+              within this collection of simple React components.
+            </li>
+          </ul>
+
           <a.p className='btn-area'>
             <img
               className='btn-sign-in'

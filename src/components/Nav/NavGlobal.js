@@ -101,9 +101,14 @@ export function NavGlobal() {
         <LinkContainer exact to='/home' active='false'>
           <Navbar.Brand>
             <div>
-              <img src={Logo} className='d-inline-block align-top logo' />
+              <img
+                src={Logo}
+                alt="Selino's Cute Logo"
+                className='d-inline-block align-top logo'
+              />
               <img
                 src={titleImg}
+                alt="Selino's Demo"
                 className='d-inline-block align-top selino-title'
               />
             </div>
