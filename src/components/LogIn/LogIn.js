@@ -197,9 +197,10 @@ export const LogIn = () => {
           </a.p>
 
           <p className='intro'>
-            Hi, friend! My name is Selino and I love designing and building web
-            apps. This is a coding sandbox I use to explore various libraries,
-            frameworks, and patterns. Feel free to login and check it out.
+            Hi, friend! My name is Selino and I love to collaborate on interface
+            design and development. This is a coding sandbox I use to explore
+            various libraries, frameworks, and patterns so feel free to login
+            and check it out.
           </p>
 
           <a.p className='btn-area'>
