@@ -31,7 +31,8 @@ const Emotion = styled.div`
 
   .login-area {
     display: none;
-    width: 70%;
+    max-width: 80vw;
+    min-width: 50vw;
   }
 
   .logo-pic {
@@ -43,6 +44,10 @@ const Emotion = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
     color: black;
+  }
+
+  .intro {
+    max-width: 320px;
   }
 
   .latest-points {
@@ -190,26 +195,12 @@ export const LogIn = () => {
               👋🏽
             </span>
           </a.p>
+
           <p className='intro'>
             Hi, friend! My name is Selino and I love designing and building web
             apps. This is a coding sandbox I use to explore various libraries,
             frameworks, and patterns. Feel free to login and check it out.
           </p>
-          <ul className='latest-points'>
-            <li>
-              I'm currently focused on designing & implementing DesOps workflows
-              between the Figma API, React App deploys, and Storybook dev tools.
-              I like helping designers and engineers get stuff done.
-            </li>
-            <li>
-              TailwindCSS is all kinds of cool! Ripping out EmotionCSS is in the
-              pipeline.
-            </li>
-            <li>
-              The next project will likely be implementing some WebObjects
-              within this collection of simple React components.
-            </li>
-          </ul>
 
           <a.p className='btn-area'>
             <img
