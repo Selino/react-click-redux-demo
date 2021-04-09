@@ -20,7 +20,7 @@ const numbersArray = [
   { num: 15, word: "FIZZBUZZ!", variant: "danger" },
   { num: 5, word: "Buzz", variant: "success" },
   { num: 3, word: "Fizz", variant: "warning" },
-  { num: null, word: null, variant: "secondary" },
+  { num: NaN, word: null, variant: "secondary" },
 ]
 
 const getString = (array, number) => {
@@ -76,7 +76,7 @@ export const AlertItem = (props) => {
             className='text-center text-md-right result-number'
             style={{ fontWeight: fontWeights.bold, fontSize: fontSizes.h3 }}
           >
-            {props.value}
+            {props.value >= 0 ? props.value : 0}
           </Col>
         </Row>
       </Container>
@@ -109,9 +109,9 @@ export default function FizzBuzz() {
     const regexp = new RegExp("^[0-9]+$")
     const cleanValue = value.match(regexp)
 
-    cleanValue >= 1 &&
+    cleanValue >= 0 &&
       cleanValue <= 99 &&
-      cleanValue != null &&
+      // cleanValue != null &&
       setInputNumber(parseInt(cleanValue))
   }
 
